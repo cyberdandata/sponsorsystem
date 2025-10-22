@@ -1,0 +1,217 @@
+{
+  "sponsorship_programs": {
+    "CH": {
+      "program_name": "CH FINANCIAL ANALYSIS REPORT TERM III 2025",
+      "students": [
+        {
+          "full_name": "dep seek",
+          "sponsorship_package": "Boarding",
+          "financial_data": {
+            "termly_school_fees": 20000,
+            "cash_received_euro": 400000,
+            "monthly_output_ugx": 6666.666666666667,
+            "monthly_output_euro": 1.6260162601626016,
+            "cash_received_ugx": 1640000000,
+            "plus_minus_diff_ugx": 1639993333.3333333,
+            "plus_minus_diff_euro": 399998.3739837398
+          },
+          "notes": "sponsop",
+          "serial_number": 1
+        }
+      ],
+      "metadata": {
+        "total_students": 1,
+        "sponsorship_types": {
+          "Boarding": 1
+        },
+        "monthly_costs_ugx": 6666.666666666667,
+        "monthly_costs_eur": 1.6260162601626016
+      }
+    },
+    "YSP": {
+      "program_name": "YSP FINANCIAL ANALYSIS REPORT Term III 2025",
+      "students": [],
+      "metadata": {
+        "total_students": 0,
+        "sponsorship_types": {},
+        "monthly_costs_ugx": 0,
+        "monthly_costs_eur": 0
+      }
+    },
+    "ICCSP": {
+      "program_name": "ICCSP FINANCIAL ANALYSIS REPORT TERM III 2025",
+      "students": [],
+      "metadata": {
+        "total_students": 0,
+        "sponsorship_types": {},
+        "monthly_costs_ugx": 0,
+        "monthly_costs_eur": 0
+      }
+    },
+    "OTM_GA": {
+      "program_name": "OTM-GA FINANCIAL ANALYSIS REPORT TERM III 2025",
+      "students": [],
+      "metadata": {
+        "total_students": 0,
+        "sponsorship_types": {},
+        "monthly_costs_ugx": 0,
+        "monthly_costs_eur": 0
+      }
+    }
+  },
+  "sponsorship_registry": {
+    "UCM": {
+      "students": [
+        {
+          "cid": 1,
+          "full_name": "Alvin Atuhirwe",
+          "category": "UCM",
+          "sponsorship_status": "active",
+          "sponsor": "Krech Norbert und Laura",
+          "amount": 70,
+          "notes": ""
+        }
+      ],
+      "metadata": {
+        "total_students": 1,
+        "active_students": 1,
+        "total_monthly_funding": 70,
+        "inactive_students": 0
+      }
+    },
+    "ICCSP": {
+      "students": [
+        {
+          "cid": 1,
+          "full_name": "Adrine Tushemerirwe",
+          "category": "ICCSP",
+          "sponsorship_status": "active",
+          "sponsor": "Augenstein Tobias -Son",
+          "amount": 35,
+          "notes": ""
+        },
+        {
+          "sponsor": "hfd",
+          "full_name": "naka",
+          "amount": 78,
+          "sponsorship_status": "active",
+          "category": "Individual",
+          "start_date": "2025-10-12",
+          "notes": "gi",
+          "cid": 2
+        }
+      ],
+      "metadata": {
+        "total_students": 2,
+        "active_students": 2,
+        "inactive_students": 0,
+        "total_monthly_funding": 113
+      }
+    },
+    "YSP": {
+      "students": [
+        {
+          "cid": 1,
+          "full_name": "Anita Nalwadda",
+          "level": "",
+          "category": "YSP",
+          "sponsorship_status": "active",
+          "sponsor": "Jungschar Allendorf",
+          "amount": 70,
+          "notes": "Dankesbrief von Robert"
+        },
+        {
+          "sponsor": "hfd",
+          "full_name": "MUGERWA JACKSON",
+          "amount": 766666,
+          "sponsorship_status": "active",
+          "category": "Individual",
+          "start_date": "2025-10-18",
+          "notes": "n",
+          "cid": 2
+        }
+      ],
+      "metadata": {
+        "total_students": 2,
+        "active_students": 2,
+        "inactive_students": 0,
+        "total_monthly_funding": 766736
+      }
+    },
+    "OTM_GA": {
+      "students": [
+        {
+          "cid": 1,
+          "full_name": "Akram Muhoozi",
+          "category": "OTM-GA",
+          "sponsorship_status": "active",
+          "sponsor": "Generation Alive",
+          "amount": 40,
+          "notes": ""
+        }
+      ],
+      "metadata": {
+        "total_students": 1,
+        "active_students": 1,
+        "inactive_students": 0,
+        "total_monthly_funding": 40
+      }
+    },
+    "CH": {
+      "students": [
+        {
+          "sponsor": "hfd",
+          "full_name": "dep seek",
+          "amount": 20000,
+          "sponsorship_status": "active",
+          "category": "Individual",
+          "start_date": "2025-10-22",
+          "notes": "hi",
+          "cid": 1
+        }
+      ],
+      "metadata": {
+        "total_students": 1,
+        "active_students": 1,
+        "total_monthly_funding": 20000,
+        "inactive_students": 0
+      }
+    }
+  },
+  "financial_review": {
+    "OTM_GA_Financial_Review": {
+      "students": [
+        {
+          "cid": 1,
+          "full_name": "Akram Muhoozi",
+          "cash_received_aug_2024": 40,
+          "cash_expected_per_month": 40,
+          "actual_sponsorship_per_child": null
+        }
+      ],
+      "summary": {
+        "total_cash_received": 1040,
+        "total_cash_expected": 1800,
+        "funding_gap": -760
+      }
+    }
+  },
+  "metadata": {
+    "source_files": [
+      "Decision on schools 2025 Term III.xlsx",
+      "General Sponsorship Edited with Romana June 2024.xlsx"
+    ],
+    "extraction_date": "2024-01-01",
+    "currency_conversion_rate": {
+      "euro_to_ugx": 4100,
+      "note": "Exchange rate used in calculations"
+    },
+    "programs_summary": {
+      "total_students_across_all_programs": 1,
+      "total_active_sponsorships": 7,
+      "total_monthly_funding_euros": 786959,
+      "total_monthly_funding_ugx": 3226531900
+    }
+  },
+  "last_updated": "2025-10-22T20:21:04.574Z"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "sponsorship-management-system",
+  "version": "1.0.0",
+  "description": "Advanced sponsorship management system with real-time WebSocket updates",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.1.10",
+    "ws": "^8.14.2"
+  },
+  "keywords": [
+    "sponsorship",
+    "management",
+    "financial",
+    "websocket",
+    "real-time"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
