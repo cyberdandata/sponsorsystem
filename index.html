@@ -3,461 +3,840 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsorship Management System</title>
+    <title>Sponsorship Management System | Professional Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ===== RESET & VARIABLES ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --info: #17a2b8;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --gray-light: #bdc3c7;
+            --white: #ffffff;
+            --sidebar-width: 280px;
+            --header-height: 70px;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== BASE STYLES ===== */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--dark);
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .connection-status {
+        .app-container {
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 0.9rem;
+            min-height: 100vh;
         }
 
-        #connection-status {
-            color: #27ae60;
-            font-weight: 600;
-        }
-
-        #connection-status.disconnected {
-            color: #e74c3c;
-        }
-
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .card h2 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #f8f9fa;
-        }
-
-        .summary-item .label {
-            font-weight: 600;
-        }
-
-        .summary-item .value {
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .value.income {
-            color: #27ae60;
-        }
-
-        .value.cost {
-            color: #e74c3c;
-        }
-
-        .value.deficit {
-            color: #c0392b;
-        }
-
-        .chart-container {
-            height: 200px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .chart-bar {
-            width: 50px;
-            background-color: #3498db;
-            border-radius: 5px 5px 0 0;
-            position: relative;
-            transition: height 0.5s ease;
-        }
-
-        .chart-bar.negative {
-            background-color: #e74c3c;
-        }
-
-        .chart-label {
-            position: absolute;
-            bottom: -25px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .recommendations-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .recommendation {
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid;
-        }
-
-        .recommendation.priority-high {
-            border-left-color: #e74c3c;
-            background-color: #ffeaea;
-        }
-
-        .recommendation.priority-medium {
-            border-left-color: #f39c12;
-            background-color: #fff4e6;
-        }
-
-        .recommendation h3 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .recommendation ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .management-actions {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: #3498db;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
-        }
-
-        .btn-secondary {
-            background-color: #95a5a6;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #7f8c8d;
-        }
-
-        .btn-success {
-            background-color: #27ae60;
-            color: white;
-        }
-
-        .btn-success:hover {
-            background-color: #219653;
-        }
-
-        .btn-danger {
-            background-color: #e74c3c;
-            color: white;
-        }
-
-        .btn-danger:hover {
-            background-color: #c0392b;
-        }
-
-        .btn-sm {
-            padding: 5px 10px;
-            font-size: 0.8rem;
-        }
-
-        .data-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 15px;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-        }
-
-        .stat-label {
-            display: block;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 5px;
-        }
-
-        .stat-value {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-
-        .students-controls {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-            align-items: center;
-        }
-
-        .students-controls select {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .students-list {
-            max-height: 400px;
-            overflow-y: auto;
-            margin-top: 15px;
-        }
-
-        .student-item {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            background-color: #f8f9fa;
-        }
-
-        .student-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .student-name {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #2c3e50;
-        }
-
-        .student-actions {
-            display: flex;
-            gap: 5px;
-        }
-
-        .student-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            font-size: 0.9rem;
-        }
-
-        .detail-item {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .detail-label {
-            font-weight: 600;
-            color: #7f8c8d;
-        }
-
-        .program-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            flex-wrap: wrap;
-        }
-
-        .tab-button {
-            padding: 10px 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: #7f8c8d;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .tab-button.active {
-            color: #3498db;
-            border-bottom-color: #3498db;
-        }
-
-        .tab-button:hover {
-            color: #3498db;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f8f9fa;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        tr:hover {
-            background-color: #f5f7fa;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--primary);
+            color: var(--white);
             position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            transition: var(--transition);
             z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
         }
 
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
+        .sidebar-header {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .sidebar-header h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .sidebar-header h2 i {
+            color: var(--secondary);
+            font-size: 1.6rem;
+        }
+
+        .nav-links {
+            padding: 20px 0;
+        }
+
+        .nav-item {
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+            margin: 5px 0;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .nav-item.active {
+            background: rgba(52, 152, 219, 0.2);
+            border-left-color: var(--secondary);
+        }
+
+        .nav-item i {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-item span {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            height: var(--header-height);
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 35px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .search-container {
+            flex: 1;
             max-width: 500px;
             position: relative;
         }
 
-        .close {
+        .search-box {
+            width: 100%;
+            padding: 14px 50px 14px 20px;
+            border: 2px solid var(--gray-light);
+            border-radius: 30px;
+            font-size: 14px;
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            background: var(--white);
+        }
+
+        .search-icon {
             position: absolute;
-            right: 15px;
-            top: 10px;
-            font-size: 28px;
-            font-weight: bold;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            background: var(--light);
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
-            color: #7f8c8d;
+            transition: var(--transition);
+        }
+
+        .connection-status:hover {
+            background: #dde4e6;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.disconnected {
+            background: var(--danger);
+            animation: none;
+        }
+
+        .status-dot.offline {
+            background: var(--warning);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        .btn-success:hover {
+            background: #219653;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: var(--white);
+        }
+
+        .btn-warning:hover {
+            background: #e67e22;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-info {
+            background: var(--info);
+            color: var(--white);
+        }
+
+        .btn-info:hover {
+            background: #138496;
+        }
+
+        .btn-light {
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        .btn-light:hover {
+            background: #dde4e6;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== DASHBOARD ===== */
+        .dashboard {
+            padding: 35px;
+        }
+
+        /* Welcome Banner */
+        .welcome-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 35px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .welcome-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .welcome-banner p {
+            opacity: 0.9;
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--secondary);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-card.income {
+            border-left-color: var(--success);
+        }
+
+        .stat-card.income::before {
+            background: var(--success);
+        }
+
+        .stat-card.cost {
+            border-left-color: var(--warning);
+        }
+
+        .stat-card.cost::before {
+            background: var(--warning);
+        }
+
+        .stat-card.deficit {
+            border-left-color: var(--danger);
+        }
+
+        .stat-card.deficit::before {
+            background: var(--danger);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            background: rgba(52, 152, 219, 0.1);
+            color: var(--secondary);
+        }
+
+        .stat-card.income .stat-icon {
+            background: rgba(39, 174, 96, 0.1);
+            color: var(--success);
+        }
+
+        .stat-card.cost .stat-icon {
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--warning);
+        }
+
+        .stat-card.deficit .stat-icon {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--danger);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--dark), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card.income .stat-value {
+            background: linear-gradient(135deg, var(--success), #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card.cost .stat-value {
+            background: linear-gradient(135deg, var(--warning), #f1c40f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card.deficit .stat-value {
+            background: linear-gradient(135deg, var(--danger), #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Charts Section */
+        .charts-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .chart-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .chart-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .chart-header h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .chart-container {
+            height: 320px;
+            position: relative;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--secondary);
+        }
+
+        .search-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 12px 16px;
+            border: 2px solid var(--gray-light);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .search-results {
+            margin-top: 25px;
+        }
+
+        .result-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .result-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Students Section */
+        .students-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-header h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            background: var(--white);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            min-width: 1000px;
+        }
+
+        .data-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 18px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table th:first-child {
+            border-top-left-radius: var(--border-radius);
+        }
+
+        .data-table th:last-child {
+            border-top-right-radius: var(--border-radius);
+        }
+
+        .data-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover {
+            background: rgba(52, 152, 219, 0.05);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .status-active {
+            background: rgba(39, 174, 96, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(39, 174, 96, 0.2);
+        }
+
+        .status-inactive {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+        }
+
+        .status-pending {
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--warning);
+            border: 1px solid rgba(243, 156, 18, 0.2);
+        }
+
+        /* Positive/Negative Colors */
+        .positive {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .negative {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .neutral {
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        /* ===== MODALS ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 650px;
+            position: relative;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .modal-header h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .close {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--white);
+            transition: var(--transition);
+            opacity: 0.8;
         }
 
         .close:hover {
-            color: #2c3e50;
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 5px;
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--dark);
+            font-size: 0.9rem;
         }
 
         .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 16px;
+            border: 2px solid var(--gray-light);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+            background: var(--white);
         }
 
         .form-group input:focus,
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
-            border-color: #3498db;
-            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
-        /* Real-time update notification */
-        .update-notification {
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            background: var(--light);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        /* ===== NOTIFICATIONS ===== */
+        .notification {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #27ae60;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1001;
-            animation: slideIn 0.3s ease;
+            top: 25px;
+            right: 25px;
+            padding: 18px 24px;
+            border-radius: var(--border-radius);
+            color: var(--white);
+            box-shadow: var(--box-shadow);
+            z-index: 3000;
+            animation: slideInRight 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 300px;
         }
 
-        @keyframes slideIn {
+        @keyframes slideInRight {
             from {
                 transform: translateX(100%);
                 opacity: 0;
@@ -468,86 +847,55 @@
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .dashboard {
-                grid-template-columns: 1fr;
-            }
-            
-            .management-actions {
-                flex-direction: column;
-            }
-            
-            .program-tabs {
-                flex-direction: column;
-            }
-            
-            .tab-button {
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-                border-left: 3px solid transparent;
-            }
-            
-            .tab-button.active {
-                border-left-color: #3498db;
-                border-bottom-color: #ddd;
-            }
-            
-            table {
-                display: block;
-                overflow-x: auto;
-            }
-            
-            .student-details {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                margin: 10% auto;
-                width: 95%;
-            }
+        .notification.success {
+            background: var(--success);
+            border-left: 4px solid #2ecc71;
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .card {
-                padding: 15px;
-            }
-            
-            .btn {
-                padding: 8px 12px;
-                font-size: 0.9rem;
-            }
-            
-            .student-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .student-actions {
-                align-self: flex-end;
-            }
+        .notification.error {
+            background: var(--danger);
+            border-left: 4px solid #c0392b;
         }
 
-        /* Loading States */
+        .notification.warning {
+            background: var(--warning);
+            border-left: 4px solid #e67e22;
+        }
+
+        .notification.info {
+            background: var(--info);
+            border-left: 4px solid #138496;
+        }
+
+        /* ===== LOADING STATES ===== */
         .loading {
-            opacity: 0.6;
+            opacity: 0.7;
             pointer-events: none;
+            position: relative;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--secondary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
 
         .spinner {
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #3498db;
+            border-top: 3px solid var(--secondary);
             border-radius: 50%;
             width: 20px;
             height: 20px;
             animation: spin 1s linear infinite;
             display: inline-block;
-            margin-right: 10px;
         }
 
         @keyframes spin {
@@ -555,523 +903,2135 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Status Indicators */
-        .status-active {
-            color: #27ae60;
-            font-weight: 600;
-        }
-
-        .status-inactive {
-            color: #e74c3c;
-            font-weight: 600;
-        }
-
-        .status-pending {
-            color: #f39c12;
-            font-weight: 600;
-        }
-
-        /* Financial Highlighting */
-        .positive {
-            color: #27ae60;
-            font-weight: 600;
-        }
-
-        .negative {
-            color: #e74c3c;
-            font-weight: 600;
-        }
-
-        .neutral {
-            color: #7f8c8d;
-            font-weight: 600;
-        }
-
-        /* Tooltip */
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted #3498db;
-            cursor: help;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 200px;
-            background-color: #2c3e50;
-            color: white;
+        /* ===== EMPTY STATES ===== */
+        .empty-state {
             text-align: center;
-            border-radius: 6px;
-            padding: 8px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -100px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 0.8rem;
-            font-weight: normal;
+            padding: 60px 30px;
+            color: var(--gray);
         }
 
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .empty-state h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .empty-state p {
+            font-size: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: 300px;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .header {
+                padding: 0 25px;
+            }
+            
+            .dashboard {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .welcome-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .welcome-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .action-buttons {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .search-filters {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .search-container {
+                max-width: 100%;
+            }
+            
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .dashboard {
+                padding: 20px 15px;
+            }
+            
+            .welcome-banner {
+                padding: 25px;
+            }
+            
+            .chart-card,
+            .search-section,
+            .students-section {
+                padding: 20px;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            .sidebar, .header, .action-buttons {
+                display: none;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .dashboard {
+                padding: 0;
+            }
+            
+            .stat-card, .chart-card, .search-section, .students-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* ===== AI ASSISTANT CHAT ===== */
+        .ai-assistant-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 5000;
+            background: linear-gradient(135deg, #3498db 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .ai-assistant-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #3498db 100%);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+        }
+        .ai-chat-box {
+            position: fixed;
+            bottom: 110px;
+            right: 32px;
+            width: 350px;
+            max-width: 95vw;
+            height: 420px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+            z-index: 5001;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #3498db;
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(60px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .ai-chat-header {
+            background: linear-gradient(135deg, #3498db 0%, #764ba2 100%);
+            color: #fff;
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .ai-chat-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .ai-chat-close:hover {
             opacity: 1;
         }
+        .ai-chat-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            background: #f7f8fa;
+        }
+        .ai-chat-message {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .ai-chat-message.user {
+            justify-content: flex-end;
+        }
+        .ai-chat-bubble {
+            max-width: 80%;
+            padding: 10px 16px;
+            border-radius: 14px;
+            font-size: 0.98rem;
+            background: #3498db;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+            word-break: break-word;
+        }
+        .ai-chat-message.user .ai-chat-bubble {
+            background: #764ba2;
+            color: #fff;
+        }
+        .ai-chat-message.ai .ai-chat-bubble {
+            background: #3498db;
+            color: #fff;
+        }
+        .ai-chat-input {
+            display: flex;
+            padding: 12px 16px;
+            border-top: 1px solid #eee;
+            background: #fff;
+        }
+        .ai-chat-input input {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            outline: none;
+            margin-right: 8px;
+        }
+        .ai-chat-input button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .ai-chat-input button:hover {
+            background: #764ba2;
+        }
+
+        /* Sponsors Section Styles */
+.sponsors-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 35px;
+}
+
+/* Add these status badge colors if not already present */
+.status-badge.status-pending {
+    background: rgba(243, 156, 18, 0.1);
+    color: var(--warning);
+    border: 1px solid rgba(243, 156, 18, 0.2);
+}
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Sponsorship Management System</h1>
-            <p>Financial Analysis & Planning Tool</p>
-            <div class="connection-status">
-                <span id="connection-status">Connected</span>
-                <span id="last-updated">Last updated: Just now</span>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-hand-holding-heart"></i> Sponsorship Pro</h2>
             </div>
-        </header>
-
-        <div class="dashboard">
-            <div class="card summary-card">
-                <h2>Financial Overview</h2>
-                <div class="summary-grid">
-                    <div class="summary-item">
-                        <span class="label">Confirmed Monthly Income</span>
-                        <span class="value income" id="total-income">€2,848</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="label">Projected Monthly Costs</span>
-                        <span class="value cost" id="total-costs">€5,804</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="label">Monthly Deficit</span>
-                        <span class="value deficit" id="total-deficit">-€2,956</span>
-                    </div>
+            <div class="nav-links">
+                <div class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard Overview</span>
+                </div>
+                <div class="nav-item" data-section="students">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students Management</span>
+                </div>
+                <div class="nav-item" data-section="sponsors">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Sponsors Registry</span>
+                </div>
+                <div class="nav-item" data-section="financials">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Financial Reports</span>
+                </div>
+                <div class="nav-item" data-section="search">
+                    <i class="fas fa-search"></i>
+                    <span>Advanced Search</span>
+                </div>
+                <div class="nav-item" data-section="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </div>
+                <div class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>System Settings</span>
                 </div>
             </div>
+        </div>
 
-            <div class="card gap-card">
-                <h2>Funding Gap by Program</h2>
-                <div id="funding-gap-chart" class="chart-container">
-                    <!-- Chart will be rendered here -->
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- AI Assistant Chat Box -->
+            <div id="ai-assistant" style="display:none;position:fixed;bottom:20px;right:20px;width:320px;background:#fff;border:1px solid #ccc;padding:12px;z-index:2000;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                    <h4 style="margin:0;font-size:1.1rem;color:var(--primary);">AI Assistant</h4>
+                    <button onclick="document.getElementById('ai-assistant').style.display='none'" style="background:none;border:none;font-size:1.2rem;color:var(--danger);cursor:pointer;">&times;</button>
                 </div>
-            </div>
-
-            <div class="card recommendations-card">
-                <h2>Recommendations</h2>
-                <div class="recommendations-list">
-                    <div class="recommendation priority-high">
-                        <h3>Immediate Priority: Address Funding Gap</h3>
-                        <p>The system is structurally underfunded with a monthly deficit of €2,956</p>
-                        <ul>
-                            <li>Launch campaign to find sponsors for inactive/underfunded students</li>
-                            <li>Critically review budgeted items for potential savings</li>
-                            <li>Formally prioritize which students/programs can be fully funded</li>
-                        </ul>
-                    </div>
-                    <div class="recommendation priority-medium">
-                        <h3>Create Integrated Data System</h3>
-                        <p>Eliminate manual data entry errors and ensure consistency</p>
-                        <ul>
-                            <li>Implement automatic data linking between registry and financial planning</li>
-                            <li>Use single master database with real-time synchronization</li>
-                            <li>This system is the first step toward that goal</li>
-                        </ul>
-                    </div>
-                    <div class="recommendation priority-medium">
-                        <h3>Standardize Assumptions</h3>
-                        <p>Ensure consistent calculations across all programs</p>
-                        <ul>
-                            <li>Use single exchange rate (4100 UGX = 1 EUR)</li>
-                            <li>Standardize cost calculations in centralized location</li>
-                            <li>Update assumptions in one place to propagate changes everywhere</li>
-                        </ul>
-                    </div>
+                <div id="ai-chat-log" style="height:120px;overflow-y:auto;border:1px solid #eee;margin-bottom:8px;padding:4px;font-size:0.95rem;background:#fafbfc;border-radius:6px;"></div>
+                <div style="display:flex;gap:6px;">
+                    <input type="text" id="ai-user-input" placeholder="Ask me anything..." style="flex:1;padding:6px 10px;border-radius:6px;border:1px solid #ccc;">
+                    <button onclick="sendAIMessage()" style="background:var(--secondary);color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;">Send</button>
                 </div>
             </div>
 
-            <div class="card data-management-card">
-                <h2>Data Management</h2>
-                <div class="management-actions">
-                    <button id="add-program" class="btn btn-primary">Add Program</button>
-                    <button id="add-student" class="btn btn-primary">Add Student</button>
-                    <button id="refresh-data" class="btn btn-secondary">Refresh Data</button>
-                    <button id="export-data" class="btn btn-secondary">Export Report</button>
+            <!-- Header with Search and Actions -->
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" class="search-box" id="global-search" placeholder="Search students, sponsors, programs, financial records...">
+                    <i class="fas fa-search search-icon"></i>
                 </div>
-                <div class="data-stats">
-                    <div class="stat">
-                        <span class="stat-label">Total Students</span>
-                        <span class="stat-value" id="total-students">149</span>
+                <div class="header-actions">
+                    <button id="ai-assistant-toggle" style="background:var(--secondary);color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;">AI Assistant</button>
+                    <div class="connection-status" id="connection-toggle">
+                        <div class="status-dot" id="connection-dot"></div>
+                        <span id="connection-text">Connected</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-label">Active Sponsorships</span>
-                        <span class="stat-value" id="active-sponsorships">98</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Monthly Funding</span>
-                        <span class="stat-value" id="monthly-funding">€4,413</span>
-                    </div>
+                    <button class="btn btn-primary" id="sync-now">
+                        <i class="fas fa-sync-alt"></i> Sync Now
+                    </button>
                 </div>
             </div>
 
-            <div class="card students-card">
-                <h2>Student Management</h2>
-                <div class="students-controls">
-                    <select id="program-select">
-                        <option value="">Select Program</option>
-                        <option value="CH">CH</option>
-                        <option value="YSP">YSP</option>
-                        <option value="ICCSP">ICCSP</option>
-                        <option value="OTM_GA">OTM-GA</option>
-                    </select>
-                    <button id="load-students" class="btn btn-primary">Load Students</button>
+            <!-- Dashboard Content -->
+            <div class="dashboard">
+                <!-- Welcome Banner -->
+                <div class="welcome-banner">
+                    <h1>Sponsorship Management Dashboard</h1>
+                    <p>Comprehensive overview of all sponsorship programs, financial analytics, and student management</p>
                 </div>
-                <div id="students-list" class="students-list">
-                    <!-- Students will be loaded here -->
-                </div>
-            </div>
 
-            <div class="card program-details-card">
-                <h2>Program Details</h2>
-                <div class="program-tabs">
-                    <button class="tab-button active" data-program="all">All Programs</button>
-                    <button class="tab-button" data-program="CH">CH</button>
-                    <button class="tab-button" data-program="YSP">YSP</button>
-                    <button class="tab-button" data-program="ICCSP">ICCSP</button>
-                    <button class="tab-button" data-program="OTM_GA">OTM-GA</button>
+                <!-- Key Statistics Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-value" id="total-students">0</div>
+                        <div class="stat-label">Total Students</div>
+                    </div>
+                    <div class="stat-card income">
+                        <div class="stat-icon">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <div class="stat-value" id="total-income">€0</div>
+                        <div class="stat-label">Monthly Income</div>
+                    </div>
+                    <div class="stat-card cost">
+                        <div class="stat-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="stat-value" id="total-costs">€0</div>
+                        <div class="stat-label">Monthly Costs</div>
+                    </div>
+                    <div class="stat-card deficit">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line-down"></i>
+                        </div>
+                        <div class="stat-value" id="total-deficit">€0</div>
+                        <div class="stat-label">Monthly Deficit</div>
+                    </div>
                 </div>
-                <div class="program-content">
-                    <table id="program-table">
-                        <thead>
-                            <tr>
-                                <th>Program</th>
-                                <th>Students</th>
-                                <th>Monthly Income</th>
-                                <th>Monthly Costs</th>
-                                <th>Deficit/Surplus</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Program data will be populated here -->
-                        </tbody>
-                    </table>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Funding Gap Analysis</h3>
+                            <button class="btn btn-sm btn-info" onclick="exportChartData()">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="funding-gap-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Program Distribution</h3>
+                            <button class="btn btn-sm btn-info" onclick="refreshCharts()">
+                                <i class="fas fa-refresh"></i> Refresh
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="program-distribution-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Search Section -->
+                <div class="search-section" id="search-section">
+                    <h3 class="section-title"><i class="fas fa-search"></i> Advanced Search</h3>
+                    <div class="search-filters">
+                        <div class="filter-group">
+                            <label for="search-type">Search Type</label>
+                            <select id="search-type">
+                                <option value="all">All Records</option>
+                                <option value="students">Students Only</option>
+                                <option value="sponsors">Sponsors Only</option>
+                                <option value="programs">Programs Only</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="search-program">Program</label>
+                            <select id="search-program">
+                                <option value="">All Programs</option>
+                                <option value="CH">CH Program</option>
+                                <option value="YSP">YSP Program</option>
+                                <option value="ICCSP">ICCSP Program</option>
+                                <option value="OTM_GA">OTM-GA Program</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="search-status">Status</label>
+                            <select id="search-status">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="search-package">Sponsorship Package</label>
+                            <select id="search-package">
+                                <option value="">All Packages</option>
+                                <option value="Day">Day Program</option>
+                                <option value="Boarding">Boarding Program</option>
+                                <option value="Day Sec">Day Secondary</option>
+                                <option value="Boarding Sec">Boarding Secondary</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="perform-search">
+                        <i class="fas fa-search"></i> Perform Search
+                    </button>
+                    <div class="search-results" id="search-results">
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <h4>No Search Results</h4>
+                            <p>Use the search filters above to find students, sponsors, or program records</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Students Management Section -->
+                <div class="students-section" id="students-section">
+                    <div class="section-header">
+                        <h3 class="section-title"><i class="fas fa-user-graduate"></i> Students Management</h3>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" id="add-student-btn">
+                                <i class="fas fa-plus"></i> Add Student
+                            </button>
+                            <button class="btn btn-success" id="export-data">
+                                <i class="fas fa-download"></i> Export Data
+                            </button>
+                            <button class="btn btn-info" id="refresh-data">
+                                <i class="fas fa-sync"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="students-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Program</th>
+                                    <th>Package</th>
+                                    <th>Termly Fees</th>
+                                    <th>Cash Received</th>
+                                    <th>Monthly Cost</th>
+                                    <th>Balance</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="students-table-body">
+                                <tr>
+                                    <td colspan="9">
+                                        <div class="empty-state">
+                                            <i class="fas fa-user-graduate"></i>
+                                            <h4>Loading Students Data</h4>
+                                            <p>Please wait while we load the student information...</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modals for CRUD operations -->
-    <div id="program-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="modal-title">Add New Program</h3>
-            <form id="program-form">
-                <div class="form-group">
-                    <label for="program-code">Program Code:</label>
-                    <input type="text" id="program-code" required>
-                </div>
-                <div class="form-group">
-                    <label for="program-name">Program Name:</label>
-                    <input type="text" id="program-name" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Save Program</button>
-            </form>
+
+<!-- Sponsors Registry Section -->
+<div class="sponsors-section" id="sponsors-section" style="display: none;">
+    <div class="section-header">
+        <h3 class="section-title"><i class="fas fa-hand-holding-usd"></i> Sponsors Registry</h3>
+        <div class="action-buttons">
+            <button class="btn btn-primary" id="add-sponsor-btn">
+                <i class="fas fa-plus"></i> Add Sponsor
+            </button>
+            <button class="btn btn-success" id="export-sponsors">
+                <i class="fas fa-download"></i> Export Sponsors
+            </button>
+            <button class="btn btn-info" id="refresh-sponsors">
+                <i class="fas fa-sync"></i> Refresh
+            </button>
         </div>
     </div>
 
+    <!-- Sponsors Summary Cards -->
+    <div class="stats-grid" style="margin-bottom: 25px;">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-value" id="total-sponsors">0</div>
+            <div class="stat-label">Total Sponsors</div>
+        </div>
+        <div class="stat-card income">
+            <div class="stat-icon">
+                <i class="fas fa-euro-sign"></i>
+            </div>
+            <div class="stat-value" id="active-sponsors-income">€0</div>
+            <div class="stat-label">Monthly Sponsorship</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-user-check"></i>
+            </div>
+            <div class="stat-value" id="active-sponsors">0</div>
+            <div class="stat-label">Active Sponsors</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-user-clock"></i>
+            </div>
+            <div class="stat-value" id="inactive-sponsors">0</div>
+            <div class="stat-label">Inactive Sponsors</div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table class="data-table" id="sponsors-table">
+            <thead>
+                <tr>
+                    <th>Sponsor Name</th>
+                    <th>Sponsored Student</th>
+                    <th>Program</th>
+                    <th>Amount (EUR)</th>
+                    <th>Amount (UGX)</th>
+                    <th>Status</th>
+                    <th>Category</th>
+                    <th>Start Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="sponsors-table-body">
+                <tr>
+                    <td colspan="9">
+                        <div class="empty-state">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <h4>Loading Sponsors Data</h4>
+                            <p>Please wait while we load the sponsors information...</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- Student Management Modal -->
     <div id="student-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="student-modal-title">Add New Student</h3>
-            <form id="student-form">
-                <div class="form-group">
-                    <label for="student-program">Program:</label>
-                    <select id="student-program" required>
-                        <option value="">Select Program</option>
-                        <option value="CH">CH</option>
-                        <option value="YSP">YSP</option>
-                        <option value="ICCSP">ICCSP</option>
-                        <option value="OTM_GA">OTM-GA</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="full-name">Full Name:</label>
-                    <input type="text" id="full-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="sponsorship-package">Sponsorship Package:</label>
-                    <select id="sponsorship-package" required>
-                        <option value="Day">Day</option>
-                        <option value="Boarding">Boarding</option>
-                        <option value="Day Sec">Day Secondary</option>
-                        <option value="Boarding Sec">Boarding Secondary</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="termly-fees">Termly School Fees (UGX):</label>
-                    <input type="number" id="termly-fees" value="0">
-                </div>
-                <div class="form-group">
-                    <label for="cash-received">Monthly Cash Received (EUR):</label>
-                    <input type="number" id="cash-received" value="0">
-                </div>
-                <button type="submit" class="btn btn-primary">Save Student</button>
-            </form>
+            <div class="modal-header">
+                <h3 id="student-modal-title">Add New Student</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="student-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="student-program">Program *</label>
+                            <select id="student-program" required>
+                                <option value="">Select Program</option>
+                                <option value="CH">CH Program</option>
+                                <option value="YSP">YSP Program</option>
+                                <option value="ICCSP">ICCSP Program</option>
+                                <option value="OTM_GA">OTM-GA Program</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" required placeholder="Enter student's full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="sponsorship-package">Sponsorship Package *</label>
+                            <select id="sponsorship-package" required>
+                                <option value="Day">Day Program</option>
+                                <option value="Boarding">Boarding Program</option>
+                                <option value="Day Sec">Day Secondary</option>
+                                <option value="Boarding Sec">Boarding Secondary</option>
+                                <option value="Day Van">Day Van</option>
+                                <option value="Boarding SN">Boarding SN</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="termly-fees">Termly School Fees (UGX)</label>
+                            <input type="number" id="termly-fees" value="0" placeholder="Enter termly fees in UGX">
+                        </div>
+                        <div class="form-group">
+                            <label for="cash-received">Monthly Cash Received (EUR)</label>
+                            <input type="number" id="cash-received" value="0" placeholder="Enter monthly cash in EUR">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="student-notes">Additional Notes</label>
+                            <textarea id="student-notes" rows="3" placeholder="Any additional information about the student..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" id="cancel-student">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button type="submit" form="student-form" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Student
+                </button>
+            </div>
         </div>
     </div>
 
-    <script>
-       // Global variables
-let database = {};
-let financialSummary = {};
-let fundingGap = {};
-let currentProgram = '';
-let ws = null;
 
-// DOM Content Loaded
+
+    <!-- Sponsor Management Modal -->
+<div id="sponsor-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="sponsor-modal-title">Add New Sponsor</h3>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="sponsor-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="sponsor-program">Program *</label>
+                        <select id="sponsor-program" required>
+                            <option value="">Select Program</option>
+                            <option value="CH">CH Program</option>
+                            <option value="YSP">YSP Program</option>
+                            <option value="ICCSP">ICCSP Program</option>
+                            <option value="OTM_GA">OTM-GA Program</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-name">Sponsor Name *</label>
+                        <input type="text" id="sponsor-name" required placeholder="Enter sponsor's full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsored-student">Sponsored Student *</label>
+                        <select id="sponsored-student" required>
+                            <option value="">Select Student</option>
+                            <!-- Students will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-amount">Monthly Amount (EUR) *</label>
+                        <input type="number" id="sponsor-amount" required min="0" step="0.01" placeholder="Enter monthly amount in EUR">
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-status">Sponsorship Status *</label>
+                        <select id="sponsor-status" required>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-category">Category</label>
+                        <select id="sponsor-category">
+                            <option value="Individual">Individual</option>
+                            <option value="Organization">Organization</option>
+                            <option value="Foundation">Foundation</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Government">Government</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-start-date">Start Date</label>
+                        <input type="date" id="sponsor-start-date">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="sponsor-notes">Additional Notes</label>
+                        <textarea id="sponsor-notes" rows="3" placeholder="Any additional information about the sponsor..."></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" id="cancel-sponsor">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+            <button type="submit" form="sponsor-form" class="btn btn-primary">
+                <i class="fas fa-save"></i> Save Sponsor
+            </button>
+        </div>
+    </div>
+</div>
+    <script>
+// ===== GLOBAL VARIABLES =====
+let database = {};
+let financialSummary = {
+    totalStudents: 0,
+    totalIncomeEUR: 0,
+    totalIncomeUGX: 0,
+    totalCostsEUR: 0,
+    totalCostsUGX: 0,
+    totalDeficitEUR: 0,
+    totalDeficitUGX: 0
+};
+let fundingGap = { programs: [], totalDeficitEUR: 0, totalDeficitUGX: 0 };
+let allStudents = [];
+let allSponsors = [];
+let ws = null;
+let currentSection = 'dashboard';
+let isConnected = false;
+let isOnlineMode = true;
+let fundingChart = null;
+let programChart = null;
+const EXCHANGE_RATE = 4100; // 1 EUR = 4100 UGX
+
+// ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    initializeWebSocket();
-    loadData();
-    setupEventListeners();
-    setupModals();
+    console.log('🚀 Initializing Sponsorship Management System...');
+    initializeApplication();
 });
 
-// Initialize WebSocket for real-time updates
+async function initializeApplication() {
+    try {
+        setupEventListeners();
+        setupModals();
+        setupNavigation();
+        await loadData();
+        initializeWebSocket();
+        console.log('✅ Application initialized successfully');
+    } catch (error) {
+        console.error('❌ Failed to initialize application:', error);
+        showNotification('Failed to initialize application', 'error');
+    }
+}
+
+// ===== WEB SOCKET MANAGEMENT =====
 function initializeWebSocket() {
+    if (!isOnlineMode) return;
+
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     const wsUrl = `${protocol}//${window.location.host}`;
     
-    ws = new WebSocket(wsUrl);
-    
-    ws.onopen = function() {
-        console.log('WebSocket connected');
-        updateConnectionStatus(true);
-    };
-    
-    ws.onmessage = function(event) {
-        const message = JSON.parse(event.data);
-        handleWebSocketMessage(message);
-    };
-    
-    ws.onclose = function() {
-        console.log('WebSocket disconnected');
-        updateConnectionStatus(false);
-        // Attempt to reconnect after 5 seconds
-        setTimeout(initializeWebSocket, 5000);
-    };
-    
-    ws.onerror = function(error) {
-        console.error('WebSocket error:', error);
-        updateConnectionStatus(false);
-    };
+    try {
+        ws = new WebSocket(wsUrl);
+        
+        ws.onopen = function() {
+            console.log('🔗 WebSocket connected successfully');
+            isConnected = true;
+            updateConnectionStatus(true, 'online');
+        };
+        
+        ws.onmessage = function(event) {
+            try {
+                const message = JSON.parse(event.data);
+                handleWebSocketMessage(message);
+            } catch (error) {
+                console.error('❌ Error parsing WebSocket message:', error);
+            }
+        };
+        
+        ws.onclose = function() {
+            console.log('🔌 WebSocket disconnected');
+            isConnected = false;
+            updateConnectionStatus(false, 'online');
+            
+            if (isOnlineMode) {
+                setTimeout(() => {
+                    if (!isConnected) initializeWebSocket();
+                }, 3000);
+            }
+        };
+        
+        ws.onerror = function(error) {
+            console.error('❌ WebSocket error:', error);
+            isConnected = false;
+            updateConnectionStatus(false, 'online');
+        };
+        
+    } catch (error) {
+        console.error('❌ WebSocket initialization failed:', error);
+        isConnected = false;
+        updateConnectionStatus(false, 'online');
+    }
 }
 
-// Handle WebSocket messages
 function handleWebSocketMessage(message) {
+    console.log('📨 WebSocket message:', message.type);
+    
     switch (message.type) {
         case 'database_loaded':
         case 'database_update':
             database = message.data;
-            showNotification('Database updated in real-time');
+            processAllData();
             updateUI();
+            showNotification('Data updated in real-time', 'success');
             break;
             
         case 'program_updated':
-            database.sponsorship_programs[message.program] = message.data;
-            showNotification(message.message);
+            if (database.sponsorship_programs) {
+                database.sponsorship_programs[message.program] = message.data;
+            }
+            processAllData();
             updateUI();
+            showNotification(message.message, 'success');
             break;
             
         case 'student_added':
         case 'student_updated':
         case 'student_deleted':
-            showNotification(message.message);
-            if (currentProgram === message.program) {
-                loadStudents(currentProgram);
-            }
-            updateUI();
+        case 'sponsor_added':
+        case 'sponsor_updated':
+        case 'sponsor_deleted':
+            showNotification(message.message, 'success');
+            loadData();
             break;
     }
 }
 
-// Update connection status
-function updateConnectionStatus(connected) {
-    const statusElement = document.getElementById('connection-status');
-    if (connected) {
-        statusElement.textContent = 'Connected';
-        statusElement.classList.remove('disconnected');
-    } else {
-        statusElement.textContent = 'Disconnected';
-        statusElement.classList.add('disconnected');
-    }
-}
-
-// Load data from server
+// ===== DATA MANAGEMENT =====
 async function loadData() {
     try {
         showLoading(true);
+        console.log('📡 Loading data from server...');
         
-        const response = await fetch('/api/data');
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (isOnlineMode) {
+            const dataResponse = await fetch('/api/data');
+            if (!dataResponse.ok) throw new Error(`Server error: ${dataResponse.status}`);
+            
+            const dataResult = await dataResponse.json();
+            console.log('📊 Data received:', dataResult);
+
+            // Extract data from different response formats
+            if (dataResult.sponsorship_programs !== undefined) {
+                database = dataResult;
+            } else if (dataResult.data && dataResult.data.sponsorship_programs) {
+                database = dataResult.data;
+            } else if (dataResult.success && dataResult.data) {
+                database = dataResult.data;
+            } else {
+                database = dataResult;
+            }
+            
+            // Save to localStorage for offline use
+            localStorage.setItem('sponsorshipData', JSON.stringify(database));
+        } else {
+            const localData = localStorage.getItem('sponsorshipData');
+            if (localData) {
+                database = JSON.parse(localData);
+            } else {
+                throw new Error('No local data available');
+            }
+        }
         
-        database = await response.json();
-        
-        const financialResponse = await fetch('/api/financial-summary');
-        financialSummary = await financialResponse.json();
-        
-        const gapResponse = await fetch('/api/funding-gap');
-        fundingGap = await gapResponse.json();
-        
+        processAllData();
         updateUI();
-        showNotification('Data loaded successfully');
+        showNotification('Data loaded successfully!', 'success');
+        
     } catch (error) {
-        console.error('Error loading data:', error);
-        showNotification('Failed to load data. Please check if server is running.', 'error');
+        console.error('❌ Error loading data:', error);
+        showNotification(`Failed to load data: ${error.message}`, 'error');
+        loadSampleData();
     } finally {
         showLoading(false);
     }
 }
 
-// Setup event listeners
-function setupEventListeners() {
-    // Refresh data button
-    document.getElementById('refresh-data').addEventListener('click', loadData);
+function processAllData() {
+    console.log('🔄 Processing data...');
+    allStudents = [];
+    allSponsors = [];
     
-    // Export data button
-    document.getElementById('export-data').addEventListener('click', exportData);
-    
-    // Load students button
-    document.getElementById('load-students').addEventListener('click', () => {
-        const program = document.getElementById('program-select').value;
-        if (program) {
-            loadStudents(program);
-        } else {
-            showNotification('Please select a program', 'error');
-        }
-    });
-    
-    // Program tabs
-    const tabButtons = document.querySelectorAll('.tab-button');
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            filterProgramTable(this.getAttribute('data-program'));
+    // Process students
+    if (database.sponsorship_programs) {
+        Object.entries(database.sponsorship_programs).forEach(([program, programData]) => {
+            if (programData && programData.students) {
+                programData.students.forEach(student => {
+                    const financialData = calculateFinancialData(student.financial_data || {});
+                    allStudents.push({
+                        ...student,
+                        program: program,
+                        program_name: programData.program_name,
+                        calculated_financials: financialData,
+                        type: 'student',
+                        status: 'active'
+                    });
+                });
+            }
         });
+    }
+    
+    // Process sponsors
+    if (database.sponsorship_registry) {
+        Object.entries(database.sponsorship_registry).forEach(([program, registryData]) => {
+            if (registryData && registryData.students) {
+                registryData.students.forEach(sponsor => {
+                    allSponsors.push({
+                        ...sponsor,
+                        program: program,
+                        type: 'sponsor'
+                    });
+                });
+            }
+        });
+    }
+    
+    calculateRealTimeFinancials();
+    fundingGap = calculateFundingGapFromData();
+    
+    console.log(`✅ Processed ${allStudents.length} students and ${allSponsors.length} sponsors`);
+}
+
+function calculateRealTimeFinancials() {
+    console.log('🧮 Calculating financials...');
+    
+    // Calculate total students
+    const totalStudents = allStudents.length;
+    
+    // Calculate total income from active sponsors
+    let totalIncomeEUR = 0;
+    allSponsors.forEach(sponsor => {
+        if (sponsor.sponsorship_status === 'active' || !sponsor.sponsorship_status) {
+            totalIncomeEUR += parseFloat(sponsor.amount) || 0;
+        }
+    });
+    const totalIncomeUGX = totalIncomeEUR * EXCHANGE_RATE;
+    
+    // Calculate total costs from students
+    let totalCostsUGX = 0;
+    allStudents.forEach(student => {
+        const financials = student.calculated_financials || {};
+        totalCostsUGX += parseFloat(financials.monthly_output_ugx) || 0;
+    });
+    const totalCostsEUR = totalCostsUGX / EXCHANGE_RATE;
+    
+    // Calculate deficit
+    const totalDeficitUGX = totalIncomeUGX - totalCostsUGX;
+    const totalDeficitEUR = totalDeficitUGX / EXCHANGE_RATE;
+    
+    financialSummary = {
+        totalStudents,
+        totalIncomeEUR,
+        totalIncomeUGX,
+        totalCostsEUR,
+        totalCostsUGX,
+        totalDeficitEUR,
+        totalDeficitUGX
+    };
+    
+    console.log('💰 Financial summary:', financialSummary);
+}
+
+function calculateFundingGapFromData() {
+    const programs = {};
+    
+    // Group students by program
+    allStudents.forEach(student => {
+        if (!programs[student.program]) {
+            programs[student.program] = {
+                name: student.program,
+                incomeEUR: 0,
+                incomeUGX: 0,
+                costsUGX: 0,
+                costsEUR: 0,
+                studentCount: 0
+            };
+        }
+        
+        const financials = student.calculated_financials || {};
+        programs[student.program].costsUGX += parseFloat(financials.monthly_output_ugx) || 0;
+        programs[student.program].studentCount++;
+    });
+    
+    // Add sponsor income by program
+    allSponsors.forEach(sponsor => {
+        if ((sponsor.sponsorship_status === 'active' || !sponsor.sponsorship_status) && programs[sponsor.program]) {
+            programs[sponsor.program].incomeEUR += parseFloat(sponsor.amount) || 0;
+        }
+    });
+    
+    // Convert and calculate deficits
+    const programArray = Object.values(programs).map(program => {
+        program.incomeUGX = program.incomeEUR * EXCHANGE_RATE;
+        program.costsEUR = program.costsUGX / EXCHANGE_RATE;
+        const deficitUGX = program.incomeUGX - program.costsUGX;
+        const deficitEUR = deficitUGX / EXCHANGE_RATE;
+        
+        return {
+            ...program,
+            deficitEUR,
+            deficitUGX
+        };
+    });
+    
+    const totalDeficitUGX = programArray.reduce((sum, program) => sum + program.deficitUGX, 0);
+    const totalDeficitEUR = totalDeficitUGX / EXCHANGE_RATE;
+    
+    return {
+        programs: programArray,
+        totalDeficitEUR,
+        totalDeficitUGX
+    };
+}
+
+// ===== FINANCIAL CALCULATIONS =====
+function calculateFinancialData(financialData) {
+    const result = { ...financialData };
+    
+    // Convert all values to numbers
+    Object.keys(result).forEach(key => {
+        if (typeof result[key] === 'string' && result[key].startsWith('=')) {
+            result[key] = evaluateFormula(result[key], result);
+        } else if (result[key] === null || result[key] === undefined) {
+            result[key] = 0;
+        } else if (typeof result[key] === 'string') {
+            result[key] = parseFloat(result[key]) || 0;
+        }
+    });
+    
+    // Calculate monthly costs if not provided
+    if (!result.monthly_output_ugx || result.monthly_output_ugx === 0) {
+        result.monthly_output_ugx = calculateMonthlyCostsUGX(result);
+    }
+    
+    // Calculate derived values
+    result.monthly_output_euro = result.monthly_output_ugx / EXCHANGE_RATE;
+    result.cash_received_ugx = (result.cash_received_euro || 0) * EXCHANGE_RATE;
+    result.plus_minus_diff_ugx = result.cash_received_ugx - result.monthly_output_ugx;
+    result.plus_minus_diff_euro = result.plus_minus_diff_ugx / EXCHANGE_RATE;
+    
+    return result;
+}
+
+function calculateMonthlyCostsUGX(financialData) {
+    const termlyFeesMonthly = (financialData.termly_school_fees || 0) / 3;
+    const directSpending = financialData.direct_spending_school_fees_ugx_monthly || 0;
+    const food = financialData.food || 0;
+    const medical = financialData.average_medical || 0;
+    const transport = financialData.school_personal_requirements_transport || 0;
+    const admin = financialData.admin_utilities || 0;
+    
+    return termlyFeesMonthly + directSpending + food + medical + transport + admin;
+}
+
+function evaluateFormula(formula, data) {
+    try {
+        let expression = formula.substring(1);
+        const replacements = {
+            '\\$E\\$3': data.termly_school_fees || 0,
+            '\\$D\\$3': data.termly_school_fees || 0,
+            'D3': data.termly_school_fees || 0,
+            'E3': data.direct_spending_school_fees_ugx_monthly || 0,
+            'F3': data.direct_spending_school_fees_euros_monthly || 0,
+            'G3': data.food || 0,
+            'H3': data.average_medical || 0,
+            'I3': data.school_personal_requirements_transport || 0,
+            'J3': data.admin_utilities || 0
+        };
+        
+        Object.entries(replacements).forEach(([pattern, value]) => {
+            expression = expression.replace(new RegExp(pattern, 'g'), value);
+        });
+        
+        expression = expression
+            .replace(/(\d+)%/g, '$1/100')
+            .replace(/SUM\(([^)]+)\)/g, (match, range) => {
+                const parts = range.split(':');
+                return parts.reduce((sum, part) => sum + (parseFloat(data[part]) || 0), 0);
+            });
+        
+        const result = Function('"use strict"; return (' + expression + ')')();
+        return typeof result === 'number' ? result : 0;
+    } catch (error) {
+        console.warn('Error evaluating formula:', formula, error);
+        return 0;
+    }
+}
+
+// ===== UI UPDATE FUNCTIONS =====
+function updateUI() {
+    updateFinancialSummary();
+    renderFundingGapChart();
+    renderProgramDistributionChart();
+    renderAllStudentsTable();
+    updateSponsorsUI();
+    updateLastUpdated();
+}
+
+function updateFinancialSummary() {
+    const totalStudents = financialSummary.totalStudents || 0;
+    const totalIncomeUGX = financialSummary.totalIncomeUGX || 0;
+    const totalCostsUGX = financialSummary.totalCostsUGX || 0;
+    const totalDeficitUGX = financialSummary.totalDeficitUGX || 0;
+    
+    document.getElementById('total-students').textContent = totalStudents.toLocaleString();
+    document.getElementById('total-income').textContent = formatUGX(totalIncomeUGX);
+    document.getElementById('total-costs').textContent = formatUGX(totalCostsUGX);
+    document.getElementById('total-deficit').textContent = formatUGX(totalDeficitUGX);
+    
+    const deficitElement = document.getElementById('total-deficit');
+    if (totalDeficitUGX < 0) {
+        deficitElement.style.color = 'var(--danger)';
+    } else if (totalDeficitUGX > 0) {
+        deficitElement.style.color = 'var(--success)';
+    } else {
+        deficitElement.style.color = 'var(--gray)';
+    }
+}
+
+function formatUGX(amount) {
+    if (amount >= 1000000) {
+        return 'UGX ' + (amount / 1000000).toFixed(1) + 'M';
+    } else if (amount >= 1000) {
+        return 'UGX ' + (amount / 1000).toFixed(0) + 'K';
+    } else {
+        return 'UGX ' + Math.round(amount).toLocaleString();
+    }
+}
+
+function renderFundingGapChart() {
+    const ctx = document.getElementById('funding-gap-chart').getContext('2d');
+    
+    if (fundingChart) fundingChart.destroy();
+    
+    if (!fundingGap.programs || fundingGap.programs.length === 0) {
+        ctx.canvas.parentElement.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-chart-bar"></i>
+                <h4>No Funding Data</h4>
+                <p>Funding gap analysis will appear here once data is available</p>
+            </div>`;
+        return;
+    }
+
+    const programs = fundingGap.programs;
+    const labels = programs.map(p => p.name);
+    const incomeData = programs.map(p => p.incomeUGX / 1000);
+    const costsData = programs.map(p => p.costsUGX / 1000);
+    const deficitData = programs.map(p => Math.abs(p.deficitUGX) / 1000);
+
+    fundingChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Income (UGX)',
+                    data: incomeData,
+                    backgroundColor: 'rgba(39, 174, 96, 0.8)',
+                    borderColor: 'rgba(39, 174, 96, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
+                },
+                {
+                    label: 'Costs (UGX)',
+                    data: costsData,
+                    backgroundColor: 'rgba(243, 156, 18, 0.8)',
+                    borderColor: 'rgba(243, 156, 18, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
+                },
+                {
+                    label: 'Deficit (UGX)',
+                    data: deficitData,
+                    backgroundColor: 'rgba(231, 76, 60, 0.8)',
+                    borderColor: 'rgba(231, 76, 60, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Funding Gap Analysis by Program (Thousands UGX)',
+                    font: { size: 16, weight: 'bold' },
+                    padding: 20
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) label += ': ';
+                            const value = context.parsed.y * 1000;
+                            label += 'UGX ' + value.toLocaleString();
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    position: 'top',
+                    labels: { padding: 15, usePointStyle: true }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Amount (Thousands UGX)' },
+                    ticks: {
+                        callback: function(value) {
+                            return 'UGX ' + value.toLocaleString() + 'K';
+                        }
+                    }
+                },
+                x: {
+                    title: { display: true, text: 'Programs' },
+                    grid: { display: false }
+                }
+            },
+            animation: {
+                duration: 1000,
+                easing: 'easeInOutQuart'
+            }
+        }
     });
 }
 
-// Setup modals
-function setupModals() {
-    // Program modal
-    const programModal = document.getElementById('program-modal');
-    const programBtn = document.getElementById('add-program');
-    const programClose = programModal.querySelector('.close');
+function renderProgramDistributionChart() {
+    const ctx = document.getElementById('program-distribution-chart').getContext('2d');
     
-    programBtn.onclick = function() {
-        programModal.style.display = 'block';
-        document.getElementById('modal-title').textContent = 'Add New Program';
-        document.getElementById('program-form').reset();
-    };
+    if (programChart) programChart.destroy();
     
-    programClose.onclick = function() {
-        programModal.style.display = 'none';
-    };
+    const programStats = calculateProgramStatistics();
     
-    // Student modal
-    const studentModal = document.getElementById('student-modal');
-    const studentBtn = document.getElementById('add-student');
-    const studentClose = studentModal.querySelector('.close');
-    
-    studentBtn.onclick = function() {
-        studentModal.style.display = 'block';
-        document.getElementById('student-modal-title').textContent = 'Add New Student';
-        document.getElementById('student-form').reset();
-    };
-    
-    studentClose.onclick = function() {
-        studentModal.style.display = 'none';
-    };
-    
-    // Close modals when clicking outside
-    window.onclick = function(event) {
-        if (event.target === programModal) {
-            programModal.style.display = 'none';
+    if (!programStats || programStats.length === 0) {
+        ctx.canvas.parentElement.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-chart-pie"></i>
+                <h4>No Program Data</h4>
+                <p>Program distribution data will appear here once available</p>
+            </div>`;
+        return;
+    }
+
+    const labels = programStats.map(p => p.name);
+    const studentCounts = programStats.map(p => p.studentCount);
+
+    programChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: studentCounts,
+                backgroundColor: [
+                    'rgba(52, 152, 219, 0.8)',
+                    'rgba(155, 89, 182, 0.8)',
+                    'rgba(46, 204, 113, 0.8)',
+                    'rgba(241, 196, 15, 0.8)',
+                    'rgba(230, 126, 34, 0.8)',
+                    'rgba(231, 76, 60, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(52, 152, 219, 1)',
+                    'rgba(155, 89, 182, 1)',
+                    'rgba(46, 204, 113, 1)',
+                    'rgba(241, 196, 15, 1)',
+                    'rgba(230, 126, 34, 1)',
+                    'rgba(231, 76, 60, 1)'
+                ],
+                borderWidth: 2,
+                hoverOffset: 15
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Student Distribution by Program',
+                    font: { size: 16, weight: 'bold' },
+                    padding: 20
+                },
+                legend: {
+                    position: 'right',
+                    labels: { padding: 15, usePointStyle: true, font: { size: 11 } }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = Math.round((value / total) * 100);
+                            return `${label}: ${value} students (${percentage}%)`;
+                        }
+                    }
+                }
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true,
+                duration: 1000,
+                easing: 'easeInOutQuart'
+            }
         }
-        if (event.target === studentModal) {
-            studentModal.style.display = 'none';
-        }
-    };
-    
-    // Form submissions
-    document.getElementById('program-form').onsubmit = handleProgramSubmit;
-    document.getElementById('student-form').onsubmit = handleStudentSubmit;
+    });
 }
 
-// Handle program form submission
-async function handleProgramSubmit(e) {
+function calculateProgramStatistics() {
+    const programs = {};
+    allStudents.forEach(student => {
+        if (!programs[student.program]) {
+            programs[student.program] = { name: student.program, studentCount: 0 };
+        }
+        programs[student.program].studentCount++;
+    });
+    return Object.values(programs);
+}
+
+function renderAllStudentsTable() {
+    const tableBody = document.getElementById('students-table-body');
+    
+    if (allStudents.length === 0) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="9">
+                    <div class="empty-state">
+                        <i class="fas fa-user-graduate"></i>
+                        <h4>No Students Found</h4>
+                        <p>No student records found in the database.</p>
+                    </div>
+                </td>
+            </tr>`;
+        return;
+    }
+    
+    tableBody.innerHTML = allStudents.map(student => {
+        const financials = student.calculated_financials;
+        const balanceUGX = financials.plus_minus_diff_ugx || 0;
+        const balanceClass = balanceUGX >= 0 ? 'positive' : 'negative';
+        const balanceText = balanceUGX >= 0 ? 
+            `+${formatUGX(balanceUGX)}` : 
+            `-${formatUGX(Math.abs(balanceUGX))}`;
+        
+        return `
+            <tr>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            ${student.full_name ? student.full_name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2) : '??'}
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--dark);">${student.full_name || 'Unknown Student'}</div>
+                            <div style="font-size: 0.8rem; color: var(--gray);">${student.program_name || student.program}</div>
+                        </div>
+                    </div>
+                </td>
+                <td><span class="status-badge status-active">${student.program}</span></td>
+                <td>${student.sponsorship_package || 'Not specified'}</td>
+                <td>
+                    <div style="font-weight: 600; color: var(--dark);">${formatUGX(financials.termly_school_fees || 0)}</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Termly</div>
+                </td>
+                <td>
+                    <div style="font-weight: 600; color: var(--success);">€${(financials.cash_received_euro || 0).toFixed(2)}</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">${formatUGX((financials.cash_received_euro || 0) * EXCHANGE_RATE)}</div>
+                </td>
+                <td>
+                    <div style="font-weight: 600; color: var(--warning);">${formatUGX(financials.monthly_output_ugx || 0)}</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Monthly</div>
+                </td>
+                <td>
+                    <span class="${balanceClass}" style="font-weight: 700; font-size: 1rem;">${balanceText}</span>
+                </td>
+                <td><span class="status-badge status-active">Active</span></td>
+                <td>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-primary btn-sm" onclick="editStudent('${student.program}', ${student.serial_number})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-info btn-sm" onclick="viewStudentDetails('${student.program}', ${student.serial_number})">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteStudent('${student.program}', ${student.serial_number})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        `;
+    }).join('');
+}
+
+// ===== SPONSORS MANAGEMENT =====
+function updateSponsorsUI() {
+    updateSponsorsSummary();
+    renderSponsorsTable();
+}
+
+function updateSponsorsSummary() {
+    const totalSponsors = allSponsors.length;
+    const activeSponsors = allSponsors.filter(s => s.sponsorship_status === 'active').length;
+    const inactiveSponsors = allSponsors.filter(s => s.sponsorship_status === 'inactive').length;
+    
+    const activeSponsorsIncome = allSponsors
+        .filter(s => s.sponsorship_status === 'active')
+        .reduce((sum, sponsor) => sum + (parseFloat(sponsor.amount) || 0), 0);
+    
+    document.getElementById('total-sponsors').textContent = totalSponsors.toLocaleString();
+    document.getElementById('active-sponsors').textContent = activeSponsors.toLocaleString();
+    document.getElementById('inactive-sponsors').textContent = inactiveSponsors.toLocaleString();
+    document.getElementById('active-sponsors-income').textContent = `€${activeSponsorsIncome.toFixed(2)}`;
+}
+
+function renderSponsorsTable() {
+    const tableBody = document.getElementById('sponsors-table-body');
+    
+    if (allSponsors.length === 0) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="9">
+                    <div class="empty-state">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h4>No Sponsors Found</h4>
+                        <p>No sponsor records found in the registry. Add sponsors to get started.</p>
+                    </div>
+                </td>
+            </tr>`;
+        return;
+    }
+    
+    tableBody.innerHTML = allSponsors.map(sponsor => {
+        const amountUGX = (sponsor.amount || 0) * EXCHANGE_RATE;
+        const statusClass = sponsor.sponsorship_status === 'active' ? 'status-active' : 
+                           sponsor.sponsorship_status === 'inactive' ? 'status-inactive' : 'status-pending';
+        
+        return `
+            <tr>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #27ae60, #2ecc71); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            ${sponsor.sponsor ? sponsor.sponsor.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2) : '??'}
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--dark);">${sponsor.sponsor || 'Unknown Sponsor'}</div>
+                            <div style="font-size: 0.8rem; color: var(--gray);">${sponsor.category || 'Individual'}</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div style="font-weight: 600; color: var(--secondary);">${sponsor.full_name || 'No student assigned'}</div>
+                    ${sponsor.full_name ? `<div style="font-size: 0.8rem; color: var(--gray);">Student</div>` : ''}
+                </td>
+                <td><span class="status-badge">${sponsor.program}</span></td>
+                <td>
+                    <div style="font-weight: 600; color: var(--success);">€${(sponsor.amount || 0).toFixed(2)}</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Monthly</div>
+                </td>
+                <td>
+                    <div style="font-weight: 600; color: var(--warning);">${formatUGX(amountUGX)}</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Monthly</div>
+                </td>
+                <td><span class="status-badge ${statusClass}">${sponsor.sponsorship_status || 'active'}</span></td>
+                <td>${sponsor.category || 'Individual'}</td>
+                <td>
+                    <div style="font-weight: 600; color: var(--dark);">${sponsor.start_date ? new Date(sponsor.start_date).toLocaleDateString() : 'Not set'}</div>
+                    ${sponsor.start_date ? `<div style="font-size: 0.8rem; color: var(--gray);">Start Date</div>` : ''}
+                </td>
+                <td>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-primary btn-sm" onclick="editSponsor('${sponsor.program}', ${sponsor.cid})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-info btn-sm" onclick="viewSponsorDetails('${sponsor.program}', ${sponsor.cid})">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteSponsor('${sponsor.program}', ${sponsor.cid})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        `;
+    }).join('');
+}
+
+async function showSponsorModal(sponsor = null) {
+    const modal = document.getElementById('sponsor-modal');
+    const title = document.getElementById('sponsor-modal-title');
+    const form = document.getElementById('sponsor-form');
+    
+    if (sponsor) {
+        title.textContent = 'Edit Sponsor';
+        document.getElementById('sponsor-program').value = sponsor.program;
+        document.getElementById('sponsor-name').value = sponsor.sponsor || '';
+        document.getElementById('sponsor-amount').value = sponsor.amount || '';
+        document.getElementById('sponsor-status').value = sponsor.sponsorship_status || 'active';
+        document.getElementById('sponsor-category').value = sponsor.category || 'Individual';
+        document.getElementById('sponsor-start-date').value = sponsor.start_date || '';
+        document.getElementById('sponsor-notes').value = sponsor.notes || '';
+        
+        form.dataset.editingSponsor = JSON.stringify(sponsor);
+    } else {
+        title.textContent = 'Add New Sponsor';
+        form.reset();
+        delete form.dataset.editingSponsor;
+    }
+    
+    // Populate students dropdown based on selected program
+    await updateSponsoredStudentsDropdown();
+    
+    // If editing, set the student value after dropdown is populated
+    if (sponsor && sponsor.full_name) {
+        setTimeout(() => {
+            document.getElementById('sponsored-student').value = sponsor.full_name;
+        }, 500);
+    }
+    
+    modal.style.display = 'block';
+}
+
+async function updateSponsoredStudentsDropdown() {
+    const program = document.getElementById('sponsor-program').value;
+    const studentDropdown = document.getElementById('sponsored-student');
+    
+    // Clear existing options except the first one
+    while (studentDropdown.options.length > 1) {
+        studentDropdown.remove(1);
+    }
+    
+    if (program) {
+        try {
+            let studentsList = [];
+            
+            if (isOnlineMode) {
+                // Fetch students from the backend for the selected program
+                const response = await fetch(`/api/programs/${program}/students-list`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch students list');
+                }
+                
+                const result = await response.json();
+                studentsList = result.success ? result.data : [];
+            } else {
+                // Use local data for offline mode
+                studentsList = allStudents
+                    .filter(student => student.program === program)
+                    .map(student => ({
+                        full_name: student.full_name,
+                        sponsorship_package: student.sponsorship_package,
+                        serial_number: student.serial_number
+                    }));
+            }
+            
+            if (studentsList.length > 0) {
+                studentsList.forEach(student => {
+                    const option = document.createElement('option');
+                    option.value = student.full_name;
+                    option.textContent = `${student.full_name} (${student.sponsorship_package})`;
+                    option.setAttribute('data-student-id', student.serial_number);
+                    studentDropdown.appendChild(option);
+                });
+            } else {
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'No students available in this program';
+                option.disabled = true;
+                studentDropdown.appendChild(option);
+            }
+        } catch (error) {
+            console.error('Error fetching students list:', error);
+            // Fallback to using local data
+            const programStudents = allStudents.filter(student => student.program === program);
+            
+            if (programStudents.length > 0) {
+                programStudents.forEach(student => {
+                    const option = document.createElement('option');
+                    option.value = student.full_name;
+                    option.textContent = `${student.full_name} (${student.sponsorship_package})`;
+                    studentDropdown.appendChild(option);
+                });
+            } else {
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'No students found';
+                option.disabled = true;
+                studentDropdown.appendChild(option);
+            }
+        }
+    } else {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'Please select a program first';
+        option.disabled = true;
+        studentDropdown.appendChild(option);
+    }
+}
+
+async function handleSponsorSubmit(e) {
     e.preventDefault();
     
-    const programCode = document.getElementById('program-code').value.toUpperCase();
-    const programName = document.getElementById('program-name').value;
+    const form = e.target;
+    const program = document.getElementById('sponsor-program').value;
+    const sponsorName = document.getElementById('sponsor-name').value;
+    const sponsoredStudent = document.getElementById('sponsored-student').value;
+    const amount = parseFloat(document.getElementById('sponsor-amount').value) || 0;
+    const status = document.getElementById('sponsor-status').value;
+    const category = document.getElementById('sponsor-category').value;
+    const startDate = document.getElementById('sponsor-start-date').value;
+    const notes = document.getElementById('sponsor-notes').value;
     
-    const programData = {
-        program_name: programName,
-        students: [],
-        metadata: {
-            total_students: 0,
-            sponsorship_types: {}
-        }
+    if (!program || !sponsorName || !sponsoredStudent || !amount) {
+        showNotification('Please fill in all required fields', 'error');
+        return;
+    }
+    
+    if (amount <= 0) {
+        showNotification('Please enter a valid sponsorship amount', 'error');
+        return;
+    }
+    
+    const sponsorData = {
+        sponsor: sponsorName,
+        full_name: sponsoredStudent,
+        amount: amount,
+        sponsorship_status: status,
+        category: category
     };
     
+    if (startDate) sponsorData.start_date = startDate;
+    if (notes) sponsorData.notes = notes;
+    
     try {
-        const response = await fetch(`/api/programs/${programCode}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
+        let response, url, method;
+        
+        if (form.dataset.editingSponsor) {
+            const sponsor = JSON.parse(form.dataset.editingSponsor);
+            url = `/api/registry/${sponsor.program}/students/${sponsor.cid}`;
+            method = 'PUT';
+        } else {
+            url = `/api/registry/${program}/students`;
+            method = 'POST';
+        }
+        
+        console.log('Sending sponsor data:', sponsorData);
+        
+        response = await fetch(url, {
+            method: method,
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: JSON.stringify(programData)
+            body: JSON.stringify(sponsorData)
         });
+        
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Server responded with status: ${response.status} - ${errorText}`);
+        }
         
         const result = await response.json();
         
         if (result.success) {
-            showNotification(result.message);
-            document.getElementById('program-modal').style.display = 'none';
-            loadData();
+            showNotification(result.message, 'success');
+            document.getElementById('sponsor-modal').style.display = 'none';
+            
+            // Update local data with server response
+            if (result.database) {
+                database = result.database;
+                processAllData();
+                updateUI();
+                updateSponsorsUI();
+            } else {
+                await loadData(); // Reload fresh data from server
+            }
         } else {
-            showNotification('Error: ' + result.message, 'error');
+            showNotification('Error: ' + (result.message || 'Unknown error'), 'error');
         }
     } catch (error) {
-        console.error('Error creating program:', error);
-        showNotification('Failed to create program', 'error');
+        console.error('Error saving sponsor:', error);
+        showNotification('Failed to save sponsor: ' + error.message, 'error');
     }
 }
 
-// Handle student form submission
+function editSponsor(program, sponsorId) {
+    const sponsor = allSponsors.find(s => s.program === program && s.cid === sponsorId);
+    if (sponsor) {
+        showSponsorModal(sponsor);
+    } else {
+        showNotification('Sponsor not found', 'error');
+    }
+}
+
+function viewSponsorDetails(program, sponsorId) {
+    const sponsor = allSponsors.find(s => s.program === program && s.cid === sponsorId);
+    if (sponsor) {
+        showSponsorDetailsModal(sponsor);
+    } else {
+        showNotification('Sponsor not found', 'error');
+    }
+}
+
+function showSponsorDetailsModal(sponsor) {
+    const amountUGX = (sponsor.amount || 0) * EXCHANGE_RATE;
+    const sponsoredStudent = allStudents.find(s => s.full_name === sponsor.full_name && s.program === sponsor.program);
+    
+    let detailsHTML = `
+        <div style="padding: 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                <div>
+                    <h4 style="color: var(--secondary); margin-bottom: 10px;">Sponsor Information</h4>
+                    <p><strong>Name:</strong> ${sponsor.sponsor}</p>
+                    <p><strong>Category:</strong> ${sponsor.category || 'Individual'}</p>
+                    <p><strong>Status:</strong> <span class="status-badge ${sponsor.sponsorship_status === 'active' ? 'status-active' : 'status-inactive'}">${sponsor.sponsorship_status}</span></p>
+                    <p><strong>Start Date:</strong> ${sponsor.start_date ? new Date(sponsor.start_date).toLocaleDateString() : 'Not set'}</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--secondary); margin-bottom: 10px;">Financial Information</h4>
+                    <p><strong>Monthly Amount:</strong> €${(sponsor.amount || 0).toFixed(2)}</p>
+                    <p><strong>Monthly Amount (UGX):</strong> ${formatUGX(amountUGX)}</p>
+                    <p><strong>Program:</strong> ${sponsor.program}</p>
+                </div>
+            </div>
+    `;
+    
+    if (sponsoredStudent) {
+        const studentFinancials = sponsoredStudent.financial_data || {};
+        detailsHTML += `
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: var(--secondary); margin-bottom: 10px;">Sponsored Student</h4>
+                <p><strong>Student Name:</strong> ${sponsoredStudent.full_name}</p>
+                <p><strong>Sponsorship Package:</strong> ${sponsoredStudent.sponsorship_package}</p>
+                <p><strong>Termly Fees:</strong> ${formatUGX(studentFinancials.termly_school_fees || 0)}</p>
+                <p><strong>Monthly Cost:</strong> ${formatUGX(studentFinancials.monthly_output_ugx || 0)}</p>
+            </div>
+        `;
+    }
+    
+    if (sponsor.notes) {
+        detailsHTML += `
+            <div>
+                <h4 style="color: var(--secondary); margin-bottom: 10px;">Additional Notes</h4>
+                <p style="background: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 4px solid var(--secondary);">${sponsor.notes}</p>
+            </div>
+        `;
+    }
+    
+    detailsHTML += `</div>`;
+    
+    // Create a custom modal for sponsor details
+    const existingModal = document.getElementById('sponsor-details-modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    const modalHTML = `
+        <div id="sponsor-details-modal" class="modal">
+            <div class="modal-content" style="max-width: 700px;">
+                <div class="modal-header">
+                    <h3>Sponsor Details - ${sponsor.sponsor}</h3>
+                    <span class="close" onclick="document.getElementById('sponsor-details-modal').remove()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    ${detailsHTML}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="editSponsor('${sponsor.program}', ${sponsor.cid})">
+                        <i class="fas fa-edit"></i> Edit Sponsor
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="document.getElementById('sponsor-details-modal').remove()">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    document.getElementById('sponsor-details-modal').style.display = 'block';
+}
+
+async function deleteSponsor(program, sponsorId) {
+    const sponsor = allSponsors.find(s => s.program === program && s.cid === sponsorId);
+    
+    if (!sponsor) {
+        showNotification('Sponsor not found', 'error');
+        return;
+    }
+    
+    if (!confirm(`Are you sure you want to delete sponsor "${sponsor.sponsor}"? This will remove their sponsorship information but won't affect the student record.`)) {
+        return;
+    }
+    
+    try {
+        const response = await fetch(`/api/registry/${program}/students/${sponsorId}`, {
+            method: 'DELETE',
+            headers: { 'Accept': 'application/json' }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Server responded with status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showNotification(result.message, 'success');
+            
+            // Update local data with server response
+            if (result.database) {
+                database = result.database;
+                processAllData();
+                updateUI();
+                updateSponsorsUI();
+            } else {
+                await loadData();
+            }
+        } else {
+            showNotification('Error: ' + (result.message || 'Unknown error'), 'error');
+        }
+    } catch (error) {
+        console.error('Error deleting sponsor:', error);
+        showNotification('Failed to delete sponsor. Please check your connection and try again.', 'error');
+    }
+}
+
+function exportSponsorsData() {
+    let csvContent = "Sponsors Registry - Complete Report\n\n";
+    csvContent += "Generated on:," + new Date().toLocaleString() + "\n";
+    csvContent += "Total Sponsors:," + allSponsors.length + "\n";
+    csvContent += "Active Sponsors:," + allSponsors.filter(s => s.sponsorship_status === 'active').length + "\n";
+    csvContent += "Total Monthly Sponsorship:," + allSponsors.filter(s => s.sponsorship_status === 'active').reduce((sum, s) => sum + (s.amount || 0), 0) + " EUR\n\n";
+    
+    csvContent += "SPONSORS DETAILS\n";
+    csvContent += "Program,Sponsor Name,Sponsored Student,Amount (EUR),Amount (UGX),Status,Category,Start Date,Notes\n";
+    
+    allSponsors.forEach(sponsor => {
+        const amountUGX = (sponsor.amount || 0) * EXCHANGE_RATE;
+        csvContent += `"${sponsor.program}","${sponsor.sponsor}","${sponsor.full_name}",${sponsor.amount},${amountUGX},${sponsor.sponsorship_status},"${sponsor.category}","${sponsor.start_date || ''}","${sponsor.notes || ''}"\n`;
+    });
+    
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const timestamp = new Date().toISOString().split('T')[0];
+    
+    link.setAttribute('href', url);
+    link.setAttribute('download', `sponsors_registry_${timestamp}.csv`);
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    showNotification('Sponsors report exported successfully!', 'success');
+}
+
+// ===== CONNECTION MANAGEMENT =====
+function toggleConnectionMode() {
+    isOnlineMode = !isOnlineMode;
+    
+    if (isOnlineMode) {
+        updateConnectionStatus(false, 'online');
+        initializeWebSocket();
+        showNotification('Switched to Online Mode', 'info');
+    } else {
+        if (ws) ws.close();
+        updateConnectionStatus(true, 'offline');
+        showNotification('Switched to Offline Mode', 'warning');
+    }
+    
+    loadData();
+}
+
+function updateConnectionStatus(connected, mode) {
+    const dot = document.getElementById('connection-dot');
+    const text = document.getElementById('connection-text');
+    
+    dot.className = 'status-dot';
+    
+    if (mode === 'offline') {
+        dot.classList.add('offline');
+        text.textContent = 'Offline';
+    } else if (connected) {
+        dot.classList.add('connected');
+        text.textContent = 'Connected';
+    } else {
+        dot.classList.add('disconnected');
+        text.textContent = 'Connecting...';
+    }
+}
+
+// ===== EVENT HANDLERS =====
+function setupEventListeners() {
+    document.getElementById('sync-now').addEventListener('click', loadData);
+    document.getElementById('refresh-data').addEventListener('click', loadData);
+    document.getElementById('export-data').addEventListener('click', exportData);
+    document.getElementById('add-student-btn').addEventListener('click', () => showStudentModal());
+    document.getElementById('perform-search').addEventListener('click', performAdvancedSearch);
+    document.getElementById('global-search').addEventListener('input', performGlobalSearch);
+    document.getElementById('connection-toggle').addEventListener('click', toggleConnectionMode);
+    document.getElementById('ai-assistant-toggle').addEventListener('click', function() {
+        document.getElementById('ai-assistant').style.display = 'block';
+    });
+    
+    // Sponsors event listeners
+    setupSponsorsEventListeners();
+    
+    ['search-type', 'search-program', 'search-status', 'search-package'].forEach(filter => {
+        document.getElementById(filter).addEventListener('change', performAdvancedSearch);
+    });
+}
+
+function setupSponsorsEventListeners() {
+    document.getElementById('add-sponsor-btn').addEventListener('click', () => showSponsorModal());
+    document.getElementById('export-sponsors').addEventListener('click', exportSponsorsData);
+    document.getElementById('refresh-sponsors').addEventListener('click', loadData);
+    
+    // Sponsor modal events
+    const sponsorModal = document.getElementById('sponsor-modal');
+    const closeButtons = sponsorModal.querySelectorAll('.close, #cancel-sponsor');
+    
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            sponsorModal.style.display = 'none';
+        });
+    });
+    
+    window.addEventListener('click', (event) => {
+        if (event.target === sponsorModal) {
+            sponsorModal.style.display = 'none';
+        }
+    });
+    
+    document.getElementById('sponsor-form').addEventListener('submit', handleSponsorSubmit);
+    document.getElementById('sponsor-program').addEventListener('change', updateSponsoredStudentsDropdown);
+}
+
+function setupModals() {
+    const studentModal = document.getElementById('student-modal');
+    const closeButtons = studentModal.querySelectorAll('.close, #cancel-student');
+    
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            studentModal.style.display = 'none';
+        });
+    });
+    
+    window.addEventListener('click', (event) => {
+        if (event.target === studentModal) {
+            studentModal.style.display = 'none';
+        }
+    });
+    
+    document.getElementById('student-form').addEventListener('submit', handleStudentSubmit);
+}
+
+function setupNavigation() {
+    const navItems = document.querySelectorAll('.nav-item');
+    
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const section = this.getAttribute('data-section');
+            navItems.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+            navigateToSection(section);
+        });
+    });
+}
+
+function navigateToSection(section) {
+    currentSection = section;
+    const sections = ['search-section', 'students-section', 'sponsors-section'];
+    
+    sections.forEach(sec => {
+        const element = document.getElementById(sec);
+        if (element) element.style.display = 'none';
+    });
+    
+    switch (section) {
+        case 'search':
+            document.getElementById('search-section').style.display = 'block';
+            document.getElementById('search-section').scrollIntoView({ behavior: 'smooth' });
+            break;
+        case 'students':
+            document.getElementById('students-section').style.display = 'block';
+            document.getElementById('students-section').scrollIntoView({ behavior: 'smooth' });
+            break;
+        case 'sponsors':
+            document.getElementById('sponsors-section').style.display = 'block';
+            document.getElementById('sponsors-section').scrollIntoView({ behavior: 'smooth' });
+            break;
+        default:
+            sections.forEach(sec => {
+                const element = document.getElementById(sec);
+                if (element) element.style.display = 'block';
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// ===== STUDENT MANAGEMENT =====
+function showStudentModal(student = null) {
+    const modal = document.getElementById('student-modal');
+    const title = document.getElementById('student-modal-title');
+    const form = document.getElementById('student-form');
+    
+    if (student) {
+        title.textContent = 'Edit Student';
+        document.getElementById('student-program').value = student.program;
+        document.getElementById('full-name').value = student.full_name;
+        document.getElementById('sponsorship-package').value = student.sponsorship_package;
+        document.getElementById('termly-fees').value = student.financial_data?.termly_school_fees || 0;
+        document.getElementById('cash-received').value = student.financial_data?.cash_received_euro || 0;
+        document.getElementById('student-notes').value = student.notes || '';
+        form.dataset.editingStudent = JSON.stringify(student);
+    } else {
+        title.textContent = 'Add New Student';
+        form.reset();
+        delete form.dataset.editingStudent;
+    }
+    
+    modal.style.display = 'block';
+}
+
 async function handleStudentSubmit(e) {
     e.preventDefault();
     
+    const form = e.target;
     const program = document.getElementById('student-program').value;
     const fullName = document.getElementById('full-name').value;
     const sponsorshipPackage = document.getElementById('sponsorship-package').value;
     const termlyFees = parseInt(document.getElementById('termly-fees').value) || 0;
-    const cashReceived = parseInt(document.getElementById('cash-received').value) || 0;
+    const cashReceived = parseFloat(document.getElementById('cash-received').value) || 0;
+    const notes = document.getElementById('student-notes').value;
+    
+    if (!program || !fullName || !sponsorshipPackage) {
+        showNotification('Please fill in all required fields', 'error');
+        return;
+    }
+    
+    const financialData = calculateFinancialData({
+        termly_school_fees: termlyFees,
+        cash_received_euro: cashReceived
+    });
     
     const studentData = {
         full_name: fullName,
         sponsorship_package: sponsorshipPackage,
-        financial_data: {
-            termly_school_fees: termlyFees,
-            cash_received_euro: cashReceived
-        }
+        financial_data: financialData
     };
     
+    if (notes) studentData.notes = notes;
+    
     try {
-        const response = await fetch(`/api/programs/${program}/students`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
+        let response, url, method;
+        
+        if (form.dataset.editingStudent) {
+            const student = JSON.parse(form.dataset.editingStudent);
+            url = `/api/programs/${student.program}/students/${student.serial_number}`;
+            method = 'PUT';
+        } else {
+            url = `/api/programs/${program}/students`;
+            method = 'POST';
+        }
+        
+        response = await fetch(url, {
+            method: method,
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(studentData)
         });
@@ -1079,422 +3039,467 @@ async function handleStudentSubmit(e) {
         const result = await response.json();
         
         if (result.success) {
-            showNotification(result.message);
+            showNotification(result.message, 'success');
             document.getElementById('student-modal').style.display = 'none';
-            if (currentProgram === program) {
-                loadStudents(program);
-            }
-            loadData();
+            await loadData();
         } else {
-            showNotification('Error: ' + result.message, 'error');
+            showNotification('Error: ' + (result.message || 'Unknown error'), 'error');
         }
     } catch (error) {
-        console.error('Error creating student:', error);
-        showNotification('Failed to create student', 'error');
+        console.error('Error saving student:', error);
+        showNotification('Failed to save student. Please check your connection and try again.', 'error');
     }
 }
 
-// Load students for a program
-async function loadStudents(program) {
+function editStudent(program, studentId) {
+    const student = allStudents.find(s => s.program === program && s.serial_number === studentId);
+    if (student) {
+        showStudentModal(student);
+    } else {
+        showNotification('Student not found', 'error');
+    }
+}
+
+function viewStudentDetails(program, studentId) {
+    const student = allStudents.find(s => s.program === program && s.serial_number === studentId);
+    if (student) {
+        showNotification(`Viewing details for ${student.full_name}`, 'info');
+    }
+}
+
+async function deleteStudent(program, studentId) {
+    const student = allStudents.find(s => s.program === program && s.serial_number === studentId);
+    
+    if (!student) {
+        showNotification('Student not found', 'error');
+        return;
+    }
+    
+    if (!confirm(`Are you sure you want to delete ${student.full_name}? This action cannot be undone.`)) {
+        return;
+    }
+    
     try {
-        const response = await fetch(`/api/programs/${program}`);
-        const programData = await response.json();
+        const response = await fetch(`/api/programs/${program}/students/${studentId}`, {
+            method: 'DELETE',
+            headers: { 'Accept': 'application/json' }
+        });
         
-        const studentsList = document.getElementById('students-list');
-        studentsList.innerHTML = '';
+        const result = await response.json();
         
-        if (programData.students && programData.students.length > 0) {
-            programData.students.forEach(student => {
-                const studentElement = createStudentElement(student, program);
-                studentsList.appendChild(studentElement);
-            });
+        if (result.success) {
+            showNotification(result.message, 'success');
+            await loadData();
         } else {
-            studentsList.innerHTML = '<p>No students found for this program.</p>';
+            showNotification('Error: ' + (result.message || 'Unknown error'), 'error');
         }
-        
-        currentProgram = program;
-        showNotification(`Loaded ${programData.students?.length || 0} students from ${program}`);
     } catch (error) {
-        console.error('Error loading students:', error);
-        document.getElementById('students-list').innerHTML = '<p>Error loading students.</p>';
-        showNotification('Failed to load students', 'error');
+        console.error('Error deleting student:', error);
+        showNotification('Failed to delete student. Please check your connection and try again.', 'error');
     }
 }
 
-// Create student element
-function createStudentElement(student, program) {
-    const studentDiv = document.createElement('div');
-    studentDiv.className = 'student-item';
+// ===== SEARCH FUNCTIONALITY =====
+function performAdvancedSearch() {
+    const searchType = document.getElementById('search-type').value;
+    const program = document.getElementById('search-program').value;
+    const status = document.getElementById('search-status').value;
+    const packageType = document.getElementById('search-package').value;
     
-    const financialData = student.financial_data || {};
+    let results = [];
     
-    // Calculate actual values from formulas
-    const calculatedData = calculateFinancialData(financialData);
-    
-    studentDiv.innerHTML = `
-        <div class="student-header">
-            <div class="student-name">${student.full_name}</div>
-            <div class="student-actions">
-                <button class="btn btn-primary btn-sm edit-student" data-id="${student.serial_number}">Edit</button>
-                <button class="btn btn-danger btn-sm delete-student" data-id="${student.serial_number}">Delete</button>
-            </div>
-        </div>
-        <div class="student-details">
-            <div class="detail-item">
-                <span class="detail-label">Package:</span>
-                <span>${student.sponsorship_package}</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">Termly Fees:</span>
-                <span>${calculatedData.termly_school_fees.toLocaleString()} UGX</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">Monthly Fees:</span>
-                <span>${calculatedData.direct_spending_school_fees_ugx_monthly.toLocaleString()} UGX</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">Cash Received:</span>
-                <span>${calculatedData.cash_received_euro} EUR</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">Monthly Cost:</span>
-                <span class="${calculatedData.monthly_output_euro >= 0 ? 'positive' : 'negative'}">
-                    ${calculatedData.monthly_output_euro.toFixed(2)} EUR
-                </span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">Balance:</span>
-                <span class="${calculatedData.plus_minus_diff_euro >= 0 ? 'positive' : 'negative'}">
-                    ${calculatedData.plus_minus_diff_euro.toFixed(2)} EUR
-                </span>
-            </div>
-        </div>
-    `;
-    
-    // Add event listeners to buttons
-    studentDiv.querySelector('.edit-student').addEventListener('click', () => {
-        editStudent(student, program);
-    });
-    
-    studentDiv.querySelector('.delete-student').addEventListener('click', () => {
-        deleteStudent(student.serial_number, program);
-    });
-    
-    return studentDiv;
-}
-
-// Calculate financial data from formulas
-function calculateFinancialData(financialData) {
-    const result = { ...financialData };
-    
-    // Convert formula strings to actual numbers
-    Object.keys(financialData).forEach(key => {
-        if (typeof financialData[key] === 'string' && financialData[key].startsWith('=')) {
-            result[key] = evaluateFormula(financialData[key], financialData);
-        } else if (financialData[key] === null) {
-            result[key] = 0;
-        }
-    });
-    
-    return result;
-}
-
-// Simple formula evaluator
-function evaluateFormula(formula, data) {
-    try {
-        // Remove the = sign and replace cell references with actual values
-        let expression = formula.substring(1);
-        
-        // Replace common Excel-style formulas
-        expression = expression
-            .replace(/SUM\(([^)]+)\)/g, (match, range) => {
-                const parts = range.split(':');
-                return parts.reduce((sum, part) => sum + (parseFloat(data[part]) || 0), 0);
-            })
-            .replace(/(\d+)%/g, '$1/100')
-            .replace(/\*/g, '*')
-            .replace(/\//g, '/');
-        
-        // Simple evaluation (in production, use a proper formula parser)
-        return eval(expression) || 0;
-    } catch (error) {
-        console.error('Error evaluating formula:', formula, error);
-        return 0;
+    if (searchType === 'students' || searchType === 'all') {
+        results = results.concat(searchStudents(program, status, packageType));
     }
-}
-
-// Edit student
-function editStudent(student, program) {
-    document.getElementById('student-modal').style.display = 'block';
-    document.getElementById('student-modal-title').textContent = 'Edit Student';
     
-    document.getElementById('student-program').value = program;
-    document.getElementById('full-name').value = student.full_name;
-    document.getElementById('sponsorship-package').value = student.sponsorship_package;
-    document.getElementById('termly-fees').value = student.financial_data?.termly_school_fees || 0;
-    document.getElementById('cash-received').value = student.financial_data?.cash_received_euro || 0;
-    
-    // Update form submission to handle edit
-    const form = document.getElementById('student-form');
-    const originalSubmit = form.onsubmit;
-    
-    form.onsubmit = async function(e) {
-        e.preventDefault();
-        
-        const updates = {
-            full_name: document.getElementById('full-name').value,
-            sponsorship_package: document.getElementById('sponsorship-package').value,
-            financial_data: {
-                ...student.financial_data,
-                termly_school_fees: parseInt(document.getElementById('termly-fees').value) || 0,
-                cash_received_euro: parseInt(document.getElementById('cash-received').value) || 0
-            }
-        };
-        
-        try {
-            const response = await fetch(`/api/programs/${program}/students/${student.serial_number}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(updates)
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-                showNotification(result.message);
-                document.getElementById('student-modal').style.display = 'none';
-                loadStudents(program);
-                loadData();
-                // Restore original submit handler
-                form.onsubmit = originalSubmit;
-            } else {
-                showNotification('Error: ' + result.message, 'error');
-            }
-        } catch (error) {
-            console.error('Error updating student:', error);
-            showNotification('Failed to update student', 'error');
-        }
-    };
-}
-
-// Delete student
-async function deleteStudent(studentId, program) {
-    if (confirm('Are you sure you want to delete this student?')) {
-        try {
-            const response = await fetch(`/api/programs/${program}/students/${studentId}`, {
-                method: 'DELETE'
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-                showNotification(result.message);
-                loadStudents(program);
-                loadData();
-            } else {
-                showNotification('Error: ' + result.message, 'error');
-            }
-        } catch (error) {
-            console.error('Error deleting student:', error);
-            showNotification('Failed to delete student', 'error');
-        }
+    if (searchType === 'sponsors' || searchType === 'all') {
+        results = results.concat(searchSponsors(program, status));
     }
+    
+    displaySearchResults(results);
 }
 
-// Update UI with loaded data
-function updateUI() {
-    // Update financial summary
-    document.getElementById('total-income').textContent = `€${financialSummary.totalIncome.toLocaleString()}`;
-    document.getElementById('total-costs').textContent = `€${financialSummary.totalCosts.toLocaleString()}`;
-    document.getElementById('total-deficit').textContent = `-€${Math.abs(financialSummary.totalDeficit).toLocaleString()}`;
-    
-    // Update data stats
-    document.getElementById('total-students').textContent = database.metadata.programs_summary.total_students_across_all_programs;
-    document.getElementById('active-sponsorships').textContent = database.metadata.programs_summary.total_active_sponsorships;
-    document.getElementById('monthly-funding').textContent = `€${database.metadata.programs_summary.total_monthly_funding_euros}`;
-    
-    // Render funding gap chart
-    renderFundingGapChart();
-    
-    // Populate program table
-    populateProgramTable();
-    
-    // Update last updated time
-    document.getElementById('last-updated').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
-}
-
-// Render funding gap chart
-function renderFundingGapChart() {
-    const chartContainer = document.getElementById('funding-gap-chart');
-    chartContainer.innerHTML = '';
-    
-    if (fundingGap.programs && fundingGap.programs.length > 0) {
-        const maxDeficit = Math.max(...fundingGap.programs.map(p => Math.abs(p.deficit)));
-        
-        fundingGap.programs.forEach(program => {
-            const barHeight = (Math.abs(program.deficit) / maxDeficit) * 180;
-            const bar = document.createElement('div');
-            bar.className = `chart-bar ${program.deficit < 0 ? 'negative' : ''}`;
-            bar.style.height = `${barHeight}px`;
-            
-            const label = document.createElement('div');
-            label.className = 'chart-label';
-            label.textContent = program.name;
-            
-            const value = document.createElement('div');
-            value.className = 'chart-value';
-            value.textContent = `€${Math.abs(program.deficit).toFixed(0)}`;
-            value.style.position = 'absolute';
-            value.style.top = '-25px';
-            value.style.left = '0';
-            value.style.right = '0';
-            value.style.textAlign = 'center';
-            value.style.fontSize = '0.8rem';
-            value.style.fontWeight = '600';
-            
-            bar.appendChild(value);
-            bar.appendChild(label);
-            chartContainer.appendChild(bar);
-        });
-    }
-}
-
-// Populate program table
-function populateProgramTable() {
-    const tableBody = document.querySelector('#program-table tbody');
-    tableBody.innerHTML = '';
-    
-    // Add rows for each program
-    const programs = Object.keys(database.sponsorship_programs);
-    
-    programs.forEach(program => {
-        const programData = database.sponsorship_programs[program];
-        const registryData = database.sponsorship_registry[program];
-        const programGap = fundingGap.programs ? fundingGap.programs.find(p => p.name === program) : null;
-        
-        if (programData) {
-            const row = document.createElement('tr');
-            
-            // Program name
-            const nameCell = document.createElement('td');
-            nameCell.textContent = program;
-            row.appendChild(nameCell);
-            
-            // Students count
-            const studentsCell = document.createElement('td');
-            studentsCell.textContent = programData.metadata.total_students;
-            row.appendChild(studentsCell);
-            
-            // Monthly income
-            const incomeCell = document.createElement('td');
-            const income = registryData?.metadata?.total_monthly_funding || 0;
-            incomeCell.textContent = `€${income}`;
-            row.appendChild(incomeCell);
-            
-            // Monthly costs
-            const costsCell = document.createElement('td');
-            const costs = programGap ? programGap.costs : 0;
-            costsCell.textContent = `€${costs.toFixed(0)}`;
-            row.appendChild(costsCell);
-            
-            // Deficit/Surplus
-            const deficitCell = document.createElement('td');
-            const deficit = programGap ? programGap.deficit : 0;
-            deficitCell.textContent = `€${deficit.toFixed(0)}`;
-            deficitCell.className = deficit >= 0 ? 'positive' : 'negative';
-            row.appendChild(deficitCell);
-            
-            tableBody.appendChild(row);
-        }
+function searchStudents(program, status, packageType) {
+    return allStudents.filter(student => {
+        let match = true;
+        if (program && student.program !== program) match = false;
+        if (packageType && student.sponsorship_package !== packageType) match = false;
+        if (status && student.status !== status) match = false;
+        return match;
     });
 }
 
-// Filter program table
-function filterProgramTable(program) {
-    const rows = document.querySelectorAll('#program-table tbody tr');
+function searchSponsors(program, status) {
+    return allSponsors.filter(sponsor => {
+        let match = true;
+        if (program && sponsor.program !== program) match = false;
+        if (status && sponsor.sponsorship_status !== status) match = false;
+        return match;
+    });
+}
+
+function performGlobalSearch() {
+    const query = document.getElementById('global-search').value.toLowerCase().trim();
     
-    rows.forEach(row => {
-        if (program === 'all' || row.cells[0].textContent === program) {
-            row.style.display = '';
+    if (query.length < 2) {
+        document.getElementById('search-results').innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-search"></i>
+                <h4>Ready to Search</h4>
+                <p>Enter at least 2 characters to start searching</p>
+            </div>`;
+        return;
+    }
+    
+    const results = [
+        ...allStudents.filter(student => 
+            student.full_name.toLowerCase().includes(query) ||
+            student.program.toLowerCase().includes(query) ||
+            (student.sponsorship_package && student.sponsorship_package.toLowerCase().includes(query)) ||
+            (student.program_name && student.program_name.toLowerCase().includes(query))
+        ),
+        ...allSponsors.filter(sponsor =>
+            sponsor.sponsor.toLowerCase().includes(query) ||
+            sponsor.program.toLowerCase().includes(query) ||
+            (sponsor.full_name && sponsor.full_name.toLowerCase().includes(query)) ||
+            (sponsor.category && sponsor.category.toLowerCase().includes(query))
+        )
+    ];
+    
+    displaySearchResults(results);
+}
+
+function displaySearchResults(results) {
+    const container = document.getElementById('search-results');
+    
+    if (results.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-search"></i>
+                <h4>No Results Found</h4>
+                <p>No records match your search criteria.</p>
+            </div>`;
+        return;
+    }
+    
+    container.innerHTML = results.map(item => {
+        if (item.type === 'student') {
+            const financials = item.calculated_financials;
+            const balanceUGX = financials.plus_minus_diff_ugx || 0;
+            const balanceClass = balanceUGX >= 0 ? 'positive' : 'negative';
+            const balanceText = balanceUGX >= 0 ? 
+                `+${formatUGX(balanceUGX)}` : 
+                `-${formatUGX(Math.abs(balanceUGX))}`;
+            
+            return `
+                <div class="result-card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                        <h4 style="margin: 0; color: var(--secondary); display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-user-graduate"></i>${item.full_name}
+                        </h4>
+                        <span class="status-badge status-active">Student</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.9rem;">
+                        <div><strong>Program:</strong> ${item.program}</div>
+                        <div><strong>Package:</strong> ${item.sponsorship_package}</div>
+                        <div><strong>Termly Fees:</strong> ${formatUGX(financials.termly_school_fees || 0)}</div>
+                        <div><strong>Monthly Cost:</strong> ${formatUGX(financials.monthly_output_ugx || 0)}</div>
+                        <div><strong>Cash Received:</strong> €${financials.cash_received_euro || 0}</div>
+                        <div><strong>Balance:</strong> <span class="${balanceClass}">${balanceText}</span></div>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <button class="btn btn-primary btn-sm" onclick="editStudent('${item.program}', ${item.serial_number})">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn btn-info btn-sm" onclick="viewStudentDetails('${item.program}', ${item.serial_number})">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                </div>
+            `;
         } else {
-            row.style.display = 'none';
+            const amountUGX = (item.amount || 0) * EXCHANGE_RATE;
+            const statusClass = item.sponsorship_status === 'active' ? 'status-active' : 'status-inactive';
+            
+            return `
+                <div class="result-card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                        <h4 style="margin: 0; color: var(--success); display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-hand-holding-usd"></i>${item.sponsor}
+                        </h4>
+                        <span class="status-badge ${statusClass}">
+                            ${item.sponsorship_status}
+                        </span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.9rem;">
+                        <div><strong>Program:</strong> ${item.program}</div>
+                        <div><strong>Sponsored Student:</strong> ${item.full_name}</div>
+                        <div><strong>Amount:</strong> €${item.amount}/month</div>
+                        <div><strong>Category:</strong> ${item.category}</div>
+                        ${item.notes ? `<div><strong>Notes:</strong> ${item.notes}</div>` : ''}
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <button class="btn btn-primary btn-sm" onclick="editSponsor('${item.program}', ${item.cid})">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn btn-info btn-sm" onclick="viewSponsorDetails('${item.program}', ${item.cid})">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                </div>
+            `;
         }
-    });
+    }).join('');
 }
 
-// Export data
-function exportData() {
-    // Create a CSV string with the financial summary
-    let csvContent = "Sponsorship Management System - Financial Report\n\n";
-    csvContent += "Financial Summary\n";
-    csvContent += `Confirmed Monthly Income,€${financialSummary.totalIncome}\n`;
-    csvContent += `Projected Monthly Costs,€${financialSummary.totalCosts}\n`;
-    csvContent += `Monthly Deficit,€${financialSummary.totalDeficit}\n\n`;
-    
-    csvContent += "Funding Gap by Program\n";
-    if (fundingGap.programs) {
-        fundingGap.programs.forEach(program => {
-            csvContent += `${program.name},€${program.deficit.toFixed(2)}\n`;
-        });
-    }
-    
-    csvContent += "\nStudent Details\n";
-    csvContent += "Program,Student Name,Package,Termly Fees,Monthly Cost,Cash Received,Balance\n";
-    
-    Object.entries(database.sponsorship_programs).forEach(([program, programData]) => {
-        programData.students.forEach(student => {
-            const financialData = student.financial_data || {};
-            const calculatedData = calculateFinancialData(financialData);
-            csvContent += `${program},${student.full_name},${student.sponsorship_package},${calculatedData.termly_school_fees},${calculatedData.monthly_output_euro.toFixed(2)},${calculatedData.cash_received_euro},${calculatedData.plus_minus_diff_euro.toFixed(2)}\n`;
-        });
-    });
-    
-    // Create a blob and download link
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'sponsorship_financial_report.csv';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    
-    showNotification('Report exported successfully');
+// ===== UTILITY FUNCTIONS =====
+function updateLastUpdated() {
+    console.log(`🕒 Last updated: ${new Date().toLocaleString()}`);
 }
 
-// Show notification
 function showNotification(message, type = 'success') {
-    const notification = document.createElement('div');
-    notification.className = 'update-notification';
-    notification.textContent = message;
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => {
+        if (notification.parentNode) notification.parentNode.removeChild(notification);
+    });
     
-    if (type === 'error') {
-        notification.style.backgroundColor = '#e74c3c';
-    }
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <i class="fas fa-${getNotificationIcon(type)}"></i>
+        <span>${message}</span>
+    `;
     
     document.body.appendChild(notification);
     
     setTimeout(() => {
-        notification.remove();
-    }, 3000);
+        if (notification.parentNode) notification.parentNode.removeChild(notification);
+    }, 5000);
 }
 
-// Show loading state
+function getNotificationIcon(type) {
+    const icons = {
+        success: 'check-circle',
+        error: 'exclamation-triangle',
+        warning: 'exclamation-circle',
+        info: 'info-circle'
+    };
+    return icons[type] || 'info-circle';
+}
+
 function showLoading(loading) {
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
+    const buttons = document.querySelectorAll('.btn:not(.close)');
+    buttons.forEach(btn => {
+        btn.disabled = loading;
         if (loading) {
-            button.disabled = true;
-            button.classList.add('loading');
+            btn.classList.add('loading');
         } else {
-            button.disabled = false;
-            button.classList.remove('loading');
+            btn.classList.remove('loading');
         }
     });
 }
-    </script>
+
+// ===== EXPORT FUNCTIONALITY =====
+function exportData() {
+    let csvContent = "Sponsorship Management System - Complete Report\n\n";
+    csvContent += "Generated on:," + new Date().toLocaleString() + "\n";
+    csvContent += "Total Students:," + allStudents.length + "\n";
+    csvContent += "Total Income:," + formatUGX(financialSummary.totalIncomeUGX || 0) + "\n";
+    csvContent += "Total Costs:," + formatUGX(financialSummary.totalCostsUGX || 0) + "\n";
+    csvContent += "Total Deficit:," + formatUGX(financialSummary.totalDeficitUGX || 0) + "\n\n";
+    
+    csvContent += "STUDENTS DETAILS\n";
+    csvContent += "Program,Student Name,Sponsorship Package,Termly Fees (UGX),Monthly Cost (UGX),Cash Received (EUR),Cash Received (UGX),Balance (UGX)\n";
+    
+    allStudents.forEach(student => {
+        const financials = student.calculated_financials;
+        csvContent += `"${student.program}","${student.full_name}","${student.sponsorship_package}",${financials.termly_school_fees},${financials.monthly_output_ugx},${financials.cash_received_euro},${financials.cash_received_ugx},${financials.plus_minus_diff_ugx}\n`;
+    });
+    
+    if (allSponsors.length > 0) {
+        csvContent += "\nSPONSORS DETAILS\n";
+        csvContent += "Program,Sponsor Name,Sponsored Student,Amount (EUR),Amount (UGX),Status,Category,Start Date,Notes\n";
+        
+        allSponsors.forEach(sponsor => {
+            const amountUGX = (sponsor.amount || 0) * EXCHANGE_RATE;
+            csvContent += `"${sponsor.program}","${sponsor.sponsor}","${sponsor.full_name}",${sponsor.amount},${amountUGX},${sponsor.sponsorship_status},"${sponsor.category}","${sponsor.start_date || ''}","${sponsor.notes || ''}"\n`;
+        });
+    }
+    
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const timestamp = new Date().toISOString().split('T')[0];
+    
+    link.setAttribute('href', url);
+    link.setAttribute('download', `sponsorship_report_${timestamp}.csv`);
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    showNotification('Report exported successfully!', 'success');
+}
+
+// ===== SAMPLE DATA FALLBACK =====
+function loadSampleData() {
+    console.log('📋 Loading sample data...');
+    
+    database = {
+        sponsorship_programs: {
+            "CH": {
+                "program_name": "CH FINANCIAL ANALYSIS REPORT TERM III 2025",
+                "students": [
+                    {
+                        "serial_number": 1,
+                        "full_name": "LWANGA DESTINY ADRIAN",
+                        "sponsorship_package": "Day",
+                        "financial_data": {
+                            "termly_school_fees": 500000,
+                            "direct_spending_school_fees_ugx_monthly": 125000,
+                            "food": 80000,
+                            "average_medical": 20000,
+                            "school_personal_requirements_transport": 20000,
+                            "admin_utilities": 13500,
+                            "cash_received_euro": 70
+                        }
+                    },
+                    {
+                        "serial_number": 2,
+                        "full_name": "NAKATO PRECIOUS",
+                        "sponsorship_package": "Boarding",
+                        "financial_data": {
+                            "termly_school_fees": 800000,
+                            "direct_spending_school_fees_ugx_monthly": 200000,
+                            "food": 120000,
+                            "average_medical": 25000,
+                            "school_personal_requirements_transport": 30000,
+                            "admin_utilities": 15000,
+                            "cash_received_euro": 100
+                        }
+                    }
+                ]
+            }
+        },
+        sponsorship_registry: {
+            "CH": {
+                "students": [
+                    {
+                        "cid": 1,
+                        "full_name": "LWANGA DESTINY ADRIAN",
+                        "sponsor": "Foundation X",
+                        "amount": 70,
+                        "sponsorship_status": "active",
+                        "category": "Education"
+                    },
+                    {
+                        "cid": 2,
+                        "full_name": "NAKATO PRECIOUS",
+                        "sponsor": "Organization Y",
+                        "amount": 100,
+                        "sponsorship_status": "active",
+                        "category": "Education"
+                    }
+                ]
+            }
+        }
+    };
+    
+    processAllData();
+    updateUI();
+    showNotification('Sample data loaded successfully', 'warning');
+}
+
+// ===== AI ASSISTANT =====
+async function sendAIMessage() {
+    const input = document.getElementById('ai-user-input');
+    const log = document.getElementById('ai-chat-log');
+    const userMessage = input.value.trim();
+    
+    if (!userMessage) return;
+    
+    log.innerHTML += `<div style="margin-bottom: 10px; text-align: right;"><strong>You:</strong> ${userMessage}</div>`;
+    input.value = '';
+    log.scrollTop = log.scrollHeight;
+    
+    try {
+        log.innerHTML += `<div style="margin-bottom: 10px;"><strong>AI:</strong> <span class="spinner"></span> Thinking...</div>`;
+        log.scrollTop = log.scrollHeight;
+        
+        const res = await fetch('/api/ai-assistant', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                message: userMessage,
+                context: {
+                    totalStudents: allStudents.length,
+                    totalIncome: formatUGX(financialSummary.totalIncomeUGX),
+                    totalCosts: formatUGX(financialSummary.totalCostsUGX),
+                    totalDeficit: formatUGX(financialSummary.totalDeficitUGX)
+                }
+            })
+        });
+        
+        log.innerHTML = log.innerHTML.replace(/<div style="margin-bottom: 10px;"><strong>AI:<\/strong> <span class="spinner"><\/span> Thinking...<\/div>/, '');
+        
+        const data = await res.json();
+        if (data.success) {
+            log.innerHTML += `<div style="margin-bottom: 10px;"><strong>AI:</strong> ${data.response}</div>`;
+        } else {
+            log.innerHTML += `<div style="margin-bottom: 10px;"><strong>AI:</strong> Error: ${data.response}</div>`;
+        }
+        
+        log.scrollTop = log.scrollHeight;
+    } catch (err) {
+        log.innerHTML = log.innerHTML.replace(/<div style="margin-bottom: 10px;"><strong>AI:<\/strong> <span class="spinner"><\/span> Thinking...<\/div>/, '');
+        log.innerHTML += `<div style="margin-bottom: 10px;"><strong>AI:</strong> Network error. Please check your connection.</div>`;
+        log.scrollTop = log.scrollHeight;
+    }
+}
+
+// ===== CHART FUNCTIONS =====
+function refreshCharts() {
+    renderFundingGapChart();
+    renderProgramDistributionChart();
+    showNotification('Charts refreshed successfully', 'success');
+}
+
+function exportChartData() {
+    const data = {
+        financialSummary: financialSummary,
+        fundingGap: fundingGap,
+        programStats: calculateProgramStatistics(),
+        timestamp: new Date().toISOString()
+    };
+    
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    
+    link.href = url;
+    link.download = `chart-data-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    showNotification('Chart data exported successfully', 'success');
+}
+
+// ===== GLOBAL EXPORTS =====
+window.editStudent = editStudent;
+window.viewStudentDetails = viewStudentDetails;
+window.deleteStudent = deleteStudent;
+window.editSponsor = editSponsor;
+window.viewSponsorDetails = viewSponsorDetails;
+window.deleteSponsor = deleteSponsor;
+window.refreshCharts = refreshCharts;
+window.exportChartData = exportChartData;
+window.sendAIMessage = sendAIMessage;
+
+console.log('✅ Sponsorship Management System Frontend Loaded!');
+</script>
 </body>
 </html>
