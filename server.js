@@ -13,7 +13,7 @@ const DB_FILE = 'database.json';
 const EXCHANGE_RATE = 4100; // 1 EUR = 4100 UGX
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
 app.use(express.static('public'));
 
 // WebSocket connection for real-time updates
@@ -123,6 +123,24 @@ function createEmptyDatabase() {
             "OTM_GA": { "students": [], "metadata": { "total_students": 0, "active_students": 0, "total_monthly_funding": 0 } }
         },
         financial_review: {},
+        daily_expenses: [],
+        events: [],
+        system_settings: {
+            organization: {
+                name: "Sponsorship Pro",
+                currency: "EUR",
+                logo: null
+            },
+            forex: {
+                manual_rate: EXCHANGE_RATE,
+                auto_update: false
+            },
+            notifications: {
+                email: true,
+                event_reminders: true,
+                low_balance: true
+            }
+        },
         metadata: {
             source_files: [],
             extraction_date: new Date().toISOString().split('T')[0],
@@ -287,6 +305,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// ===== CORE DATA ROUTES =====
+
 // Get complete database
 app.get('/api/data', (req, res) => {
     const database = loadDatabase();
@@ -367,6 +387,8 @@ app.post('/api/programs/:program', (req, res) => {
         res.status(500).json({ success: false, message: 'Failed to save database' });
     }
 });
+
+// ===== STUDENT MANAGEMENT ROUTES =====
 
 // Add student to program
 app.post('/api/programs/:program/students', (req, res) => {
@@ -737,31 +759,461 @@ app.get('/api/registry-stats', (req, res) => {
     });
 });
 
-// Helper function to update registry metadata
-function updateRegistryMetadata(program, database) {
-    const registry = database.sponsorship_registry[program];
-    if (registry && registry.students) {
-        registry.metadata = registry.metadata || {};
-        registry.metadata.total_students = registry.students.length;
-        
-        const activeStudents = registry.students.filter(s => 
-            s.sponsorship_status === 'active' || !s.sponsorship_status
-        );
-        registry.metadata.active_students = activeStudents.length;
-        
-        const inactiveStudents = registry.students.filter(s => 
-            s.sponsorship_status === 'inactive'
-        );
-        registry.metadata.inactive_students = inactiveStudents.length;
-        
-        const programFunding = activeStudents.reduce((sum, student) => {
-            return sum + (parseFloat(student.amount) || 0);
-        }, 0);
-        
-        registry.metadata.total_monthly_funding = programFunding;
+// ===== DAILY EXPENSES ROUTES =====
+
+// Get all daily expenses
+app.get('/api/expenses', (req, res) => {
+    const database = loadDatabase();
+    res.json({
+        success: true,
+        data: database.daily_expenses || [],
+        message: 'Daily expenses loaded successfully'
+    });
+});
+
+// Add new expense
+app.post('/api/expenses', (req, res) => {
+    const expenseData = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.daily_expenses) {
+        database.daily_expenses = [];
     }
-    return database;
-}
+    
+    // Generate ID if not provided
+    if (!expenseData.id) {
+        expenseData.id = database.daily_expenses.length > 0 ? 
+            Math.max(...database.daily_expenses.map(e => e.id)) + 1 : 1;
+    }
+    
+    // Set default currency if not provided
+    if (!expenseData.currency) {
+        expenseData.currency = 'UGX';
+    }
+    
+    database.daily_expenses.push(expenseData);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'expense_added',
+            expense: expenseData,
+            database: updatedDatabase,
+            message: 'Expense added successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: expenseData,
+            message: 'Expense added successfully'
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save expense' });
+    }
+});
+
+// Update expense
+app.put('/api/expenses/:expenseId', (req, res) => {
+    const expenseId = parseInt(req.params.expenseId);
+    const updates = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.daily_expenses) {
+        return res.status(404).json({ success: false, message: 'No expenses found' });
+    }
+    
+    const expenseIndex = database.daily_expenses.findIndex(e => e.id === expenseId);
+    
+    if (expenseIndex === -1) {
+        return res.status(404).json({ success: false, message: 'Expense not found' });
+    }
+    
+    Object.assign(database.daily_expenses[expenseIndex], updates);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'expense_updated',
+            expenseId: expenseId,
+            expense: database.daily_expenses[expenseIndex],
+            database: updatedDatabase,
+            message: 'Expense updated successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: database.daily_expenses[expenseIndex],
+            message: 'Expense updated successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save expense' });
+    }
+});
+
+// Delete expense
+app.delete('/api/expenses/:expenseId', (req, res) => {
+    const expenseId = parseInt(req.params.expenseId);
+    
+    let database = loadDatabase();
+    
+    if (!database.daily_expenses) {
+        return res.status(404).json({ success: false, message: 'No expenses found' });
+    }
+    
+    const expenseIndex = database.daily_expenses.findIndex(e => e.id === expenseId);
+    
+    if (expenseIndex === -1) {
+        return res.status(404).json({ success: false, message: 'Expense not found' });
+    }
+    
+    const deletedExpense = database.daily_expenses.splice(expenseIndex, 1)[0];
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'expense_deleted',
+            expenseId: expenseId,
+            database: updatedDatabase,
+            message: 'Expense deleted successfully'
+        });
+        res.json({ 
+            success: true, 
+            message: 'Expense deleted successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to delete expense' });
+    }
+});
+
+// ===== EVENTS MANAGEMENT ROUTES =====
+
+// Get all events
+app.get('/api/events', (req, res) => {
+    const database = loadDatabase();
+    res.json({
+        success: true,
+        data: database.events || [],
+        message: 'Events loaded successfully'
+    });
+});
+
+// Add new event
+app.post('/api/events', (req, res) => {
+    const eventData = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.events) {
+        database.events = [];
+    }
+    
+    // Generate ID if not provided
+    if (!eventData.id) {
+        eventData.id = database.events.length > 0 ? 
+            Math.max(...database.events.map(e => e.id)) + 1 : 1;
+    }
+    
+    database.events.push(eventData);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'event_added',
+            event: eventData,
+            database: updatedDatabase,
+            message: 'Event added successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: eventData,
+            message: 'Event added successfully'
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save event' });
+    }
+});
+
+// Update event
+app.put('/api/events/:eventId', (req, res) => {
+    const eventId = parseInt(req.params.eventId);
+    const updates = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.events) {
+        return res.status(404).json({ success: false, message: 'No events found' });
+    }
+    
+    const eventIndex = database.events.findIndex(e => e.id === eventId);
+    
+    if (eventIndex === -1) {
+        return res.status(404).json({ success: false, message: 'Event not found' });
+    }
+    
+    Object.assign(database.events[eventIndex], updates);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'event_updated',
+            eventId: eventId,
+            event: database.events[eventIndex],
+            database: updatedDatabase,
+            message: 'Event updated successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: database.events[eventIndex],
+            message: 'Event updated successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save event' });
+    }
+});
+
+// Delete event
+app.delete('/api/events/:eventId', (req, res) => {
+    const eventId = parseInt(req.params.eventId);
+    
+    let database = loadDatabase();
+    
+    if (!database.events) {
+        return res.status(404).json({ success: false, message: 'No events found' });
+    }
+    
+    const eventIndex = database.events.findIndex(e => e.id === eventId);
+    
+    if (eventIndex === -1) {
+        return res.status(404).json({ success: false, message: 'Event not found' });
+    }
+    
+    const deletedEvent = database.events.splice(eventIndex, 1)[0];
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'event_deleted',
+            eventId: eventId,
+            database: updatedDatabase,
+            message: 'Event deleted successfully'
+        });
+        res.json({ 
+            success: true, 
+            message: 'Event deleted successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to delete event' });
+    }
+});
+
+// ===== SETTINGS MANAGEMENT ROUTES =====
+
+// Get system settings
+app.get('/api/settings', (req, res) => {
+    const database = loadDatabase();
+    res.json({
+        success: true,
+        data: database.system_settings || {},
+        message: 'Settings loaded successfully'
+    });
+});
+
+// Update system settings
+app.put('/api/settings', (req, res) => {
+    const settings = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.system_settings) {
+        database.system_settings = {};
+    }
+    
+    Object.assign(database.system_settings, settings);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'settings_updated',
+            settings: database.system_settings,
+            database: updatedDatabase,
+            message: 'Settings updated successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: database.system_settings,
+            message: 'Settings updated successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save settings' });
+    }
+});
+
+// Update organization settings
+app.put('/api/settings/organization', (req, res) => {
+    const orgSettings = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.system_settings) {
+        database.system_settings = {};
+    }
+    
+    if (!database.system_settings.organization) {
+        database.system_settings.organization = {};
+    }
+    
+    Object.assign(database.system_settings.organization, orgSettings);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'organization_settings_updated',
+            settings: database.system_settings.organization,
+            database: updatedDatabase,
+            message: 'Organization settings updated successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: database.system_settings.organization,
+            message: 'Organization settings updated successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save organization settings' });
+    }
+});
+
+// Update forex settings
+app.put('/api/settings/forex', (req, res) => {
+    const forexSettings = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.system_settings) {
+        database.system_settings = {};
+    }
+    
+    if (!database.system_settings.forex) {
+        database.system_settings.forex = {};
+    }
+    
+    Object.assign(database.system_settings.forex, forexSettings);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'forex_settings_updated',
+            settings: database.system_settings.forex,
+            database: updatedDatabase,
+            message: 'Forex settings updated successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: database.system_settings.forex,
+            message: 'Forex settings updated successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save forex settings' });
+    }
+});
+
+// Update notification settings
+app.put('/api/settings/notifications', (req, res) => {
+    const notificationSettings = req.body;
+    
+    let database = loadDatabase();
+    
+    if (!database.system_settings) {
+        database.system_settings = {};
+    }
+    
+    if (!database.system_settings.notifications) {
+        database.system_settings.notifications = {};
+    }
+    
+    Object.assign(database.system_settings.notifications, notificationSettings);
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'notification_settings_updated',
+            settings: database.system_settings.notifications,
+            database: updatedDatabase,
+            message: 'Notification settings updated successfully'
+        });
+        res.json({ 
+            success: true, 
+            data: database.system_settings.notifications,
+            message: 'Notification settings updated successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save notification settings' });
+    }
+});
+
+// Upload logo
+app.post('/api/settings/logo', (req, res) => {
+    const { logoData } = req.body;
+    
+    if (!logoData) {
+        return res.status(400).json({ success: false, message: 'No logo data provided' });
+    }
+    
+    let database = loadDatabase();
+    
+    if (!database.system_settings) {
+        database.system_settings = {};
+    }
+    
+    if (!database.system_settings.organization) {
+        database.system_settings.organization = {};
+    }
+    
+    database.system_settings.organization.logo = logoData;
+    
+    if (saveDatabase(database)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'logo_updated',
+            logo: logoData,
+            database: updatedDatabase,
+            message: 'Logo updated successfully'
+        });
+        res.json({ 
+            success: true, 
+            message: 'Logo updated successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to save logo' });
+    }
+});
+
+// ===== ANALYTICS AND REPORTS =====
+
+// Get analytics data
+app.get('/api/analytics', (req, res) => {
+    const database = loadDatabase();
+    const analytics = calculateAnalytics(database);
+    
+    res.json({
+        success: true,
+        data: analytics,
+        message: 'Analytics data loaded successfully'
+    });
+});
+
+// Generate financial report
+app.get('/api/reports/financial', (req, res) => {
+    const database = loadDatabase();
+    const report = generateFinancialReport(database);
+    
+    res.json({
+        success: true,
+        data: report,
+        message: 'Financial report generated successfully'
+    });
+});
+
+// ===== HELPER FUNCTIONS =====
 
 function calculateSponsorStatistics(database) {
     let totalSponsors = 0;
@@ -800,7 +1252,6 @@ function calculateSponsorStatistics(database) {
     };
 }
 
-// Financial calculation functions
 function calculateFinancialSummary(db) {
     const totalIncomeEUR = db.metadata.programs_summary?.total_monthly_funding_euros || 0;
     const totalIncomeUGX = totalIncomeEUR * EXCHANGE_RATE;
@@ -866,6 +1317,100 @@ function calculateFundingGap(db) {
         totalDeficitUGX
     };
 }
+
+function calculateAnalytics(db) {
+    const programs = Object.keys(db.sponsorship_programs);
+    const analytics = {
+        program_distribution: {},
+        expense_breakdown: {},
+        financial_trends: {},
+        sponsor_categories: {}
+    };
+    
+    // Program distribution
+    programs.forEach(program => {
+        const programData = db.sponsorship_programs[program];
+        if (programData && programData.metadata) {
+            analytics.program_distribution[program] = {
+                student_count: programData.metadata.total_students || 0,
+                monthly_costs: programData.metadata.monthly_costs_ugx || 0,
+                sponsorship_types: programData.metadata.sponsorship_types || {}
+            };
+        }
+    });
+    
+    // Expense breakdown
+    if (db.daily_expenses) {
+        const categories = {};
+        db.daily_expenses.forEach(expense => {
+            const category = expense.category || 'other';
+            categories[category] = (categories[category] || 0) + (expense.amount || 0);
+        });
+        analytics.expense_breakdown = categories;
+    }
+    
+    // Sponsor categories
+    Object.entries(db.sponsorship_registry).forEach(([program, registry]) => {
+        if (registry.students) {
+            registry.students.forEach(sponsor => {
+                const category = sponsor.category || 'Individual';
+                analytics.sponsor_categories[category] = (analytics.sponsor_categories[category] || 0) + 1;
+            });
+        }
+    });
+    
+    return analytics;
+}
+
+function generateFinancialReport(db) {
+    const financialSummary = calculateFinancialSummary(db);
+    const fundingGap = calculateFundingGap(db);
+    const sponsorStats = calculateSponsorStatistics(db);
+    
+    return {
+        summary: financialSummary,
+        funding_gap: fundingGap,
+        sponsor_statistics: sponsorStats,
+        generated_at: new Date().toISOString(),
+        exchange_rate: EXCHANGE_RATE
+    };
+}
+
+// ===== IMPORT/EXPORT ROUTES =====
+
+// Export data to JSON
+app.get('/api/export/json', (req, res) => {
+    const database = loadDatabase();
+    const timestamp = new Date().toISOString().split('T')[0];
+    
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Disposition', `attachment; filename=sponsorship_data_${timestamp}.json`);
+    res.send(JSON.stringify(database, null, 2));
+});
+
+// Import data from JSON
+app.post('/api/import/json', (req, res) => {
+    const importedData = req.body;
+    
+    if (!importedData || typeof importedData !== 'object') {
+        return res.status(400).json({ success: false, message: 'Invalid data format' });
+    }
+    
+    if (saveDatabase(importedData)) {
+        const updatedDatabase = loadDatabase();
+        broadcast({
+            type: 'database_imported',
+            database: updatedDatabase,
+            message: 'Data imported successfully'
+        });
+        res.json({ 
+            success: true, 
+            message: 'Data imported successfully' 
+        });
+    } else {
+        res.status(500).json({ success: false, message: 'Failed to import data' });
+    }
+});
 
 // Start server
 server.listen(PORT, () => {
