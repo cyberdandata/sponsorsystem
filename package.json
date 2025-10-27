@@ -1,23 +1,31 @@
 {
   "name": "sponsorship-management-system",
   "version": "1.0.0",
-  "description": "Advanced sponsorship management system with real-time WebSocket updates",
+  "description": "Advanced sponsorship management system with real-time WebSocket updates and Excel import functionality",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "nodemon": "^3.1.10",
-    "ws": "^8.14.2"
+    "ws": "^8.14.2",
+    "multer": "^1.4.5-lts.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   },
   "keywords": [
     "sponsorship",
     "management",
     "financial",
     "websocket",
-    "real-time"
+    "real-time",
+    "excel",
+    "import",
+    "export",
+    "analytics"
   ],
   "author": "Your Name",
   "license": "MIT"
