@@ -1903,35 +1903,91 @@
                     </div>
                 </div>
 
-                <!-- Import/Export Section -->
-                <div class="import-export-section" id="import-export-section" style="display: none;">
-                    <div class="section-header">
-                        <h3 class="section-title"><i class="fas fa-file-export"></i> Import/Export Data</h3>
-                    </div>
+                <!-- Add this to your Import/Export section -->
+<div class="import-export-section" id="import-export-section" style="display: none;">
+    <div class="section-header">
+        <h3 class="section-title"><i class="fas fa-file-export"></i> Import/Export Data</h3>
+    </div>
 
-                    <div class="export-options">
-                        <div class="export-card" onclick="exportToExcel()">
-                            <i class="fas fa-file-excel"></i>
-                            <h4>Export to Excel</h4>
-                            <p>Download data in Excel format for further analysis</p>
-                        </div>
-                        <div class="export-card" onclick="exportToPDF()">
-                            <i class="fas fa-file-pdf"></i>
-                            <h4>Export to PDF</h4>
-                            <p>Generate professional PDF reports</p>
-                        </div>
-                        <div class="export-card" onclick="showImportModal()">
-                            <i class="fas fa-file-import"></i>
-                            <h4>Import Data</h4>
-                            <p>Upload Excel files to update your database</p>
-                        </div>
-                        <div class="export-card" onclick="backupData()">
-                            <i class="fas fa-database"></i>
-                            <h4>Backup Data</h4>
-                            <p>Create a complete backup of your system</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="export-options">
+        <div class="export-card" onclick="exportToExcel()">
+            <i class="fas fa-file-excel"></i>
+            <h4>Export to Excel</h4>
+            <p>Download data in Excel format for further analysis</p>
+        </div>
+        <div class="export-card" onclick="exportToPDF()">
+            <i class="fas fa-file-pdf"></i>
+            <h4>Export to PDF</h4>
+            <p>Generate professional PDF reports</p>
+        </div>
+        <div class="export-card" onclick="showImportModal()">
+            <i class="fas fa-file-import"></i>
+            <h4>Import Data</h4>
+            <p>Upload Excel files to update your database</p>
+        </div>
+        <div class="export-card" onclick="backupData()">
+            <i class="fas fa-database"></i>
+            <h4>Backup Data</h4>
+            <p>Create a complete backup of your system</p>
+        </div>
+    </div>
+
+    <!-- Sample Templates Section -->
+    <div style="margin-top: 40px;">
+        <h4 style="margin-bottom: 20px; color: var(--dark);">
+            <i class="fas fa-download"></i> Download Sample Templates
+        </h4>
+        <div class="export-options">
+            <div class="export-card" onclick="downloadSampleTemplate('students')">
+                <i class="fas fa-user-graduate"></i>
+                <h4>Students Template</h4>
+                <p>Excel template for importing student data</p>
+            </div>
+            <div class="export-card" onclick="downloadSampleTemplate('sponsors')">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h4>Sponsors Template</h4>
+                <p>Excel template for importing sponsor data</p>
+            </div>
+            <div class="export-card" onclick="downloadSampleTemplate('expenses')">
+                <i class="fas fa-money-bill-wave"></i>
+                <h4>Expenses Template</h4>
+                <p>Excel template for importing expense data</p>
+            </div>
+            <div class="export-card" onclick="downloadSampleTemplate('all')">
+                <i class="fas fa-file-alt"></i>
+                <h4>Complete Template</h4>
+                <p>All templates in one Excel file</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Instructions -->
+    <div style="margin-top: 40px; background: var(--light); padding: 25px; border-radius: var(--border-radius);">
+        <h4 style="margin-bottom: 15px; color: var(--dark);">
+            <i class="fas fa-info-circle"></i> Import Instructions
+        </h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h5>File Format Requirements:</h5>
+                <ul style="color: var(--gray); line-height: 1.6;">
+                    <li>Use Excel files (.xlsx or .xls)</li>
+                    <li>Follow the column structure in sample templates</li>
+                    <li>Ensure data types are correct (numbers for amounts)</li>
+                    <li>Use proper program codes: CH, YSP, ICCSP, OTM_GA</li>
+                </ul>
+            </div>
+            <div>
+                <h5>Supported Import Types:</h5>
+                <ul style="color: var(--gray); line-height: 1.6;">
+                    <li><strong>Students:</strong> Sheet names should match program codes</li>
+                    <li><strong>Sponsors:</strong> Use program code with "_Sponsors" suffix</li>
+                    <li><strong>Expenses:</strong> Single "Expenses" sheet</li>
+                    <li><strong>All Data:</strong> Combine all sheets in one file</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Settings Section -->
                 <div class="settings-section" id="settings-section" style="display: none;">
@@ -3538,6 +3594,10 @@ function setupEventListeners() {
     document.getElementById('logo-upload-area')?.addEventListener('click', () => document.getElementById('logo-upload').click());
     document.getElementById('logo-upload')?.addEventListener('change', handleLogoUpload);
     
+    // Import/Export event listeners
+    document.getElementById('process-import')?.addEventListener('click', processImport);
+    document.getElementById('import-file')?.addEventListener('change', handleFileSelect);
+    
     // Search filters
     ['search-type', 'search-program', 'search-status', 'search-package'].forEach(filter => {
         const element = document.getElementById(filter);
@@ -3633,6 +3693,24 @@ function setupModals() {
         });
         
         document.getElementById('event-form')?.addEventListener('submit', handleEventSubmit);
+    }
+    
+    // Import modal
+    const importModal = document.getElementById('import-modal');
+    if (importModal) {
+        const importCloseButtons = importModal.querySelectorAll('.close');
+        
+        importCloseButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                importModal.style.display = 'none';
+            });
+        });
+        
+        window.addEventListener('click', (event) => {
+            if (event.target === importModal) {
+                importModal.style.display = 'none';
+            }
+        });
     }
 }
 
@@ -4478,6 +4556,340 @@ function backupData() {
     showNotification('Data backup created successfully', 'success');
 }
 
+// ===== ENHANCED IMPORT FUNCTIONALITY =====
+function handleFileSelect(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const fileName = file.name.toLowerCase();
+    if (!fileName.endsWith('.xlsx') && !fileName.endsWith('.xls')) {
+        showNotification('Please select a valid Excel file (.xlsx or .xls)', 'error');
+        return;
+    }
+    
+    showNotification('File selected. Click "Process Import" to continue.', 'info');
+}
+
+async function processImport() {
+    const fileInput = document.getElementById('import-file');
+    const importType = document.getElementById('import-type').value;
+    const file = fileInput.files[0];
+    
+    if (!file) {
+        showNotification('Please select an Excel file first', 'error');
+        return;
+    }
+    
+    try {
+        showLoading(true);
+        showNotification('Processing Excel file...', 'info');
+        
+        const data = await readExcelFile(file);
+        const processedData = processExcelData(data, importType);
+        
+        await sendImportData(processedData, importType);
+        
+        showNotification('Data imported successfully!', 'success');
+        document.getElementById('import-modal').style.display = 'none';
+        fileInput.value = '';
+        
+        // Reload data to reflect changes
+        loadData();
+        
+    } catch (error) {
+        console.error('Import error:', error);
+        showNotification(`Import failed: ${error.message}`, 'error');
+    } finally {
+        showLoading(false);
+    }
+}
+
+function readExcelFile(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            try {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                resolve(workbook);
+            } catch (error) {
+                reject(new Error('Failed to read Excel file: ' + error.message));
+            }
+        };
+        
+        reader.onerror = function() {
+            reject(new Error('Failed to read file'));
+        };
+        
+        reader.readAsArrayBuffer(file);
+    });
+}
+
+function processExcelData(workbook, importType) {
+    const result = {
+        type: importType,
+        data: {},
+        metadata: {
+            source_file: workbook.SheetNames[0] || 'Unknown',
+            import_date: new Date().toISOString(),
+            sheets_processed: workbook.SheetNames
+        }
+    };
+    
+    // Process based on import type
+    switch (importType) {
+        case 'students':
+            result.data = processStudentsSheet(workbook);
+            break;
+        case 'sponsors':
+            result.data = processSponsorsSheet(workbook);
+            break;
+        case 'expenses':
+            result.data = processExpensesSheet(workbook);
+            break;
+        case 'all':
+            result.data = processAllSheets(workbook);
+            break;
+        default:
+            throw new Error('Unknown import type');
+    }
+    
+    return result;
+}
+
+function processStudentsSheet(workbook) {
+    const students = {};
+    const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
+    
+    programs.forEach(program => {
+        const sheet = workbook.Sheets[program];
+        if (sheet) {
+            const jsonData = XLSX.utils.sheet_to_json(sheet);
+            students[program] = jsonData.map((row, index) => ({
+                serial_number: index + 1,
+                full_name: row['Full Name'] || row['Student Name'] || '',
+                sponsorship_package: row['Sponsorship Package'] || row['Package'] || 'Day',
+                financial_data: {
+                    termly_school_fees: parseFloat(row['Termly Fees (UGX)']) || 0,
+                    direct_spending_school_fees_ugx_monthly: parseFloat(row['Direct Spending (UGX)']) || 0,
+                    food: parseFloat(row['Food (UGX)']) || 0,
+                    average_medical: parseFloat(row['Medical (UGX)']) || 0,
+                    school_personal_requirements_transport: parseFloat(row['Transport (UGX)']) || 0,
+                    admin_utilities: parseFloat(row['Admin (UGX)']) || 0,
+                    cash_received_euro: parseFloat(row['Cash Received (EUR)']) || 0
+                },
+                notes: row['Notes'] || ''
+            }));
+        }
+    });
+    
+    return { sponsorship_programs: students };
+}
+
+function processSponsorsSheet(workbook) {
+    const sponsors = {};
+    const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
+    
+    programs.forEach(program => {
+        const sheetName = `${program}_Sponsors`;
+        const sheet = workbook.Sheets[sheetName] || workbook.Sheets[program];
+        if (sheet) {
+            const jsonData = XLSX.utils.sheet_to_json(sheet);
+            sponsors[program] = jsonData.map((row, index) => ({
+                cid: index + 1,
+                full_name: row['Sponsored Student'] || row['Student Name'] || '',
+                sponsor: row['Sponsor Name'] || row['Sponsor'] || '',
+                amount: parseFloat(row['Amount (EUR)']) || 0,
+                sponsorship_status: row['Status'] || 'active',
+                category: row['Category'] || 'Individual',
+                start_date: row['Start Date'] || new Date().toISOString().split('T')[0],
+                notes: row['Notes'] || ''
+            }));
+        }
+    });
+    
+    return { sponsorship_registry: sponsors };
+}
+
+function processExpensesSheet(workbook) {
+    const sheet = workbook.Sheets['Expenses'] || workbook.Sheets[0];
+    if (!sheet) return { daily_expenses: [] };
+    
+    const jsonData = XLSX.utils.sheet_to_json(sheet);
+    const expenses = jsonData.map((row, index) => ({
+        id: index + 1,
+        date: row['Date'] || new Date().toISOString().split('T')[0],
+        studentId: findStudentIdByName(row['Student']),
+        category: (row['Category'] || 'other').toLowerCase(),
+        amount: parseFloat(row['Amount (UGX)']) || 0,
+        description: row['Description'] || '',
+        currency: 'UGX'
+    }));
+    
+    return { daily_expenses: expenses };
+}
+
+function processAllSheets(workbook) {
+    const students = processStudentsSheet(workbook);
+    const sponsors = processSponsorsSheet(workbook);
+    const expenses = processExpensesSheet(workbook);
+    
+    return {
+        ...students,
+        ...sponsors,
+        ...expenses
+    };
+}
+
+function findStudentIdByName(studentName) {
+    if (!studentName) return null;
+    
+    const student = allStudents.find(s => 
+        s.full_name.toLowerCase().includes(studentName.toLowerCase()) ||
+        studentName.toLowerCase().includes(s.full_name.toLowerCase())
+    );
+    
+    return student ? student.serial_number : null;
+}
+
+async function sendImportData(data, importType) {
+    const response = await fetch('/api/import/json', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Failed to import data');
+    }
+    
+    return await response.json();
+}
+
+// Generate sample Excel templates
+function generateSampleTemplate(type) {
+    const wb = XLSX.utils.book_new();
+    
+    switch (type) {
+        case 'students':
+            generateStudentsTemplate(wb);
+            break;
+        case 'sponsors':
+            generateSponsorsTemplate(wb);
+            break;
+        case 'expenses':
+            generateExpensesTemplate(wb);
+            break;
+        case 'all':
+            generateStudentsTemplate(wb);
+            generateSponsorsTemplate(wb);
+            generateExpensesTemplate(wb);
+            break;
+    }
+    
+    XLSX.writeFile(wb, `sponsorship_${type}_template_${new Date().toISOString().split('T')[0]}.xlsx`);
+    showNotification(`Sample ${type} template downloaded`, 'success');
+}
+
+function generateStudentsTemplate(wb) {
+    const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
+    
+    programs.forEach(program => {
+        const sampleData = [
+            {
+                'Full Name': 'Example Student 1',
+                'Sponsorship Package': 'Day',
+                'Termly Fees (UGX)': 208000,
+                'Direct Spending (UGX)': 0,
+                'Food (UGX)': 100000,
+                'Medical (UGX)': 20000,
+                'Transport (UGX)': 20000,
+                'Admin (UGX)': 13500,
+                'Cash Received (EUR)': 70,
+                'Notes': 'Sample student record'
+            },
+            {
+                'Full Name': 'Example Student 2',
+                'Sponsorship Package': 'Boarding',
+                'Termly Fees (UGX)': 557000,
+                'Direct Spending (UGX)': 0,
+                'Food (UGX)': 0,
+                'Medical (UGX)': 0,
+                'Transport (UGX)': 0,
+                'Admin (UGX)': 0,
+                'Cash Received (EUR)': 70,
+                'Notes': 'Another sample record'
+            }
+        ];
+        
+        const ws = XLSX.utils.json_to_sheet(sampleData);
+        XLSX.utils.book_append_sheet(wb, ws, program);
+    });
+}
+
+function generateSponsorsTemplate(wb) {
+    const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
+    
+    programs.forEach(program => {
+        const sampleData = [
+            {
+                'Sponsor Name': 'Example Sponsor 1',
+                'Sponsored Student': 'Example Student 1',
+                'Amount (EUR)': 70,
+                'Status': 'active',
+                'Category': 'Individual',
+                'Start Date': new Date().toISOString().split('T')[0],
+                'Notes': 'Sample sponsor record'
+            },
+            {
+                'Sponsor Name': 'Example Sponsor 2',
+                'Sponsored Student': 'Example Student 2',
+                'Amount (EUR)': 100,
+                'Status': 'active',
+                'Category': 'Organization',
+                'Start Date': new Date().toISOString().split('T')[0],
+                'Notes': 'Another sample record'
+            }
+        ];
+        
+        const ws = XLSX.utils.json_to_sheet(sampleData);
+        XLSX.utils.book_append_sheet(wb, ws, `${program}_Sponsors`);
+    });
+}
+
+function generateExpensesTemplate(wb) {
+    const sampleData = [
+        {
+            'Date': new Date().toISOString().split('T')[0],
+            'Student': 'Example Student 1',
+            'Category': 'school',
+            'Description': 'School fees payment',
+            'Amount (UGX)': 50000
+        },
+        {
+            'Date': new Date().toISOString().split('T')[0],
+            'Student': 'Example Student 2',
+            'Category': 'medical',
+            'Description': 'Medical treatment',
+            'Amount (UGX)': 25000
+        },
+        {
+            'Date': new Date().toISOString().split('T')[0],
+            'Student': 'Example Student 1',
+            'Category': 'transport',
+            'Description': 'Transport to school',
+            'Amount (UGX)': 15000
+        }
+    ];
+    
+    const ws = XLSX.utils.json_to_sheet(sampleData);
+    XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
+}
+
 // ===== AI ASSISTANT =====
 function toggleAIChat() {
     const chatBox = document.getElementById('ai-chat-box');
@@ -4528,8 +4940,10 @@ function generateAIResponse(userMessage) {
     } else if (lowerMessage.includes('expense') || lowerMessage.includes('cost')) {
         const totalExpenses = dailyExpenses.reduce((sum, expense) => sum + expense.amount, 0);
         return `Total recorded expenses: ${formatCurrency(totalExpenses, 'UGX')}. You can view detailed expense breakdown in the Daily Expenses section.`;
+    } else if (lowerMessage.includes('import') || lowerMessage.includes('upload')) {
+        return `You can import data using Excel files. Download the sample templates from the Import/Export section to see the required format. Supported import types: Students, Sponsors, Expenses, or All data.`;
     } else {
-        return "I'm here to help with sponsorship management. You can ask me about students, sponsors, financial information, or expenses. How can I assist you further?";
+        return "I'm here to help with sponsorship management. You can ask me about students, sponsors, financial information, expenses, or data import. How can I assist you further?";
     }
 }
 
@@ -4891,6 +5305,12 @@ window.exportData = function() {
 window.exportSponsorsData = function() {
     exportToExcel();
 };
+
+window.downloadSampleTemplate = function(type) {
+    generateSampleTemplate(type);
+};
+
+window.showImportModal = showImportModal;
 
 console.log('✅ Sponsorship Management System Frontend Loaded!');
     </script>
