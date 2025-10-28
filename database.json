@@ -9,16 +9,16 @@
           "financial_data": {
             "termly_school_fees": 208000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 222833.3333333333,
-            "monthly_output_euro": 54.349593495934954,
+            "monthly_output_ugx": 216350,
+            "monthly_output_euro": 52.76829268292683,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 64166.666666666686,
-            "plus_minus_diff_euro": 15.650406504065046,
+            "plus_minus_diff_ugx": 70650,
+            "plus_minus_diff_euro": 17.23170731707317,
             "food": 100000,
             "average_medical": 20000,
             "school_personal_requirements_transport": 20000,
-            "admin_utilities": 13500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 1
@@ -28,17 +28,17 @@
           "sponsorship_package": "Day",
           "financial_data": {
             "termly_school_fees": 208000,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 222833.3333333333,
-            "monthly_output_euro": 54.349593495934954,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": -222833.3333333333,
-            "plus_minus_diff_euro": -54.349593495934954,
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 216350,
+            "monthly_output_euro": 52.76829268292683,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 70650,
+            "plus_minus_diff_euro": 17.23170731707317,
             "food": 100000,
             "average_medical": 20000,
             "school_personal_requirements_transport": 20000,
-            "admin_utilities": 13500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 2
@@ -49,16 +49,16 @@
           "financial_data": {
             "termly_school_fees": 208000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 222833.3333333333,
-            "monthly_output_euro": 54.349593495934954,
+            "monthly_output_ugx": 216350,
+            "monthly_output_euro": 52.76829268292683,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 64166.666666666686,
-            "plus_minus_diff_euro": 15.650406504065046,
+            "plus_minus_diff_ugx": 70650,
+            "plus_minus_diff_euro": 17.23170731707317,
             "food": 100000,
             "average_medical": 20000,
             "school_personal_requirements_transport": 20000,
-            "admin_utilities": 13500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 3
@@ -67,18 +67,18 @@
           "full_name": "OMARIMUNGU JORDAN",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 248000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
+            "monthly_output_ugx": 226350,
+            "monthly_output_euro": 55.207317073170735,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 217666.6666666667,
-            "plus_minus_diff_euro": 53.08943089430895,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 60650,
+            "plus_minus_diff_euro": 14.792682926829269,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 62000
           },
           "notes": "",
           "serial_number": 4
@@ -87,18 +87,18 @@
           "full_name": "NAKAWOOYA SWABRAH",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": -69333.33333333333,
-            "plus_minus_diff_euro": -16.910569105691057,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "termly_school_fees": 248000,
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 226350,
+            "monthly_output_euro": 55.207317073170735,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 60650,
+            "plus_minus_diff_euro": 14.792682926829269,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 62000
           },
           "notes": "",
           "serial_number": 5
@@ -107,18 +107,18 @@
           "full_name": "NAGADYA MELISA",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 268000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
+            "monthly_output_ugx": 231350,
+            "monthly_output_euro": 56.426829268292686,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 217666.6666666667,
-            "plus_minus_diff_euro": 53.08943089430895,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 55650,
+            "plus_minus_diff_euro": 13.573170731707316,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 6
@@ -127,18 +127,18 @@
           "full_name": "NANYANZI SHARIFAH",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 268000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
+            "monthly_output_ugx": 231350,
+            "monthly_output_euro": 56.426829268292686,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 217666.6666666667,
-            "plus_minus_diff_euro": 53.08943089430895,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 55650,
+            "plus_minus_diff_euro": 13.573170731707316,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 7
@@ -147,18 +147,18 @@
           "full_name": "MEMBE SAMUEL MUKISA",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 268000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
+            "monthly_output_ugx": 231350,
+            "monthly_output_euro": 56.426829268292686,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 217666.6666666667,
-            "plus_minus_diff_euro": 53.08943089430895,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 55650,
+            "plus_minus_diff_euro": 13.573170731707316,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 8
@@ -167,18 +167,18 @@
           "full_name": "BUMBA GERALD",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 268000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
+            "monthly_output_ugx": 231350,
+            "monthly_output_euro": 56.426829268292686,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 217666.6666666667,
-            "plus_minus_diff_euro": 53.08943089430895,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 55650,
+            "plus_minus_diff_euro": 13.573170731707316,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 9
@@ -187,18 +187,18 @@
           "full_name": "OKIR REAGAN",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 268000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
+            "monthly_output_ugx": 231350,
+            "monthly_output_euro": 56.426829268292686,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 217666.6666666667,
-            "plus_minus_diff_euro": 53.08943089430895,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 55650,
+            "plus_minus_diff_euro": 13.573170731707316,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 10
@@ -207,18 +207,18 @@
           "full_name": "ATUHIRE ALVIN",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 268000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 69333.33333333333,
-            "monthly_output_euro": 16.910569105691057,
+            "monthly_output_ugx": 231350,
+            "monthly_output_euro": 56.426829268292686,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 217666.6666666667,
-            "plus_minus_diff_euro": 53.08943089430895,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 55650,
+            "plus_minus_diff_euro": 13.573170731707316,
+            "food": 100000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 24350,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 11
@@ -227,18 +227,18 @@
           "full_name": "KIIZA MAUREEN NANVUMA",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 208000,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 151833.3333333333,
-            "monthly_output_euro": 37.032520325203244,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": -151833.3333333333,
-            "plus_minus_diff_euro": -37.032520325203244,
+            "termly_school_fees": 504000,
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 219350,
+            "monthly_output_euro": 53.5,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 67650,
+            "plus_minus_diff_euro": 16.5,
             "food": 35000,
             "average_medical": 20000,
             "school_personal_requirements_transport": 20000,
-            "admin_utilities": 7500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 12
@@ -247,18 +247,18 @@
           "full_name": "SHIFURAH ALI",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 208000,
+            "termly_school_fees": 504000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 151833.3333333333,
-            "monthly_output_euro": 37.032520325203244,
+            "monthly_output_ugx": 219350,
+            "monthly_output_euro": 53.5,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 135166.6666666667,
-            "plus_minus_diff_euro": 32.967479674796756,
+            "plus_minus_diff_ugx": 67650,
+            "plus_minus_diff_euro": 16.5,
             "food": 35000,
             "average_medical": 20000,
             "school_personal_requirements_transport": 20000,
-            "admin_utilities": 7500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 13
@@ -269,16 +269,16 @@
           "financial_data": {
             "termly_school_fees": 700000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 233333.33333333334,
-            "monthly_output_euro": 56.91056910569106,
+            "monthly_output_ugx": 268350,
+            "monthly_output_euro": 65.45121951219512,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 53666.66666666666,
-            "plus_minus_diff_euro": 13.08943089430894,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 18650,
+            "plus_minus_diff_euro": 4.548780487804878,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 175000
           },
           "notes": "",
           "serial_number": 14
@@ -287,18 +287,18 @@
           "full_name": "NALUBOWA MARION",
           "sponsorship_package": "Boarding Rena",
           "financial_data": {
-            "termly_school_fees": 1045000,
-            "cash_received_euro": 140,
-            "monthly_output_ugx": 348333.3333333333,
-            "monthly_output_euro": 84.95934959349593,
-            "cash_received_ugx": 574000,
-            "plus_minus_diff_ugx": 225666.6666666667,
-            "plus_minus_diff_euro": 55.04065040650407,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "termly_school_fees": 980000,
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 338350,
+            "monthly_output_euro": 82.52439024390245,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": -51350,
+            "plus_minus_diff_euro": -12.524390243902438,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 245000
           },
           "notes": "",
           "serial_number": 15
@@ -308,17 +308,17 @@
           "sponsorship_package": "Boarding Lincon",
           "financial_data": {
             "termly_school_fees": 650000,
-            "cash_received_euro": 80,
-            "monthly_output_ugx": 216666.66666666666,
-            "monthly_output_euro": 52.84552845528455,
-            "cash_received_ugx": 328000,
-            "plus_minus_diff_ugx": 111333.33333333334,
-            "plus_minus_diff_euro": 27.15447154471545,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 255850,
+            "monthly_output_euro": 62.40243902439025,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 31150,
+            "plus_minus_diff_euro": 7.597560975609756,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 162500
           },
           "notes": "",
           "serial_number": 16
@@ -329,19 +329,19 @@
           "financial_data": {
             "termly_school_fees": 557000,
             "cash_received_euro": 80,
-            "monthly_output_ugx": 185666.66666666666,
-            "monthly_output_euro": 45.28455284552845,
+            "monthly_output_ugx": 234650,
+            "monthly_output_euro": 57.23170731707317,
             "cash_received_ugx": 328000,
-            "plus_minus_diff_ugx": 142333.33333333334,
-            "plus_minus_diff_euro": 34.71544715447155,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 93350,
+            "plus_minus_diff_euro": 22.76829268292683,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 20400,
+            "direct_spending_school_fees_ugx_monthly": 139250
           },
           "notes": "",
-          "serial_number": 17
+          "serial_number": 18
         },
         {
           "full_name": "NAKIYINGI JOANITAH",
@@ -349,39 +349,39 @@
           "financial_data": {
             "termly_school_fees": 557000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 185666.66666666666,
-            "monthly_output_euro": 45.28455284552845,
+            "monthly_output_ugx": 232600,
+            "monthly_output_euro": 56.73170731707317,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 101333.33333333334,
-            "plus_minus_diff_euro": 24.715447154471548,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 54400,
+            "plus_minus_diff_euro": 13.268292682926829,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 139250
           },
           "notes": "",
-          "serial_number": 18
+          "serial_number": 19
         },
         {
           "full_name": "SSERUGUNDA SAMUEL",
           "sponsorship_package": "Boarding",
           "financial_data": {
             "termly_school_fees": 557000,
-            "cash_received_euro": 140,
-            "monthly_output_ugx": 185666.66666666666,
-            "monthly_output_euro": 45.28455284552845,
-            "cash_received_ugx": 574000,
-            "plus_minus_diff_ugx": 388333.3333333334,
-            "plus_minus_diff_euro": 94.71544715447155,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 232600,
+            "monthly_output_euro": 56.73170731707317,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 54400,
+            "plus_minus_diff_euro": 13.268292682926829,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 139250
           },
           "notes": "",
-          "serial_number": 19
+          "serial_number": 20
         },
         {
           "full_name": "NAKYEJJWE RECHEAL",
@@ -389,39 +389,39 @@
           "financial_data": {
             "termly_school_fees": 557000,
             "cash_received_euro": 75,
-            "monthly_output_ugx": 185666.66666666666,
-            "monthly_output_euro": 45.28455284552845,
+            "monthly_output_ugx": 233625,
+            "monthly_output_euro": 56.98170731707317,
             "cash_received_ugx": 307500,
-            "plus_minus_diff_ugx": 121833.33333333334,
-            "plus_minus_diff_euro": 29.715447154471548,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 73875,
+            "plus_minus_diff_euro": 18.01829268292683,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 19375,
+            "direct_spending_school_fees_ugx_monthly": 139250
           },
           "notes": "",
-          "serial_number": 20
+          "serial_number": 21
         },
         {
           "full_name": "MENYA RECHEAL",
           "sponsorship_package": "Boarding",
           "financial_data": {
             "termly_school_fees": 557000,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 185666.66666666666,
-            "monthly_output_euro": 45.28455284552845,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": -185666.66666666666,
-            "plus_minus_diff_euro": -45.28455284552845,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 232600,
+            "monthly_output_euro": 56.73170731707317,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 54400,
+            "plus_minus_diff_euro": 13.268292682926829,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 139250
           },
           "notes": "",
-          "serial_number": 21
+          "serial_number": 22
         },
         {
           "full_name": "SSEMBATYA JONATHAN",
@@ -429,19 +429,19 @@
           "financial_data": {
             "termly_school_fees": 557000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 185666.66666666666,
-            "monthly_output_euro": 45.28455284552845,
+            "monthly_output_ugx": 232600,
+            "monthly_output_euro": 56.73170731707317,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 101333.33333333334,
-            "plus_minus_diff_euro": 24.715447154471548,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 54400,
+            "plus_minus_diff_euro": 13.268292682926829,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 139250
           },
           "notes": "",
-          "serial_number": 22
+          "serial_number": 23
         },
         {
           "full_name": "SSEGAWA EMMANUEL",
@@ -449,39 +449,39 @@
           "financial_data": {
             "termly_school_fees": 557000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 185666.66666666666,
-            "monthly_output_euro": 45.28455284552845,
+            "monthly_output_ugx": 232600,
+            "monthly_output_euro": 56.73170731707317,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 101333.33333333334,
-            "plus_minus_diff_euro": 24.715447154471548,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 54400,
+            "plus_minus_diff_euro": 13.268292682926829,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 139250
           },
           "notes": "",
-          "serial_number": 23
+          "serial_number": 24
         },
         {
           "full_name": "NKATA JOSEPH",
           "sponsorship_package": "Boarding",
           "financial_data": {
             "termly_school_fees": 504000,
-            "cash_received_euro": 80,
-            "monthly_output_ugx": 168000.0,
-            "monthly_output_euro": 40.97560975609756,
-            "cash_received_ugx": 328000,
-            "plus_minus_diff_ugx": 160000.0,
-            "plus_minus_diff_euro": 39.02439024390244,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 219350,
+            "monthly_output_euro": 53.5,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 67650,
+            "plus_minus_diff_euro": 16.5,
+            "food": 35000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 20000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
-          "serial_number": 24
+          "serial_number": 25
         },
         {
           "full_name": "NAMAGGA MADRINE",
@@ -489,19 +489,19 @@
           "financial_data": {
             "termly_school_fees": 465000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 155000.0,
-            "monthly_output_euro": 37.80487804878049,
+            "monthly_output_ugx": 254600,
+            "monthly_output_euro": 62.09756097560975,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 132000.0,
-            "plus_minus_diff_euro": 32.19512195121951,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "plus_minus_diff_ugx": 32400,
+            "plus_minus_diff_euro": 7.902439024390244,
+            "food": 25000,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 75000,
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 116250
           },
           "notes": "",
-          "serial_number": 25
+          "serial_number": 26
         }
       ],
       "metadata": {
@@ -512,8 +512,8 @@
           "Boarding Rena": 3,
           "Boarding Lincon": 1
         },
-        "monthly_costs_ugx": 3947833.333333332,
-        "monthly_costs_eur": 962.8861788617883
+        "monthly_costs_ugx": 5896325,
+        "monthly_costs_eur": 1438.1280487804877
       }
     },
     "YSP": {
@@ -523,18 +523,18 @@
           "full_name": "MUGERWA JACKSON",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 210,
-            "monthly_output_ugx": 7500.0,
-            "monthly_output_euro": 1.829268292682927,
-            "cash_received_ugx": 861000,
-            "plus_minus_diff_ugx": 853500.0,
-            "plus_minus_diff_euro": 208.17073170731706,
+            "termly_school_fees": 2131000,
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 373516.6666666667,
+            "monthly_output_euro": 91.10162601626017,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": -86516.66666666669,
+            "plus_minus_diff_euro": -21.101626016260166,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 7500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 355166.6666666667
           },
           "notes": "",
           "serial_number": 1
@@ -543,18 +543,18 @@
           "full_name": "NABUKALU CAROL",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 140,
-            "monthly_output_ugx": 55000.0,
-            "monthly_output_euro": 13.414634146341463,
-            "cash_received_ugx": 574000,
-            "plus_minus_diff_ugx": 519000.0,
-            "plus_minus_diff_euro": 126.58536585365853,
+            "termly_school_fees": 650000,
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 228350,
+            "monthly_output_euro": 55.69512195121951,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": 58650,
+            "plus_minus_diff_euro": 14.304878048780488,
             "food": 17500,
             "average_medical": 20000,
             "school_personal_requirements_transport": 10000,
-            "admin_utilities": 7500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 162500
           },
           "notes": "",
           "serial_number": 2
@@ -565,15 +565,15 @@
           "financial_data": {
             "termly_school_fees": 0,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 14350,
+            "monthly_output_euro": 3.5,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 287000.0,
-            "plus_minus_diff_euro": 70.0,
+            "plus_minus_diff_ugx": 272650,
+            "plus_minus_diff_euro": 66.5,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
+            "admin_utilities": 14350,
             "direct_spending_school_fees_ugx_monthly": 0
           },
           "notes": "",
@@ -585,11 +585,11 @@
           "financial_data": {
             "termly_school_fees": 0,
             "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 0,
+            "monthly_output_euro": 0,
             "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
@@ -603,18 +603,18 @@
           "full_name": "NANDAWULA LOVICE",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 73,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 299300,
-            "plus_minus_diff_ugx": 299300.0,
-            "plus_minus_diff_euro": 73.0,
-            "food": 0,
-            "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "termly_school_fees": 690000,
+            "cash_received_euro": 0,
+            "monthly_output_ugx": 379000,
+            "monthly_output_euro": 92.4390243902439,
+            "cash_received_ugx": 0,
+            "plus_minus_diff_ugx": -379000,
+            "plus_minus_diff_euro": -92.4390243902439,
+            "food": 137500,
+            "average_medical": 20000,
+            "school_personal_requirements_transport": 10000,
+            "admin_utilities": 39000,
+            "direct_spending_school_fees_ugx_monthly": 172500
           },
           "notes": "",
           "serial_number": 5
@@ -623,18 +623,18 @@
           "full_name": "NAKITTO MARTHA",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 1947000,
             "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 362466.65,
+            "monthly_output_euro": 88.40650000000001,
             "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "plus_minus_diff_ugx": -362466.65,
+            "plus_minus_diff_euro": -88.40650000000001,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 37966.65,
+            "direct_spending_school_fees_ugx_monthly": 324500
           },
           "notes": "",
           "serial_number": 6
@@ -643,18 +643,18 @@
           "full_name": "NDAGIRE HELLEN",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 1465000,
             "cash_received_euro": 75,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 275950.01666666666,
+            "monthly_output_euro": 67.30488211382114,
             "cash_received_ugx": 307500,
-            "plus_minus_diff_ugx": 307500.0,
-            "plus_minus_diff_euro": 75.0,
+            "plus_minus_diff_ugx": 31549.983333333337,
+            "plus_minus_diff_euro": 7.6951178861788625,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 31783.350000000002,
+            "direct_spending_school_fees_ugx_monthly": 244166.66666666666
           },
           "notes": "",
           "serial_number": 7
@@ -663,18 +663,18 @@
           "full_name": "MUTERIZIRU NICHOLAS",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 1900000,
+            "cash_received_euro": 70,
+            "monthly_output_ugx": 372816.6666666667,
+            "monthly_output_euro": 90.9308943089431,
+            "cash_received_ugx": 287000,
+            "plus_minus_diff_ugx": -85816.66666666669,
+            "plus_minus_diff_euro": -20.930894308943095,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 36150,
+            "direct_spending_school_fees_ugx_monthly": 316666.6666666667
           },
           "notes": "",
           "serial_number": 8
@@ -683,18 +683,18 @@
           "full_name": "MWESIGWA JOSHUA",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 2197000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 404133.3166666667,
+            "monthly_output_euro": 98.56910162601628,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 287000.0,
-            "plus_minus_diff_euro": 70.0,
+            "plus_minus_diff_ugx": -117133.31666666671,
+            "plus_minus_diff_euro": -28.56910162601627,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 37966.65,
+            "direct_spending_school_fees_ugx_monthly": 366166.6666666667
           },
           "notes": "",
           "serial_number": 9
@@ -703,52 +703,52 @@
           "full_name": "AYEBALE SUSAN",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 3584750,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 615808.3333333334,
+            "monthly_output_euro": 150.19715447154474,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 287000.0,
-            "plus_minus_diff_euro": 70.0,
+            "plus_minus_diff_ugx": -328808.3333333334,
+            "plus_minus_diff_euro": -80.19715447154472,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 597458.3333333334
           },
           "notes": "",
-          "serial_number": 10
+          "serial_number": 17
         },
         {
           "full_name": "JAMERA SIMON",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 2274500,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 397433.3333333333,
+            "monthly_output_euro": 96.9349593495935,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 287000.0,
-            "plus_minus_diff_euro": 70.0,
+            "plus_minus_diff_ugx": -110433.33333333331,
+            "plus_minus_diff_euro": -26.93495934959349,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 18350,
+            "direct_spending_school_fees_ugx_monthly": 379083.3333333333
           },
           "notes": "",
-          "serial_number": 11
+          "serial_number": 18
         }
       ],
       "metadata": {
         "total_students": 11,
         "sponsorship_types": {
           "Boarding": 7,
-          "Day": 3,
+          "Day": 2,
           "Day - Report required": 1
         },
-        "monthly_costs_ugx": 62500.0,
-        "monthly_costs_eur": 15.24390243902439
+        "monthly_costs_ugx": 3423824.983333334,
+        "monthly_costs_eur": 835.0792642276424
       }
     },
     "ICCSP": {
@@ -758,18 +758,18 @@
           "full_name": "VICTORIA MIRACLE BUGWATA",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 21950.0,
-            "monthly_output_euro": 5.353658536585366,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": -21950.0,
-            "plus_minus_diff_euro": -5.353658536585366,
+            "termly_school_fees": 208000,
+            "cash_received_euro": 39,
+            "monthly_output_ugx": 79995,
+            "monthly_output_euro": 19.5109756097561,
+            "cash_received_ugx": 159900,
+            "plus_minus_diff_ugx": 79905,
+            "plus_minus_diff_euro": 19.4890243902439,
             "food": 0,
             "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 1950,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 7995,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 1
@@ -778,18 +778,18 @@
           "full_name": "MUKISA SHALOM",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 208000,
+            "cash_received_euro": 25,
+            "monthly_output_ugx": 57125,
+            "monthly_output_euro": 13.932926829268293,
+            "cash_received_ugx": 102500,
+            "plus_minus_diff_ugx": 45375,
+            "plus_minus_diff_euro": 11.067073170731707,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 2
@@ -798,18 +798,18 @@
           "full_name": "MUKISA NATHANIEL",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 50,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 205000,
-            "plus_minus_diff_ugx": 205000.0,
-            "plus_minus_diff_euro": 50.0,
+            "termly_school_fees": 208000,
+            "cash_received_euro": 25,
+            "monthly_output_ugx": 77125,
+            "monthly_output_euro": 18.8109756097561,
+            "cash_received_ugx": 102500,
+            "plus_minus_diff_ugx": 25375,
+            "plus_minus_diff_euro": 6.189024390243903,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 3
@@ -818,18 +818,18 @@
           "full_name": "LUBEGA EMANUELLA NAMBOZO",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 208000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 77125,
+            "monthly_output_euro": 18.8109756097561,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 25375,
+            "plus_minus_diff_euro": 6.189024390243903,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 4
@@ -838,18 +838,18 @@
           "full_name": "MIREMBE ZURIEL",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 208000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 57125,
+            "monthly_output_euro": 13.932926829268293,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 45375,
+            "plus_minus_diff_euro": 11.067073170731707,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 5
@@ -858,18 +858,18 @@
           "full_name": "TUSHEMEIRWE ADRINE",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 268000,
             "cash_received_euro": 35,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 74175,
+            "monthly_output_euro": 18.091463414634145,
             "cash_received_ugx": 143500,
-            "plus_minus_diff_ugx": 143500.0,
-            "plus_minus_diff_euro": 35.0,
+            "plus_minus_diff_ugx": 69325,
+            "plus_minus_diff_euro": 16.908536585365855,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 7175,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 6
@@ -878,18 +878,18 @@
           "full_name": "NAKAMYA NAIGA SHEILLA",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 50,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 205000,
-            "plus_minus_diff_ugx": 205000.0,
-            "plus_minus_diff_euro": 50.0,
+            "termly_school_fees": 504000,
+            "cash_received_euro": 40,
+            "monthly_output_ugx": 134200,
+            "monthly_output_euro": 32.73170731707317,
+            "cash_received_ugx": 164000,
+            "plus_minus_diff_ugx": 29800,
+            "plus_minus_diff_euro": 7.2682926829268295,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 7
@@ -898,18 +898,18 @@
           "full_name": "BUGWATA HANNAH ADRIEL",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 268000,
+            "cash_received_euro": 34,
+            "monthly_output_ugx": 93970,
+            "monthly_output_euro": 22.91951219512195,
+            "cash_received_ugx": 139400,
+            "plus_minus_diff_ugx": 45430,
+            "plus_minus_diff_euro": 11.080487804878048,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6970,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 8
@@ -918,18 +918,18 @@
           "full_name": "OMU BENJAMIN",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 268000,
+            "cash_received_euro": 25,
+            "monthly_output_ugx": 72125,
+            "monthly_output_euro": 17.591463414634145,
+            "cash_received_ugx": 102500,
+            "plus_minus_diff_ugx": 30375,
+            "plus_minus_diff_euro": 7.408536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 9
@@ -938,18 +938,18 @@
           "full_name": "WASWA NSAMBA DENIS",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 22000.0,
-            "monthly_output_euro": 5.365853658536586,
+            "monthly_output_ugx": 154200,
+            "monthly_output_euro": 37.609756097560975,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 142000.0,
-            "plus_minus_diff_euro": 34.63414634146341,
+            "plus_minus_diff_ugx": 9800,
+            "plus_minus_diff_euro": 2.3902439024390243,
             "food": 0,
             "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 2000,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 10
@@ -958,18 +958,18 @@
           "full_name": "KATO MATOVU DOUGLAS",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 154200,
+            "monthly_output_euro": 37.609756097560975,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 9800,
+            "plus_minus_diff_euro": 2.3902439024390243,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 11
@@ -978,18 +978,18 @@
           "full_name": "NAMAGANDA MELLISA PROSSY",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 50,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 205000,
-            "plus_minus_diff_ugx": 205000.0,
-            "plus_minus_diff_euro": 50.0,
+            "termly_school_fees": 504000,
+            "cash_received_euro": 40,
+            "monthly_output_ugx": 154200,
+            "monthly_output_euro": 37.609756097560975,
+            "cash_received_ugx": 164000,
+            "plus_minus_diff_ugx": 9800,
+            "plus_minus_diff_euro": 2.3902439024390243,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 12
@@ -998,18 +998,18 @@
           "full_name": "MABONGA ASHIM",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 268000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 72125,
+            "monthly_output_euro": 17.591463414634145,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 30375,
+            "plus_minus_diff_euro": 7.408536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 13
@@ -1018,18 +1018,18 @@
           "full_name": "BUGWATA RINNAH ABIGAIL",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "termly_school_fees": 268000,
+            "cash_received_euro": 39,
+            "monthly_output_ugx": 94995,
+            "monthly_output_euro": 23.16951219512195,
+            "cash_received_ugx": 159900,
+            "plus_minus_diff_ugx": 64905,
+            "plus_minus_diff_euro": 15.830487804878048,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 7995,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 14
@@ -1038,18 +1038,18 @@
           "full_name": "SSEMAKULA WILSON",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 168000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 47125,
+            "monthly_output_euro": 11.49390243902439,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 55375,
+            "plus_minus_diff_euro": 13.50609756097561,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 42000
           },
           "notes": "",
           "serial_number": 15
@@ -1058,18 +1058,18 @@
           "full_name": "BANGI PROMISE AGNES",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 131125,
+            "monthly_output_euro": 31.98170731707317,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": -28625,
+            "plus_minus_diff_euro": -6.9817073170731705,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 16
@@ -1078,18 +1078,18 @@
           "full_name": "NANGENDO LAURYN TENDO",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 268000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 72125,
+            "monthly_output_euro": 17.591463414634145,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 30375,
+            "plus_minus_diff_euro": 7.408536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 17
@@ -1098,18 +1098,18 @@
           "full_name": "NALWOGA SAMANTHA",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 268000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 72125,
+            "monthly_output_euro": 17.591463414634145,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 30375,
+            "plus_minus_diff_euro": 7.408536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 18
@@ -1118,18 +1118,18 @@
           "full_name": "KYAMBADDE RONALD",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 294400,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 78725,
+            "monthly_output_euro": 19.201219512195124,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 23775,
+            "plus_minus_diff_euro": 5.798780487804878,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 73600
           },
           "notes": "",
           "serial_number": 19
@@ -1138,18 +1138,18 @@
           "full_name": "NANDUDU REBECCA",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 294400,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 78725,
+            "monthly_output_euro": 19.201219512195124,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 23775,
+            "plus_minus_diff_euro": 5.798780487804878,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 73600
           },
           "notes": "",
           "serial_number": 20
@@ -1158,18 +1158,18 @@
           "full_name": "NGOBI JOVAN",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 348500,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 92250,
+            "monthly_output_euro": 22.5,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 10250,
+            "plus_minus_diff_euro": 2.5,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 87125
           },
           "notes": "",
           "serial_number": 21
@@ -1178,18 +1178,18 @@
           "full_name": "KIRABO KAREN BIRUNGI DEBORAH",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 384000,
+            "cash_received_euro": 25,
+            "monthly_output_ugx": 96000,
+            "monthly_output_euro": 23.414634146341463,
+            "cash_received_ugx": 102500,
+            "plus_minus_diff_ugx": 6500,
+            "plus_minus_diff_euro": 1.5853658536585367,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 90875
           },
           "notes": "",
           "serial_number": 22
@@ -1198,18 +1198,18 @@
           "full_name": "NAGGAYI SHARUWAH",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 250000,
+            "cash_received_euro": 40,
+            "monthly_output_ugx": 90700,
+            "monthly_output_euro": 22.121951219512194,
+            "cash_received_ugx": 164000,
+            "plus_minus_diff_ugx": 73300,
+            "plus_minus_diff_euro": 17.878048780487806,
             "food": 0,
-            "average_medical": 0,
+            "average_medical": 20000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 62500
           },
           "notes": "",
           "serial_number": 23
@@ -1218,18 +1218,18 @@
           "full_name": "MIDEVA GRACE UNGALA",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 384000,
             "cash_received_euro": 25,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 96000,
+            "monthly_output_euro": 23.414634146341463,
             "cash_received_ugx": 102500,
-            "plus_minus_diff_ugx": 102500.0,
-            "plus_minus_diff_euro": 25.0,
+            "plus_minus_diff_ugx": 6500,
+            "plus_minus_diff_euro": 1.5853658536585367,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 5125,
+            "direct_spending_school_fees_ugx_monthly": 90875
           },
           "notes": "",
           "serial_number": 24
@@ -1238,18 +1238,18 @@
           "full_name": "NAKIYIMBA NURU SHEILLA",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 500000,
+            "cash_received_euro": 62,
+            "monthly_output_ugx": 200210,
+            "monthly_output_euro": 48.83170731707317,
+            "cash_received_ugx": 254200,
+            "plus_minus_diff_ugx": 53990,
+            "plus_minus_diff_euro": 13.168292682926829,
             "food": 0,
             "average_medical": 0,
-            "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "school_personal_requirements_transport": 62500,
+            "admin_utilities": 12710,
+            "direct_spending_school_fees_ugx_monthly": 125000
           },
           "notes": "",
           "serial_number": 25
@@ -1258,18 +1258,18 @@
           "full_name": "PHILLIP MUHUMUZA",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 500000,
             "cash_received_euro": 70,
-            "monthly_output_ugx": 43500.0,
-            "monthly_output_euro": 10.609756097560975,
+            "monthly_output_ugx": 179350,
+            "monthly_output_euro": 43.74390243902439,
             "cash_received_ugx": 287000,
-            "plus_minus_diff_ugx": 243500.0,
-            "plus_minus_diff_euro": 59.390243902439025,
+            "plus_minus_diff_ugx": 107650,
+            "plus_minus_diff_euro": 26.25609756097561,
             "food": 0,
             "average_medical": 40000,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 3500,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 14350,
+            "direct_spending_school_fees_ugx_monthly": 125000
           },
           "notes": "",
           "serial_number": 26
@@ -1281,8 +1281,8 @@
           "Day": 18,
           "Boarding": 8
         },
-        "monthly_costs_ugx": 87450.0,
-        "monthly_costs_eur": 21.329268292682926
+        "monthly_costs_ugx": 2587145,
+        "monthly_costs_eur": 631.0109756097561
       }
     },
     "OTM_GA": {
@@ -1292,18 +1292,18 @@
           "full_name": "Akram Muhoozi",
           "sponsorship_package": "Day Sec High",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "termly_school_fees": 378400,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 100750,
+            "monthly_output_euro": 24.573170731707318,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 22250,
+            "plus_minus_diff_euro": 5.426829268292683,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 94600
           },
           "notes": "",
           "serial_number": 1
@@ -1312,18 +1312,18 @@
           "full_name": "Anitah Kobusingye",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 268000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 73150,
+            "monthly_output_euro": 17.841463414634145,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 49850,
+            "plus_minus_diff_euro": 12.158536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 2
@@ -1332,18 +1332,18 @@
           "full_name": "Anold Tumukunde",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 268000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 73150,
+            "monthly_output_euro": 17.841463414634145,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 49850,
+            "plus_minus_diff_euro": 12.158536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 3
@@ -1352,18 +1352,18 @@
           "full_name": "Brian Kiiza",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "termly_school_fees": 208000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 58150,
+            "monthly_output_euro": 14.182926829268293,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 64850,
+            "plus_minus_diff_euro": 15.817073170731707,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 4
@@ -1372,18 +1372,18 @@
           "full_name": "Calvin Damba",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 5
@@ -1392,18 +1392,18 @@
           "full_name": "Celline Nakawunde",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 134200,
+            "monthly_output_euro": 32.73170731707317,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 29800,
+            "plus_minus_diff_euro": 7.2682926829268295,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 6
@@ -1412,18 +1412,18 @@
           "full_name": "Cyrus Kalwe",
           "sponsorship_package": "Day Sec",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 282200,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 78750,
+            "monthly_output_euro": 19.20731707317073,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 85250,
+            "plus_minus_diff_euro": 20.79268292682927,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 70550
           },
           "notes": "",
           "serial_number": 7
@@ -1432,18 +1432,18 @@
           "full_name": "David Mugarura",
           "sponsorship_package": "Day Van",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 8
@@ -1452,18 +1452,18 @@
           "full_name": "Desire Nakazibwe",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 134200,
+            "monthly_output_euro": 32.73170731707317,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 29800,
+            "plus_minus_diff_euro": 7.2682926829268295,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 9
@@ -1472,18 +1472,18 @@
           "full_name": "Destiny Mukisa",
           "sponsorship_package": "Day Van",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 10
@@ -1492,18 +1492,18 @@
           "full_name": "Doreen Nakakande",
           "sponsorship_package": "Boarding Sec",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 11
@@ -1512,18 +1512,18 @@
           "full_name": "Elizabeth Nakazzi",
           "sponsorship_package": "Boarding SN",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 240000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 66150,
+            "monthly_output_euro": 16.134146341463413,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 56850,
+            "plus_minus_diff_euro": 13.865853658536585,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 60000
           },
           "notes": "",
           "serial_number": 12
@@ -1532,18 +1532,18 @@
           "full_name": "Elvis Muwonge",
           "sponsorship_package": "Day Van",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 13
@@ -1552,18 +1552,18 @@
           "full_name": "Emmanuel Ankunda",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 260000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 71150,
+            "monthly_output_euro": 17.353658536585368,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 51850,
+            "plus_minus_diff_euro": 12.646341463414634,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 65000
           },
           "notes": "",
           "serial_number": 14
@@ -1572,18 +1572,18 @@
           "full_name": "Fortunate Abigail Itamba",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 15
@@ -1592,18 +1592,18 @@
           "full_name": "Geofrey Ssekamate",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 180000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 51150,
+            "monthly_output_euro": 12.475609756097562,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 71850,
+            "plus_minus_diff_euro": 17.524390243902438,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 45000
           },
           "notes": "",
           "serial_number": 16
@@ -1612,18 +1612,18 @@
           "full_name": "Gift Akiram Lwanga",
           "sponsorship_package": "Day Van",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 17
@@ -1632,18 +1632,18 @@
           "full_name": "Godfrey Kasenya",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 180000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 51150,
+            "monthly_output_euro": 12.475609756097562,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 71850,
+            "plus_minus_diff_euro": 17.524390243902438,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 45000
           },
           "notes": "",
           "serial_number": 18
@@ -1652,18 +1652,18 @@
           "full_name": "Ian Ngobi",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 19
@@ -1672,18 +1672,18 @@
           "full_name": "Joan Asiimwe",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 20
@@ -1692,18 +1692,18 @@
           "full_name": "Joshua Kasirye",
           "sponsorship_package": "Day Sec",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 378400,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 100750,
+            "monthly_output_euro": 24.573170731707318,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 22250,
+            "plus_minus_diff_euro": 5.426829268292683,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 94600
           },
           "notes": "",
           "serial_number": 21
@@ -1712,18 +1712,18 @@
           "full_name": "Joshua Magabo",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 22
@@ -1732,18 +1732,18 @@
           "full_name": "Joshua Manganga",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 492000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 23
@@ -1752,18 +1752,18 @@
           "full_name": "Jovan Ngobi",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 24
@@ -1772,18 +1772,18 @@
           "full_name": "Judith Namazzi",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 492000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 134200,
+            "monthly_output_euro": 32.73170731707317,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 29800,
+            "plus_minus_diff_euro": 7.2682926829268295,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 25
@@ -1792,18 +1792,18 @@
           "full_name": "Kevin Kuguma",
           "sponsorship_package": "Day Van",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 492000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 26
@@ -1812,18 +1812,18 @@
           "full_name": "Madrine Jemima Nakagwa",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 492000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 27
@@ -1832,38 +1832,38 @@
           "full_name": "Mark Mugisha",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 134200,
+            "monthly_output_euro": 32.73170731707317,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 29800,
+            "plus_minus_diff_euro": 7.2682926829268295,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 28
         },
         {
           "full_name": "Mwaidhuma Tibaisanhia",
-          "sponsorship_package": "day sec",
+          "sponsorship_package": "day sec ",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 470000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 117500,
+            "monthly_output_euro": 28.658536585365855,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 5500,
+            "plus_minus_diff_euro": 1.3414634146341464,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 111350
           },
           "notes": "",
           "serial_number": 29
@@ -1872,38 +1872,38 @@
           "full_name": "Newton Temple Muwanguzi",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 30
         },
         {
-          "full_name": "Nisha Namugabi",
+          "full_name": "Nisha Namugisha",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 504000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 134200,
+            "monthly_output_euro": 32.73170731707317,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 29800,
+            "plus_minus_diff_euro": 7.2682926829268295,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 126000
           },
           "notes": "",
           "serial_number": 31
@@ -1912,18 +1912,18 @@
           "full_name": "Patience Birungi Nassazi",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 268000,
             "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 75200,
+            "monthly_output_euro": 18.341463414634145,
             "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "plus_minus_diff_ugx": 88800,
+            "plus_minus_diff_euro": 21.658536585365855,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 32
@@ -1932,18 +1932,18 @@
           "full_name": "Phillip Byaruhanga",
           "sponsorship_package": "Day sec",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 433400,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 114500,
+            "monthly_output_euro": 27.926829268292682,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 8500,
+            "plus_minus_diff_euro": 2.073170731707317,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 108350
           },
           "notes": "",
           "serial_number": 33
@@ -1952,18 +1952,18 @@
           "full_name": "Praise Waithera Okidi",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 268000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 73150,
+            "monthly_output_euro": 17.841463414634145,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 49850,
+            "plus_minus_diff_euro": 12.158536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 34
@@ -1972,181 +1972,221 @@
           "full_name": "Puis Muwumba",
           "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 268000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 73150,
+            "monthly_output_euro": 17.841463414634145,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 49850,
+            "plus_minus_diff_euro": 12.158536585365853,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 67000
           },
           "notes": "",
           "serial_number": 35
         },
         {
-          "full_name": "Ronald Nabangi",
-          "sponsorship_package": "Day",
+          "full_name": "Rodrine Kinene",
+          "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 36
         },
         {
-          "full_name": "Samson Laaki",
-          "sponsorship_package": "Boarding",
+          "full_name": "Ronald Nabangi",
+          "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "termly_school_fees": 208000,
+            "cash_received_euro": 40,
+            "monthly_output_ugx": 60200,
+            "monthly_output_euro": 14.682926829268293,
+            "cash_received_ugx": 164000,
+            "plus_minus_diff_ugx": 103800,
+            "plus_minus_diff_euro": 25.317073170731707,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 52000
           },
           "notes": "",
           "serial_number": 37
         },
         {
-          "full_name": "Samuel Lutalo",
+          "full_name": "Samson Laaki",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 38
         },
         {
-          "full_name": "Samuel Nsubuga",
+          "full_name": "Samuel Lutalo",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "termly_school_fees": 672000,
+            "cash_received_euro": 40,
+            "monthly_output_ugx": 176200,
+            "monthly_output_euro": 42.97560975609756,
+            "cash_received_ugx": 164000,
+            "plus_minus_diff_ugx": -12200,
+            "plus_minus_diff_euro": -2.975609756097561,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 8200,
+            "direct_spending_school_fees_ugx_monthly": 168000
           },
           "notes": "",
           "serial_number": 39
         },
         {
-          "full_name": "Shalom Namulondo",
-          "sponsorship_package": "Day",
+          "full_name": "Samuel Nsubuga",
+          "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 492000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 40
         },
         {
-          "full_name": "Shilla Kaana",
-          "sponsorship_package": "Boarding",
+          "full_name": "Shalom Namulondo",
+          "sponsorship_package": "Day",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 40,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 164000,
-            "plus_minus_diff_ugx": 164000.0,
-            "plus_minus_diff_euro": 40.0,
+            "termly_school_fees": 250000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 68650,
+            "monthly_output_euro": 16.74390243902439,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 54350,
+            "plus_minus_diff_euro": 13.25609756097561,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 62500
           },
           "notes": "",
           "serial_number": 41
         },
         {
-          "full_name": "Victorious Wairimu Okidi",
+          "full_name": "Shilla Kaana",
           "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
-            "cash_received_euro": 0,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
-            "cash_received_ugx": 0,
-            "plus_minus_diff_ugx": 0.0,
-            "plus_minus_diff_euro": 0.0,
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 42
         },
         {
-          "full_name": "Yusuf Bazibu",
-          "sponsorship_package": "Day",
+          "full_name": "Shira Kaana",
+          "sponsorship_package": "Boarding",
           "financial_data": {
-            "termly_school_fees": 0,
+            "termly_school_fees": 492000,
             "cash_received_euro": 30,
-            "monthly_output_ugx": 0.0,
-            "monthly_output_euro": 0.0,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
             "cash_received_ugx": 123000,
-            "plus_minus_diff_ugx": 123000.0,
-            "plus_minus_diff_euro": 30.0,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
             "food": 0,
             "average_medical": 0,
             "school_personal_requirements_transport": 0,
-            "admin_utilities": 0,
-            "direct_spending_school_fees_ugx_monthly": 0
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
           },
           "notes": "",
           "serial_number": 43
+        },
+        {
+          "full_name": "Victorious Wairimu Okidi",
+          "sponsorship_package": "Boarding",
+          "financial_data": {
+            "termly_school_fees": 492000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 123000,
+            "monthly_output_euro": 30,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 0,
+            "plus_minus_diff_euro": 0,
+            "food": 0,
+            "average_medical": 0,
+            "school_personal_requirements_transport": 0,
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 116850
+          },
+          "notes": "",
+          "serial_number": 44
+        },
+        {
+          "full_name": "Yusuf Bazibu",
+          "sponsorship_package": "Day",
+          "financial_data": {
+            "termly_school_fees": 268000,
+            "cash_received_euro": 30,
+            "monthly_output_ugx": 73150,
+            "monthly_output_euro": 17.841463414634145,
+            "cash_received_ugx": 123000,
+            "plus_minus_diff_ugx": 49850,
+            "plus_minus_diff_euro": 12.158536585365853,
+            "food": 0,
+            "average_medical": 0,
+            "school_personal_requirements_transport": 0,
+            "admin_utilities": 6150,
+            "direct_spending_school_fees_ugx_monthly": 67000
+          },
+          "notes": "",
+          "serial_number": 45
         }
       ],
       "metadata": {
@@ -2159,11 +2199,11 @@
           "Day Van": 5,
           "Boarding Sec": 1,
           "Boarding SN": 1,
-          "day sec": 1,
+          "day sec ": 1,
           "Day sec": 1
         },
-        "monthly_costs_ugx": 0.0,
-        "monthly_costs_eur": 0.0
+        "monthly_costs_ugx": 4554200,
+        "monthly_costs_eur": 1110.780487804878
       }
     }
   },
@@ -2172,462 +2212,622 @@
       "students": [
         {
           "cid": 1,
-          "full_name": "ATUHIRE ALVIN",
+          "full_name": "Alvin Atuhirwe",
           "sponsor": "Krech Norbert und Laura",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 2,
-          "full_name": "LWANGA DESTINY ADRIAN",
+          "full_name": "Destiny Adrian Lwanga",
           "sponsor": "Schunn Sarah und Ruopp Carolin",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 3,
-          "full_name": "SSEGAWA EMMANUEL",
+          "full_name": "Emmanuel Ssegawa",
           "sponsor": "Dr. Baldus",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 4,
-          "full_name": "BUMBA GERALD",
+          "full_name": "Gerald Bumba",
           "sponsor": "Mathias und Petra Peter",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 5,
-          "full_name": "NAKIWALA GIFT",
-          "sponsor": "Kornelia",
+          "full_name": "Gift Nakiwala",
+          "sponsor": "Kornelia??",
           "amount": 0,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 6,
-          "full_name": "KATENDE IVAN NICHOLAS",
+          "full_name": "Ivan Nicholas Katende",
           "sponsor": "Knorr Micheal und Tabea",
           "amount": 80,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 7,
-          "full_name": "MUKISA JEREMIAH",
-          "sponsor": "Mohn Henrik und Elfriede",
+          "full_name": "Jeremiah Mukisa",
+          "sponsor": "Dr. Baldus??",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 8,
-          "full_name": "NAKIYINGI JOANITAH",
-          "sponsor": "Augenstein Karheinz",
+          "full_name": "Joan Nakiyingi",
+          "sponsor": "Mohn Henrik und Elfriede",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 9,
-          "full_name": "SSEMBATYA JONATHAN",
-          "sponsor": "Bernd Reichardt",
+          "full_name": "Jonathan Ssembatya",
+          "sponsor": "Augenstein Karheinz",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 10,
-          "full_name": "OMARIMUNGU JORDAN",
-          "sponsor": "Patrick Schmidt",
+          "full_name": "Jordan Omarimungu",
+          "sponsor": "Bernd Reichardt",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 11,
-          "full_name": "NKATA JOSEPH",
-          "sponsor": "Brachthausser Laura",
+          "full_name": "Joseph Nkata",
+          "sponsor": "Patrick Schmidt",
           "amount": 80,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 12,
-          "full_name": "WAGUMA KARIM ABDUL",
-          "sponsor": "Mehrbrodt Anna",
+          "full_name": "Karim Abdul Waguma",
+          "sponsor": "Brachthausser Laura",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 13,
-          "full_name": "NAMAGGA MADRINE",
-          "sponsor": "Lingner Lisbeth und Friedemann",
+          "full_name": "Madrine Namagga",
+          "sponsor": "Mehrbrodt Anna",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 14,
-          "full_name": "NALUBOWA MARION",
-          "sponsor": "Kirr Anneliese",
+          "full_name": "Marion Nalubowa",
+          "sponsor": "Lingner Lisbeth und Friedemann",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 15,
-          "full_name": "AHEBWA PAUL",
-          "sponsor": "Schunn Joseph und Resi",
-          "amount": 80,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Melisa Nagadya",
+          "sponsor": "Kirr Anneliese",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 16,
-          "full_name": "SSERUGUNDA SAMUEL",
-          "sponsor": "Peyk Christa und Georg",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Molly Kiiza Nanvuma",
+          "sponsor": "Schunn Joseph und Resi",
+          "amount": 80,
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 17,
-          "full_name": "NAKYEJJWE RECHEAL",
-          "sponsor": "Ioana Kloos",
-          "amount": 75,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Peace Vicky Namatovu",
+          "sponsor": "Christine Gahre",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 18,
-          "full_name": "OKIR REAGAN",
-          "sponsor": "Puchtler Iris und Wollgdug",
+          "full_name": "Open Surpirse Kangume",
+          "sponsor": "Hartel Simone",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 19,
-          "full_name": "MEMBE SAMUEL MUKISA",
-          "sponsor": "Nikesch Corrinna",
+          "full_name": "Paul Ahebwa",
+          "sponsor": "Dr. Baldus",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 20,
-          "full_name": "SSERUGUNDA SAMUEL",
-          "sponsor": "Fabriz Gerhar & Reich Claudia",
+          "full_name": "Racheal Menya",
+          "sponsor": "Peyk Christa und Georg",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 21,
-          "full_name": "NANYANZI SHARIFAH",
-          "sponsor": "Mohn Familie",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Racheal Nakyejjwe",
+          "sponsor": "Ioana Kloos",
+          "amount": 75,
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 22,
-          "full_name": "SHIFURAH ALI",
-          "sponsor": "Johanna Werner",
+          "full_name": "Regan Okir",
+          "sponsor": "Puchtler Iris und Wollgdug",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 23,
-          "full_name": "NAGADYA MELISA",
-          "sponsor": "Karina Schmidt",
+          "full_name": "Samuel Meembe",
+          "sponsor": "Nikesch Corrinna",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
         },
         {
           "cid": 24,
-          "full_name": "NALUBOWA MARION",
-          "sponsor": "Schuster Rebekka und Maggi",
+          "full_name": "Samuel Sserugunda",
+          "sponsor": "Fabriz Gerhar & Reich Claudia",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "UCM"
+        },
+        {
+          "cid": 25,
+          "full_name": "Sharifah Blessing Nanyanzi",
+          "sponsor": "Mohn Familie",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "UCM"
+        },
+        {
+          "cid": 26,
+          "full_name": "Shifrah Ali Elizabeth",
+          "sponsor": "Johanna Werner",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "UCM"
+        },
+        {
+          "cid": 27,
+          "full_name": "Susan Ayebale",
+          "sponsor": "Dr. Baldus",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "UCM"
+        },
+        {
+          "cid": 28,
+          "full_name": "Swabrah Nakawooya",
+          "sponsor": "Karina Schmidt",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "UCM"
         }
       ],
       "metadata": {
-        "total_students": 24,
-        "active_students": 24,
+        "total_students": 28,
+        "active_students": 28,
         "inactive_students": 0,
-        "total_monthly_funding": 1645
+        "total_monthly_funding": 1955
       }
     },
     "YSP": {
       "students": [
         {
           "cid": 1,
-          "full_name": "MUGERWA JACKSON",
-          "sponsor": "Christine Gahre",
+          "full_name": "Anita Nalwadda",
+          "sponsor": "Jungschar Allendorf",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "YSP"
         },
         {
           "cid": 2,
-          "full_name": "NABUKALU CAROL",
-          "sponsor": "Hartel Simone",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Hellen Ndagire",
+          "sponsor": "Fuchs Martin und Erika",
+          "amount": 75,
+          "sponsorship_status": "active",
+          "category": "YSP"
         },
         {
           "cid": 3,
-          "full_name": "AYEBALE SUSAN",
-          "sponsor": "Dr. Baldus",
+          "full_name": "Herbert Katamba",
+          "sponsor": "Hartmann Horst und Lydia",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "YSP"
         },
         {
           "cid": 4,
-          "full_name": "MUGERWA JACKSON",
-          "sponsor": "Jungschar Allendorf",
+          "full_name": "Jackson Mugerwa",
+          "sponsor": "Siedel Johanna",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "YSP"
         },
         {
           "cid": 5,
-          "full_name": "NDAGIRE HELLEN",
-          "sponsor": "Fuchs Martin und Erika",
-          "amount": 75,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Joshua Mwesigwa",
+          "sponsor": "Last Oliver und Annika Last",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "YSP"
         },
         {
           "cid": 6,
-          "full_name": "KATAMBA HERBERT",
-          "sponsor": "Hartmann Horst und Lydia",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Lovice Nandawula",
+          "sponsor": "",
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "YSP"
         },
         {
           "cid": 7,
-          "full_name": "MUGERWA JACKSON",
-          "sponsor": "Siedel Johanna",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Martha Nakitto",
+          "sponsor": "",
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "YSP"
         },
         {
           "cid": 8,
-          "full_name": "MWESIGWA JOSHUA",
-          "sponsor": "Last Oliver und Annika Last",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Marvin Kato",
+          "sponsor": "Dana Jaehnert",
+          "amount": 73,
+          "sponsorship_status": "active",
+          "category": "YSP"
         },
         {
           "cid": 9,
-          "full_name": "NANDAWULA LOVICE",
-          "sponsor": "Dana Jaehnert",
-          "amount": 73,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Nabukalu Carol",
+          "sponsor": "Kring Hanne.. Kloos Katharina",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "YSP"
         },
         {
           "cid": 10,
-          "full_name": "NABUKALU CAROL",
-          "sponsor": "Kring Hanne.. Kloos Katharina",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Nicholas Muteriziru",
+          "sponsor": "",
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "YSP"
         },
         {
           "cid": 11,
-          "full_name": "JAMERA SIMON",
+          "full_name": "Open Kyobe John",
           "sponsor": "Heinlein Siegrid",
+          "amount": 50,
+          "sponsorship_status": "inactive",
+          "category": "YSP"
+        },
+        {
+          "cid": 12,
+          "full_name": "Open Marvin Nyanzi",
+          "sponsor": "Mehrbrodt Anna",
           "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "inactive",
+          "category": "YSP"
+        },
+        {
+          "cid": 13,
+          "full_name": "Open Vincent Joeph Basubira",
+          "sponsor": "Lingner Libeth und Friedemann",
+          "amount": 25,
+          "sponsorship_status": "inactive",
+          "category": "YSP"
+        },
+        {
+          "cid": 14,
+          "full_name": "Simon Jemera",
+          "sponsor": "Schuster Rebekka und Maggi",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "YSP"
+        },
+        {
+          "cid": 15,
+          "full_name": "Mark Julius Makanga",
+          "sponsor": "Krauss Roswitha",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "UCM"
         }
       ],
       "metadata": {
-        "total_students": 11,
-        "active_students": 11,
-        "inactive_students": 0,
-        "total_monthly_funding": 778
+        "total_students": 15,
+        "active_students": 8,
+        "inactive_students": 7,
+        "total_monthly_funding": 588
       }
     },
     "ICCSP": {
       "students": [
         {
           "cid": 1,
-          "full_name": "TUSHEMEIRWE ADRINE",
+          "full_name": "Adrine Tushemerirwe",
           "sponsor": "Augenstein Tobias -Son",
           "amount": 35,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 2,
-          "full_name": "MABONGA ASHIM",
-          "sponsor": "Samie und Gladys",
-          "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Ashim Mabonga",
+          "sponsor": "",
+          "amount": 0,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 3,
-          "full_name": "WASWA NSAMBA DENIS",
-          "sponsor": "'Christopher & Jackline",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Benjamin Omu",
+          "sponsor": "",
+          "amount": 0,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 4,
-          "full_name": "KATO MATOVU DOUGLAS",
-          "sponsor": "'Christopher & Jackline",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Debora Birungi Karen Kirabo",
+          "sponsor": "Samie und Gladys",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 5,
-          "full_name": "LUBEGA EMANUELLA NAMBOZO",
-          "sponsor": "Annalisa Hesse",
-          "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Denis Wasswa Nsamba",
+          "sponsor": "Christopher & Jackline, Romana Kloos",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 6,
-          "full_name": "MIDEVA GRACE UNGALA",
-          "sponsor": "Paulus Alex und Jennifer",
-          "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Douglas Kato Matovu",
+          "sponsor": "Christopher & Jackline, Romana Kloos",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 7,
-          "full_name": "NGOBI JOVAN",
-          "sponsor": "Lembacker Karin",
+          "full_name": "Emmanuella Nambozo Lubega",
+          "sponsor": "Annalisa Hesse",
           "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 8,
-          "full_name": "SSEMAKULA WILSON",
-          "sponsor": "Mergenthaler Agnes",
+          "full_name": "Grace Mideva Ongala",
+          "sponsor": "Paulus Alex und Jennifer",
           "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 9,
-          "full_name": "NAMAGANDA MELLISA PROSSY",
-          "sponsor": "'Christopher & Jackline",
-          "amount": 50,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Hannah Adriel Bugwata",
+          "sponsor": "",
+          "amount": 0,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 10,
-          "full_name": "NAKAMYA NAIGA SHEILLA",
-          "sponsor": "'Christopher & Jackline",
-          "amount": 50,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Jovan Ngobi",
+          "sponsor": "Lembacker Karin",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 11,
-          "full_name": "NANGENDO LAURYN TENDO",
-          "sponsor": "Lingner Lisbeth und Friedemann",
+          "full_name": "Mark Ahebwa",
+          "sponsor": "Mergenthaler Agnes",
           "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 12,
-          "full_name": "NALWOGA SAMANTHA",
-          "sponsor": "Lingner Lisbeth und Friedemann",
-          "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Melisha Prossy Namaganda",
+          "sponsor": "Christopher & Jackline, Romana Kloos",
+          "amount": 50,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 13,
-          "full_name": "MIREMBE ZURIEL",
-          "sponsor": "Lingner Lisbeth und Friedemann",
-          "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Mukisa Nathaneal",
+          "sponsor": "Johann & Kathrin Nietsch",
+          "amount": 0,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 14,
-          "full_name": "PHILLIP MUHUMUZA",
-          "sponsor": "Rauch Mirjam und Christoph",
-          "amount": 70,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Lauryn Tendo Nangendo",
+          "sponsor": "Lingner Lisbeth und Friedemann",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 15,
-          "full_name": "BANGI PROMISE AGNES",
-          "sponsor": "Dr. Baldus",
+          "full_name": "Samantha Nalwoga",
+          "sponsor": "Lingner Lisbeth und Friedemann",
           "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 16,
-          "full_name": "NANDUDU REBECCA",
+          "full_name": "Zuriel Mirembe",
           "sponsor": "Lingner Lisbeth und Friedemann",
           "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 17,
-          "full_name": "BUGWATA RINNAH ABIGAIL",
-          "sponsor": "Mergenthaler Agnes",
+          "full_name": "Open Esther Tushemerirwe",
+          "sponsor": "Dr. Baldus",
           "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "inactive",
+          "category": "ICCSP"
         },
         {
           "cid": 18,
-          "full_name": "KYAMBADDE RONALD",
-          "sponsor": "Lingner Lisbeth und Friedemann",
-          "amount": 25,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "full_name": "Phillip Muhumuza",
+          "sponsor": "Rauch Mirjam und Christoph",
+          "amount": 70,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         },
         {
           "cid": 19,
-          "full_name": "MUKISA NATHANIEL",
-          "sponsor": "Johann & Kathrin Nietsch",
+          "full_name": "Promise Agnes Bangi",
+          "sponsor": "Dr. Baldus",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 20,
+          "full_name": "Rebecca Nandudu",
+          "sponsor": "Lingner Lisbeth und Friedemann",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 21,
+          "full_name": "Rinnah Abigail Bugwata",
+          "sponsor": "Mergenthaler Agnes",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 22,
+          "full_name": "Ronald Kyambadde",
+          "sponsor": "Lingner Lisbeth und Friedemann",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 23,
+          "full_name": "Shalom Mukisa",
+          "sponsor": "Sita",
           "amount": 50,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 24,
+          "full_name": "Shaluwah Nagayi",
+          "sponsor": "Martin Eissenmann",
+          "amount": 0,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 25,
+          "full_name": "Sheilla Naiga Nakamya",
+          "sponsor": "Christopher & Jackline, Romana Kloos",
+          "amount": 50,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 26,
+          "full_name": "Sheilla Nuru Nakiyimba",
+          "sponsor": "Daniel Maruk",
+          "amount": 0,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 27,
+          "full_name": "Victoria Babirye Bugwata",
+          "sponsor": "",
+          "amount": 0,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 28,
+          "full_name": "Wilson Ssemakula",
+          "sponsor": "Bronkal Dan und Debie",
+          "amount": 25,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 29,
+          "full_name": "Caleb Myles Lusesi",
+          "sponsor": "OTM",
+          "amount": 16.666666666666668,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 30,
+          "full_name": "Teciah Muhindo",
+          "sponsor": "OTM",
+          "amount": 12.5,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
+        },
+        {
+          "cid": 31,
+          "full_name": "Tedrick Muhindo",
+          "sponsor": "OTM",
+          "amount": 12.5,
+          "sponsorship_status": "active",
+          "category": "ICCSP"
         }
       ],
       "metadata": {
-        "total_students": 19,
-        "active_students": 19,
-        "inactive_students": 0,
-        "total_monthly_funding": 635
+        "total_students": 31,
+        "active_students": 30,
+        "inactive_students": 1,
+        "total_monthly_funding": 660.6666666666666
       }
     },
     "OTM_GA": {
@@ -2637,276 +2837,713 @@
           "full_name": "Akram Muhoozi",
           "sponsor": "Generation Alive",
           "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 2,
           "full_name": "Anitah Kobusingye",
           "sponsor": "Generation Alive",
           "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 3,
-          "full_name": "Brian Kiiza",
+          "full_name": "Anold Tumukunde",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 4,
-          "full_name": "Calvin Damba",
+          "full_name": "Brian Kiiza",
           "sponsor": "Generation Alive",
           "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 5,
-          "full_name": "Celline Nakawunde",
+          "full_name": "Calvin Damba",
           "sponsor": "Generation Alive",
           "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 6,
-          "full_name": "Cyrus Kalwe",
+          "full_name": "Celline Nakawunde",
           "sponsor": "Generation Alive",
           "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 7,
-          "full_name": "Desire Nakazibwe",
+          "full_name": "Cyrus Kalwe",
           "sponsor": "Generation Alive",
           "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 8,
-          "full_name": "Elizabeth Nakazzi",
+          "full_name": "David Mugarura",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 9,
-          "full_name": "Geofrey Ssekamate",
+          "full_name": "Desire Nakazibwe",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 10,
-          "full_name": "Godfrey Kasenya",
+          "full_name": "Destiny Mukisa",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 11,
-          "full_name": "Ian Ngobi",
+          "full_name": "Doreen Nakakande",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 12,
-          "full_name": "Joshua Kasirye",
+          "full_name": "Elizabeth Nakazzi",
           "sponsor": "Generation Alive",
           "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 13,
-          "full_name": "Joshua Manganga",
+          "full_name": "Elvis Muwonge",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 14,
-          "full_name": "Judith Namazzi",
+          "full_name": "Emmanuel Ankunda",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 15,
-          "full_name": "Kevin Kuguma",
+          "full_name": "Fortunate Abigail Itamba",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 16,
-          "full_name": "Madrine Jemima Nakagwa",
+          "full_name": "Geofrey Ssekamate",
           "sponsor": "Generation Alive",
           "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 17,
-          "full_name": "Mark Mugisha",
+          "full_name": "Gift Akiram Lwanga",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 18,
-          "full_name": "Mwaidhuma Tibaisanhia",
+          "full_name": "Godfrey Kasenya",
           "sponsor": "Generation Alive",
           "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 19,
-          "full_name": "Newton Temple Muwanguzi",
+          "full_name": "Ian Ngobi",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 20,
-          "full_name": "Nisha Namugabi",
+          "full_name": "Joan Asiimwe",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 21,
-          "full_name": "Patience Birungi Nassazi",
+          "full_name": "Joshua Kasirye",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 22,
-          "full_name": "Phillip Byaruhanga",
+          "full_name": "Joshua Magabo",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 23,
-          "full_name": "Puis Muwumba",
+          "full_name": "Joshua Manganga",
           "sponsor": "Generation Alive",
           "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 24,
-          "full_name": "Ronald Nabangi",
+          "full_name": "Jovan Ngobi",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
         },
         {
           "cid": 25,
-          "full_name": "Samson Laaki",
+          "full_name": "Judith Namazzi",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 26,
-          "full_name": "Samuel Lutalo",
+          "full_name": "Kevin Kuguma",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 27,
-          "full_name": "Samuel Nsubuga",
+          "full_name": "Madrine Jemima Nakagwa",
           "sponsor": "Generation Alive",
           "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 28,
-          "full_name": "Shalom Namulondo",
+          "full_name": "Mark Mugisha",
           "sponsor": "Generation Alive",
-          "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 29,
-          "full_name": "Shilla Kaana",
+          "full_name": "Mwaidhuma Tibaisanhia",
           "sponsor": "Generation Alive",
-          "amount": 40,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         },
         {
           "cid": 30,
+          "full_name": "Newton Temple Muwanguzi",
+          "sponsor": "Generation Alive",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 31,
+          "full_name": "Nisha Namugisha",
+          "sponsor": "Generation Alive",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 32,
+          "full_name": "Patience Birungi Nassazi",
+          "sponsor": "Generation Alive",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 33,
+          "full_name": "Phillip Byaruhanga",
+          "sponsor": "Generation Alive",
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 34,
+          "full_name": "Praise Waithera Okidi",
+          "sponsor": "Generation Alive",
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 35,
+          "full_name": "Puis Muwumba",
+          "sponsor": "Generation Alive",
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 36,
+          "full_name": "Rodrine Kinene",
+          "sponsor": "Generation Alive",
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 37,
+          "full_name": "Ronald Nabangi",
+          "sponsor": "Generation Alive",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 38,
+          "full_name": "Samson Laaki",
+          "sponsor": "Generation alive",
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 39,
+          "full_name": "Samuel Lutalo",
+          "sponsor": "Generation Alive",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 40,
+          "full_name": "Samuel Nsubuga",
+          "sponsor": "Generation Alive",
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 41,
+          "full_name": "Shalom Namulondo",
+          "sponsor": "Generation Alive",
+          "amount": 30,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 42,
+          "full_name": "Shilla Kaana",
+          "sponsor": "Generation Alive",
+          "amount": 40,
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 43,
+          "full_name": "Shira Kaana",
+          "sponsor": "Generation Alive",
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 44,
+          "full_name": "Victorious Wairimu Okidi",
+          "sponsor": "Generation Alive",
+          "amount": 0,
+          "sponsorship_status": "inactive",
+          "category": "OTM-GA"
+        },
+        {
+          "cid": 45,
           "full_name": "Yusuf Bazibu",
           "sponsor": "Generation Alive",
           "amount": 30,
-          "sponsorship_status": "Active",
-          "category": "Individual"
+          "sponsorship_status": "active",
+          "category": "OTM-GA"
         }
       ],
       "metadata": {
-        "total_students": 30,
-        "active_students": 30,
-        "inactive_students": 0,
-        "total_monthly_funding": 1040
+        "total_students": 45,
+        "active_students": 32,
+        "inactive_students": 13,
+        "total_monthly_funding": 1290
       }
     }
   },
   "financial_review": {
     "OTM_GA_Financial_Review": {
-      "students": [],
+      "students": [
+        {
+          "cid": 1,
+          "full_name": "Akram Muhoozi",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 2,
+          "full_name": "Anitah Kobusingye",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 3,
+          "full_name": "Anold Tumukunde",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 4,
+          "full_name": "Brian Kiiza",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 5,
+          "full_name": "Calvin Damba",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 6,
+          "full_name": "Celline Nakawunde",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 7,
+          "full_name": "Cyrus Kalwe",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 8,
+          "full_name": "David Mugarura",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 9,
+          "full_name": "Desire Nakazibwe",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 10,
+          "full_name": "Destiny Mukisa",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 11,
+          "full_name": "Doreen Nakakande",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 12,
+          "full_name": "Elizabeth Nakazzi",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 13,
+          "full_name": "Elvis Muwonge",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 14,
+          "full_name": "Emmanuel Ankunda",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 15,
+          "full_name": "Fortunate Abigail Itamba",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 16,
+          "full_name": "Geofrey Ssekamate",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 17,
+          "full_name": "Gift Akiram Lwanga",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 18,
+          "full_name": "Godfrey Kasenya",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 19,
+          "full_name": "Ian Ngobi",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 20,
+          "full_name": "Joan Asiimwe",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 21,
+          "full_name": "Joshua Kasirye",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 22,
+          "full_name": "Joshua Magabo",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 23,
+          "full_name": "Joshua Manganga",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 24,
+          "full_name": "Jovan Ngobi",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 25,
+          "full_name": "Judith Namazzi",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 26,
+          "full_name": "Kevin Kuguma",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 27,
+          "full_name": "Madrine Jemima Nakagwa",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 28,
+          "full_name": "Mark Mugisha",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 29,
+          "full_name": "Mwaidhuma Tibaisanhia",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 30,
+          "full_name": "Newton Temple Muwanguzi",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 31,
+          "full_name": "Nisha Namugisha",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 32,
+          "full_name": "Patience Birungi Nassazi",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 33,
+          "full_name": "Phillip Byaruhanga",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 34,
+          "full_name": "Praise Waithera Okidi",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 35,
+          "full_name": "Puis Muwumba",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 36,
+          "full_name": "Rodrine Kinene",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 37,
+          "full_name": "Ronald Nabangi",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 38,
+          "full_name": "Samson Laaki",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 39,
+          "full_name": "Samuel Lutalo",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 40,
+          "full_name": "Samuel Nsubuga",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 41,
+          "full_name": "Shalom Namulondo",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 42,
+          "full_name": "Shilla Kaana",
+          "cash_received_aug_2024": 40,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 43,
+          "full_name": "Shira Kaana",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 44,
+          "full_name": "Victorious Wairimu Okidi",
+          "cash_received_aug_2024": 0,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        },
+        {
+          "cid": 45,
+          "full_name": "Yusuf Bazibu",
+          "cash_received_aug_2024": 30,
+          "cash_expected_month": 40,
+          "actual_sponsorship": ""
+        }
+      ],
       "summary": {
-        "total_cash_received": 0,
-        "total_cash_expected": 0,
-        "funding_gap": 0
+        "total_cash_received": 1040,
+        "total_cash_expected": 1800,
+        "funding_gap": 760
       }
     }
   },
   "metadata": {
     "source_files": [
-      "Decision on schools 2025 Term III.xlsx",
-      "General Sponsorship Edited with Romana June 2024.xlsx"
+      "General Sponsorship Edited with Romana June 2024.xlsx",
+      "Decision on schools 2025 Term III.xlsx"
     ],
-    "extraction_date": "2025-10-22",
+    "extraction_date": "2025-10-28",
     "currency_conversion_rate": {
       "euro_to_ugx": 4100,
       "note": "Exchange rate used in calculations"
     },
     "programs_summary": {
       "total_students_across_all_programs": 105,
-      "total_active_sponsorships": 84,
-      "total_monthly_funding_euros": 4098,
-      "total_monthly_funding_ugx": 16801800
+      "total_active_sponsorships": 98,
+      "total_monthly_funding_euros": 4494.333333333333,
+      "total_monthly_funding_ugx": 18426900
     }
   },
-  "last_updated": "2025-10-22T21:03:57.873Z"
+  "last_updated": "2025-10-28",
+  "daily_expenses": []
 }
