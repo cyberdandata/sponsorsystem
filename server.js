@@ -12,21 +12,39 @@ const wss = new WebSocket.Server({ server });
 
 const PORT = 3000;
 const DB_FILE = 'database.json';
+const UPLOADS_DIR = 'uploads';
 const EXCHANGE_RATE = 4100; // 1 EUR = 4100 UGX
 
+// Ensure uploads directory exists
+if (!fs.existsSync(UPLOADS_DIR)) {
+    fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+}
+
 // Configure multer for file uploads
-const storage = multer.memoryStorage();
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, UPLOADS_DIR);
+    },
+    filename: function (req, file, cb) {
+        // Generate unique filename with timestamp
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+    }
+});
+
 const upload = multer({ 
     storage: storage,
     limits: {
         fileSize: 10 * 1024 * 1024, // 10MB limit
     },
     fileFilter: (req, file, cb) => {
-        if (file.mimetype === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-            file.mimetype === 'application/vnd.ms-excel') {
+        if (file.mimetype.startsWith('image/')) {
+            cb(null, true);
+        } else if (file.mimetype === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+                   file.mimetype === 'application/vnd.ms-excel') {
             cb(null, true);
         } else {
-            cb(new Error('Only Excel files are allowed'), false);
+            cb(new Error('Only image and Excel files are allowed'), false);
         }
     }
 });
@@ -34,6 +52,7 @@ const upload = multer({
 // Middleware
 app.use(express.json({ limit: '50mb' }));
 app.use(express.static('public'));
+app.use('/uploads', express.static(UPLOADS_DIR));
 
 // WebSocket connection for real-time updates
 wss.on('connection', (ws) => {
@@ -368,15 +387,26 @@ function processExcelImport(fileBuffer, importType) {
 
 function processStudentsData(workbook) {
     const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
-    const studentsData = {};
+    const studentsData = { sponsorship_programs: {} };
 
     programs.forEach(program => {
         const sheet = workbook.Sheets[program];
+        studentsData.sponsorship_programs[program] = {
+            program_name: `${program} FINANCIAL ANALYSIS REPORT`,
+            students: [],
+            metadata: {
+                total_students: 0,
+                sponsorship_types: {},
+                monthly_costs_ugx: 0,
+                monthly_costs_eur: 0
+            }
+        };
+
         if (sheet) {
             const jsonData = XLSX.utils.sheet_to_json(sheet);
             console.log(`Processing ${program} students:`, jsonData.length);
             
-            studentsData[program] = jsonData.map((row, index) => {
+            studentsData.sponsorship_programs[program].students = jsonData.map((row, index) => {
                 // Calculate financial data
                 const financialData = {
                     termly_school_fees: parseFloat(row['Termly Fees (UGX)']) || 0,
@@ -401,16 +431,15 @@ function processStudentsData(workbook) {
             });
         } else {
             console.log(`No sheet found for program: ${program}`);
-            studentsData[program] = [];
         }
     });
 
-    return { sponsorship_programs: studentsData };
+    return studentsData;
 }
 
 function processSponsorsData(workbook) {
     const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
-    const sponsorsData = {};
+    const sponsorsData = { sponsorship_registry: {} };
 
     programs.forEach(program => {
         const sheetNames = [
@@ -427,11 +456,21 @@ function processSponsorsData(workbook) {
             }
         }
 
+        sponsorsData.sponsorship_registry[program] = {
+            students: [],
+            metadata: {
+                total_students: 0,
+                active_students: 0,
+                inactive_students: 0,
+                total_monthly_funding: 0
+            }
+        };
+
         if (sheet) {
             const jsonData = XLSX.utils.sheet_to_json(sheet);
             console.log(`Processing ${program} sponsors:`, jsonData.length);
             
-            sponsorsData[program] = jsonData.map((row, index) => ({
+            sponsorsData.sponsorship_registry[program].students = jsonData.map((row, index) => ({
                 cid: index + 1,
                 full_name: row['Sponsored Student'] || row['Student Name'] || '',
                 sponsor: row['Sponsor Name'] || row['Sponsor'] || `Sponsor ${index + 1}`,
@@ -443,11 +482,10 @@ function processSponsorsData(workbook) {
             }));
         } else {
             console.log(`No sponsor sheet found for program: ${program}`);
-            sponsorsData[program] = [];
         }
     });
 
-    return { sponsorship_registry: sponsorsData };
+    return sponsorsData;
 }
 
 function processExpensesData(workbook) {
@@ -530,14 +568,14 @@ function calculateTotalRecords(data) {
     let total = 0;
     
     if (data.sponsorship_programs) {
-        Object.values(data.sponsorship_programs).forEach(students => {
-            total += students.length;
+        Object.values(data.sponsorship_programs).forEach(program => {
+            total += program.students.length;
         });
     }
     
     if (data.sponsorship_registry) {
-        Object.values(data.sponsorship_registry).forEach(sponsors => {
-            total += sponsors.length;
+        Object.values(data.sponsorship_registry).forEach(registry => {
+            total += registry.students.length;
         });
     }
     
@@ -598,7 +636,13 @@ function integrateStudentsData(database, importedData, mergeStrategy) {
     const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
     
     programs.forEach(program => {
-        const importedStudents = importedData.sponsorship_programs[program] || [];
+        const importedProgram = importedData.sponsorship_programs && importedData.sponsorship_programs[program];
+        if (!importedProgram || !importedProgram.students) {
+            console.log(`No students data found for program: ${program}`);
+            return;
+        }
+
+        const importedStudents = importedProgram.students;
         
         if (mergeStrategy === 'replace') {
             // Replace all students in the program
@@ -641,7 +685,13 @@ function integrateSponsorsData(database, importedData, mergeStrategy) {
     const programs = ['CH', 'YSP', 'ICCSP', 'OTM_GA'];
     
     programs.forEach(program => {
-        const importedSponsors = importedData.sponsorship_registry[program] || [];
+        const importedRegistry = importedData.sponsorship_registry && importedData.sponsorship_registry[program];
+        if (!importedRegistry || !importedRegistry.students) {
+            console.log(`No sponsors data found for program: ${program}`);
+            return;
+        }
+
+        const importedSponsors = importedRegistry.students;
         
         if (mergeStrategy === 'replace') {
             // Replace all sponsors in the program
@@ -1584,39 +1634,45 @@ app.put('/api/settings/notifications', (req, res) => {
 });
 
 // Upload logo
-app.post('/api/settings/logo', (req, res) => {
-    const { logoData } = req.body;
-    
-    if (!logoData) {
-        return res.status(400).json({ success: false, message: 'No logo data provided' });
-    }
-    
-    let database = loadDatabase();
-    
-    if (!database.system_settings) {
-        database.system_settings = {};
-    }
-    
-    if (!database.system_settings.organization) {
-        database.system_settings.organization = {};
-    }
-    
-    database.system_settings.organization.logo = logoData;
-    
-    if (saveDatabase(database)) {
-        const updatedDatabase = loadDatabase();
-        broadcast({
-            type: 'logo_updated',
-            logo: logoData,
-            database: updatedDatabase,
-            message: 'Logo updated successfully'
-        });
-        res.json({ 
-            success: true, 
-            message: 'Logo updated successfully' 
-        });
-    } else {
-        res.status(500).json({ success: false, message: 'Failed to save logo' });
+app.post('/api/settings/logo', upload.single('logo'), (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ success: false, message: 'No logo file provided' });
+        }
+        
+        const logoUrl = `/uploads/${req.file.filename}`;
+        
+        let database = loadDatabase();
+        
+        if (!database.system_settings) {
+            database.system_settings = {};
+        }
+        
+        if (!database.system_settings.organization) {
+            database.system_settings.organization = {};
+        }
+        
+        database.system_settings.organization.logo = logoUrl;
+        
+        if (saveDatabase(database)) {
+            const updatedDatabase = loadDatabase();
+            broadcast({
+                type: 'logo_updated',
+                logo: logoUrl,
+                database: updatedDatabase,
+                message: 'Logo updated successfully'
+            });
+            res.json({ 
+                success: true,
+                logoUrl: logoUrl,
+                message: 'Logo uploaded successfully' 
+            });
+        } else {
+            res.status(500).json({ success: false, message: 'Failed to save logo' });
+        }
+    } catch (error) {
+        console.error('Logo upload error:', error);
+        res.status(500).json({ success: false, message: 'Failed to upload logo' });
     }
 });
 
@@ -1708,14 +1764,20 @@ app.post('/api/import/excel', upload.single('file'), (req, res) => {
         
         console.log(`Processing Excel import: ${importType} with ${mergeStrategy} strategy`);
         
+        // Read the uploaded file
+        const fileBuffer = fs.readFileSync(req.file.path);
+        
         // Process Excel file
-        const importedData = processExcelImport(req.file.buffer, importType);
+        const importedData = processExcelImport(fileBuffer, importType);
         
         // Load current database
         let database = loadDatabase();
         
         // Integrate imported data
         database = integrateImportedData(database, importedData, importType, mergeStrategy);
+        
+        // Clean up uploaded file
+        fs.unlinkSync(req.file.path);
         
         // Save updated database
         if (saveDatabase(database)) {
@@ -2061,6 +2123,7 @@ server.listen(PORT, () => {
     console.log('🚀 Sponsorship Management System with Enhanced Import Functionality');
     console.log(`📍 Local: http://localhost:${PORT}`);
     console.log(`💾 Database: ${DB_FILE}`);
+    console.log(`📁 Uploads: ${UPLOADS_DIR}`);
     console.log(`🔗 WebSockets: Enabled for real-time updates`);
     console.log(`💰 Exchange Rate: 1 EUR = ${EXCHANGE_RATE} UGX`);
     console.log(`📊 Import Features: Excel file processing, template generation`);
